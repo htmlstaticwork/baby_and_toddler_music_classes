@@ -16,13 +16,17 @@
 </head>
 
 <body>
+    <!-- Site-wide Preloader -->
+    <div id="preloader">
+        <div class="loader-note"><i class="bi bi-music-note-beamed"></i></div>
+    </div>
 
     <!-- Header & Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="img/logo.png" alt="Joyful Notes Logo" class="me-2">
-                <span class="brand-font fs-3 text-primary">Joyful Notes</span>
+                <img src="img/logo.png" alt="Joyful Notes Logo">
+                <span class="brand-font text-primary">Joyful Notes</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -81,10 +85,10 @@
     </nav>
 
     <!-- Classes Header -->
-    <header class="bg-soft section-padding text-center position-relative overflow-hidden">
+    <header class="bg-soft section-padding text-center position-relative overflow-hidden reveal">
         <div class="container position-relative z-1">
             <h1 class="display-4 fw-bold text-secondary mb-3">Our Music Classes</h1>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">Musical journeys designed for every stage of
+            <p class="text-muted mx-auto" style="max-width: 700px;">Musical journeys designed for every stage of
                 early development, from newborn to three years old.</p>
         </div>
         <!-- Decorative Music Icons -->
@@ -97,19 +101,19 @@
     </header>
 
     <!-- Class Categories -->
-    <section class="section-padding">
+    <section class="section-padding reveal">
         <div class="container">
             <!-- Baby Classes -->
             <div id="baby" class="row align-items-center mb-5 pb-5 border-bottom">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="baby_music_class_1774954250443.png" alt="Baby Music Class"
-                        class="img-fluid rounded-4 shadow">
+                    <img src="https://kicontent.s3.amazonaws.com/images/contentimages/large/1p0q5wffnz3.jpeg"
+                        alt="Baby Music Class" class="img-fluid rounded-4 shadow">
                 </div>
                 <div class="col-lg-6 ps-lg-5">
                     <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">0 – 12 Months</span>
                     <h2 class="display-5 fw-bold text-secondary mb-2">Baby Classes</h2>
                     <div class="section-divider justify-content-start mb-4">
-                        <span></span><span></span><span></span>
+                        <span></span><span></span>
                         <i class="bi bi-star-fill"></i>
                         <span></span><span></span><span></span>
                     </div>
@@ -143,14 +147,14 @@
             <!-- Toddler Classes -->
             <div id="toddler" class="row align-items-center mb-5 pb-5 border-bottom">
                 <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
-                    <img src="toddler_music_class_1774954267960.png" alt="Toddler Music Class"
-                        class="img-fluid rounded-4 shadow">
+                    <img src="https://www.myriadmusic.net/wp-content/uploads/2017/11/01Myriadclassroom_107-1024x683.jpg"
+                        alt="Toddler Music Class" class="img-fluid rounded-4 shadow">
                 </div>
                 <div class="col-lg-6 pe-lg-5 order-lg-1">
                     <span class="badge bg-secondary px-3 py-2 rounded-pill mb-3">1 – 3 Years</span>
                     <h2 class="display-5 fw-bold text-secondary mb-2">Toddler Classes</h2>
                     <div class="section-divider justify-content-start mb-4">
-                        <span></span><span></span><span></span>
+                        <span></span><span></span>
                         <i class="bi bi-star-fill"></i>
                         <span></span><span></span><span></span>
                     </div>
@@ -184,14 +188,14 @@
             <!-- Mixed Age Classes -->
             <div id="mixed" class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="mixed_age_music_class_1774954285340.png" alt="Mixed Age Music Class"
-                        class="img-fluid rounded-4 shadow">
+                    <img src="https://www.singnmove.com/uploads/1/1/6/1/11618999/mixed-ages_orig.jpeg"
+                        alt="Mixed Age Music Class" class="img-fluid rounded-4 shadow">
                 </div>
                 <div class="col-lg-6 ps-lg-5">
                     <span class="badge bg-accent text-dark px-3 py-2 rounded-pill mb-3">All Ages (0 – 5 Years)</span>
                     <h2 class="display-5 fw-bold text-secondary mb-2">Mixed Age Classes</h2>
                     <div class="section-divider justify-content-start mb-4">
-                        <span></span><span></span><span></span>
+                        <span></span><span></span>
                         <i class="bi bi-star-fill"></i>
                         <span></span><span></span><span></span>
                     </div>
@@ -225,14 +229,14 @@
     </section>
 
     <!-- Pricing / Packages -->
-    <section class="section-padding bg-soft">
+    <section class="section-padding bg-soft reveal">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold text-secondary mb-2">Pricing Packages</h2>
                 <div class="section-divider">
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                     <i class="bi bi-star-fill"></i>
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                 </div>
             </div>
             <div class="row g-4">
@@ -284,16 +288,16 @@
         <div class="container-fluid px-md-5 px-4">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="img/logo.png" alt="Logo" height="40" class="me-2">
-                        <span class="brand-font fs-4 text-primary">Joyful Notes</span>
-                    </div>
+                    <a href="index.html" class="d-flex align-items-center mb-4 text-decoration-none">
+                        <img src="img/logo.png" alt="Joyful Notes Logo">
+                        <span class="brand-font text-primary">Joyful Notes</span>
+                    </a>
                     <p class="text-muted">Nurturing young minds through the joy of music and community. Join us in a
                         musical journey that starts from the very beginning.</p>
-                    <div class="d-flex gap-3 fs-5">
-                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="footer-social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 ms-lg-auto">

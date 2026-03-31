@@ -16,13 +16,17 @@
 </head>
 
 <body>
+    <!-- Site-wide Preloader -->
+    <div id="preloader">
+        <div class="loader-note"><i class="bi bi-music-note-beamed"></i></div>
+    </div>
 
     <!-- Header & Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="img/logo.png" alt="Joyful Notes Logo" class="me-2">
-                <span class="brand-font fs-3 text-primary">Joyful Notes</span>
+                <img src="img/logo.png" alt="Joyful Notes Logo">
+                <span class="brand-font text-primary">Joyful Notes</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -81,10 +85,10 @@
     </nav>
 
     <!-- Contact Header -->
-    <header class="bg-soft section-padding text-center position-relative overflow-hidden">
+    <header class="bg-soft section-padding text-center position-relative overflow-hidden reveal">
         <div class="container position-relative z-1">
             <h1 class="display-4 fw-bold text-secondary mb-3">Get in Touch</h1>
-            <p class="lead text-muted mx-auto" style="max-width: 600px;">We'd love to hear from you. Send us a message
+            <p class="text-muted mx-auto" style="max-width: 600px;">We'd love to hear from you. Send us a message
                 or visit us at our main studio.</p>
         </div>
         <!-- Decorative Music Icons -->
@@ -97,7 +101,7 @@
     </header>
 
     <!-- Contact Details & Form -->
-    <section class="section-padding">
+    <section class="section-padding reveal">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
@@ -120,11 +124,11 @@
                             <p class="text-body mb-1">Mon - Fri: 9:00 AM - 5:00 PM</p>
                             <p class="text-body">Sat: 9:00 AM - 1:00 PM</p>
                         </div>
-                        <div>
+                        <div class="text-center">
                             <h4
                                 class="fw-bold text-secondary mb-3 border-bottom border-secondary border-2 pb-2 d-inline-block">
                                 Follow Us</h4>
-                            <div class="d-flex gap-3 fs-3">
+                            <div class="d-flex gap-3 fs-3 justify-content-center">
                                 <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
                                 <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
                                 <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
@@ -137,9 +141,9 @@
                     <div class="card p-5 border-0 shadow-sm text-center h-100">
                         <h4 class="fw-bold text-primary mb-2">Send a Message</h4>
                         <div class="section-divider mb-4">
-                            <span></span><span></span><span></span>
+                            <span></span><span></span>
                             <i class="bi bi-star-fill"></i>
-                            <span></span><span></span><span></span>
+                            <span></span><span></span>
                         </div>
                         <form id="contact-form" class="needs-validation text-start" novalidate>
                             <div class="row g-3">
@@ -184,13 +188,13 @@
     </section>
 
     <!-- Map Placeholder -->
-    <section class="section-padding bg-soft text-center">
+    <section class="section-padding bg-soft text-center reveal">
         <div class="container">
             <h4 class="fw-bold text-secondary mb-2">Find Us Here</h4>
             <div class="section-divider mb-4">
-                <span></span><span></span><span></span>
+                <span></span><span></span>
                 <i class="bi bi-star-fill"></i>
-                <span></span><span></span><span></span>
+                <span></span><span></span>
             </div>
             <div class="rounded-4 overflow-hidden shadow-sm border border-soft" style="height: 450px;">
                 <iframe
@@ -207,16 +211,16 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="img/logo.png" alt="Logo" height="40" class="me-2">
-                        <span class="brand-font fs-4 text-primary">Joyful Notes</span>
-                    </div>
+                    <a href="index.html" class="d-flex align-items-center mb-4 text-decoration-none">
+                        <img src="img/logo.png" alt="Joyful Notes Logo">
+                        <span class="brand-font text-primary">Joyful Notes</span>
+                    </a>
                     <p class="text-muted">Nurturing young minds through the joy of music and community. Join us in a
                         musical journey that starts from the very beginning.</p>
-                    <div class="d-flex gap-3 fs-5">
-                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="footer-social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 ms-lg-auto">

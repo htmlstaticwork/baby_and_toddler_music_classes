@@ -16,13 +16,17 @@
 </head>
 
 <body>
+    <!-- Site-wide Preloader -->
+    <div id="preloader">
+        <div class="loader-note"><i class="bi bi-music-note-beamed"></i></div>
+    </div>
 
     <!-- Header & Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="img/logo.png" alt="Joyful Notes Logo" class="me-2">
-                <span class="brand-font fs-3 text-primary">Joyful Notes</span>
+                <img src="img/logo.png" alt="Joyful Notes Logo">
+                <span class="brand-font text-primary">Joyful Notes</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -81,10 +85,10 @@
     </nav>
 
     <!-- About Header -->
-    <header class="bg-soft section-padding text-center position-relative overflow-hidden">
+    <header class="bg-soft section-padding text-center position-relative overflow-hidden reveal">
         <div class="container position-relative z-1">
             <h1 class="display-4 fw-bold text-secondary mb-3">Our Story & Mission</h1>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">Learn why we're passionate about bringing music
+            <p class="text-muted mx-auto" style="max-width: 700px;">Learn why we're passionate about bringing music
                 into the lives of the littlest learners.</p>
         </div>
         <!-- Decorative Music Icons -->
@@ -97,7 +101,7 @@
     </header>
 
     <!-- Our Story -->
-    <section class="section-padding">
+    <section class="section-padding reveal">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
@@ -107,7 +111,7 @@
                 <div class="col-lg-6 ps-lg-5">
                     <h2 class="display-5 fw-bold text-secondary mb-2">How it All Began</h2>
                     <div class="section-divider justify-content-start mb-4">
-                        <span></span><span></span><span></span>
+                        <span></span><span></span>
                         <i class="bi bi-star-fill"></i>
                         <span></span><span></span><span></span>
                     </div>
@@ -125,20 +129,22 @@
     </section>
 
     <!-- Learning Philosophy -->
-    <section class="section-padding bg-soft">
+    <section class="section-padding bg-soft reveal">
         <div class="container text-center">
             <h2 class="display-5 fw-bold text-secondary mb-2">Our Learning Philosophy</h2>
             <div class="section-divider mb-5">
-                <span></span><span></span><span></span>
+                <span></span><span></span>
                 <i class="bi bi-star-fill"></i>
-                <span></span><span></span><span></span>
+                <span></span><span></span>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100 p-4 border-0">
-                        <div class="mb-3">
-                            <img src="play_centered_philosophy_1774954673495.png" alt="Play-Centered"
-                                class="rounded-4 shadow-sm" style="width: 80px; height: 80px; object-fit: cover;">
+                        <div class="mb-4">
+                            <div class="hexagon-wrapper hexagon-md">
+                                <img src="C:/Users/Divya%20Prabha/.gemini/antigravity/brain/568a1489-9b30-4b55-ac6f-e011f23672cd/play_centered_philosophy_1774962244662.png"
+                                    alt="Play-Centered" class="hexagon-image">
+                            </div>
                         </div>
                         <h4 class="fw-bold">Play-Centered</h4>
                         <p class="text-muted">We believe children learn best when they don't even know they're
@@ -147,9 +153,11 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 p-4 border-0">
-                        <div class="mb-3">
-                            <img src="community_centered_philosophy_1774954690616.png" alt="Community-Based"
-                                class="rounded-4 shadow-sm" style="width: 80px; height: 80px; object-fit: cover;">
+                        <div class="mb-4">
+                            <div class="hexagon-wrapper hexagon-md">
+                                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80"
+                                    alt="Community-Based" class="hexagon-image">
+                            </div>
                         </div>
                         <h4 class="fw-bold">Community Based</h4>
                         <p class="text-muted">Building connections between parents and families is just as important as
@@ -158,9 +166,11 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card h-100 p-4 border-0">
-                        <div class="mb-3">
-                            <img src="development_centered_philosophy_1774954707120.png" alt="Developmental"
-                                class="rounded-4 shadow-sm" style="width: 80px; height: 80px; object-fit: cover;">
+                        <div class="mb-4">
+                            <div class="hexagon-wrapper hexagon-md">
+                                <img src="https://tse1.mm.bing.net/th/id/OIP.IKlSxx05sshnx9_WNXW4EwHaE8?pid=Api&P=0&h=180"
+                                    alt="Developmental" class="hexagon-image">
+                            </div>
                         </div>
                         <h4 class="fw-bold">Developmental Approach</h4>
                         <p class="text-muted">Every activity is grounded in research to support physical, cognitive, and
@@ -172,23 +182,24 @@
     </section>
 
     <!-- Why Choose Us? (Redesigned) -->
-    <section class="section-padding border-top">
+    <section class="section-padding border-top reveal">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold text-secondary mb-2">Why Families Love Us</h2>
                 <div class="section-divider mb-5">
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                     <i class="bi bi-star-fill"></i>
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                 </div>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6">
                     <div class="card h-100 border-0 shadow-sm p-4 text-center hover-lift">
-                        <div class="mb-3">
-                            <img src="safe_clean_studio_about_1774954734517.png" alt="Safe Studio"
-                                class="rounded-circle shadow-sm"
-                                style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;">
+                        <div class="mb-4">
+                            <div class="hexagon-wrapper hexagon-md">
+                                <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
+                                    alt="Safe Studio" class="hexagon-image">
+                            </div>
                         </div>
                         <h5 class="fw-bold">Safe & Clean</h5>
                         <p class="text-muted small mb-0">Our studios are sanitized between every session, ensuring a
@@ -197,10 +208,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card h-100 border-0 shadow-sm p-4 text-center hover-lift">
-                        <div class="mb-3">
-                            <img src="expert_teacher_about_1774954751867.png" alt="Expert Teacher"
-                                class="rounded-circle shadow-sm"
-                                style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;">
+                        <div class="mb-4">
+                            <div class="hexagon-wrapper hexagon-md">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80"
+                                    alt="Expert Teacher" class="hexagon-image">
+                            </div>
                         </div>
                         <h5 class="fw-bold">Expert Faculty</h5>
                         <p class="text-muted small mb-0">Every teacher is a certified early childhood specialist with a
@@ -209,10 +221,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card h-100 border-0 shadow-sm p-4 text-center hover-lift">
-                        <div class="mb-3">
-                            <img src="research_backed_about_1774954767217.png" alt="Research Backed"
-                                class="rounded-circle shadow-sm"
-                                style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;">
+                        <div class="mb-4">
+                            <div class="hexagon-wrapper hexagon-md">
+                                <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=600&q=80"
+                                    alt="Research Backed" class="hexagon-image">
+                            </div>
                         </div>
                         <h5 class="fw-bold">Research-Backed</h5>
                         <p class="text-muted small mb-0">Our curriculum is grounded in the latest neuroscience regarding
@@ -221,10 +234,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="card h-100 border-0 shadow-sm p-4 text-center hover-lift">
-                        <div class="mb-3">
-                            <img src="community_families_about_1774954785385.png" alt="Community"
-                                class="rounded-circle shadow-sm"
-                                style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;">
+                        <div class="mb-4">
+                            <div class="hexagon-wrapper hexagon-md">
+                                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=600&q=80"
+                                    alt="Community" class="hexagon-image">
+                            </div>
                         </div>
                         <h5 class="fw-bold">Family First</h5>
                         <p class="text-muted small mb-0">Beyond classes, we foster a warm community where parents
@@ -236,46 +250,54 @@
     </section>
 
     <!-- Our Core Values (New Section) -->
-    <section class="section-padding bg-soft border-top">
+    <section class="section-padding bg-soft border-top reveal">
         <div class="container text-center">
             <h2 class="display-5 fw-bold text-secondary mb-2">Our Musical DNA</h2>
             <div class="section-divider mb-5">
-                <span></span><span></span><span></span>
+                <span></span><span></span>
                 <i class="bi bi-star-fill"></i>
-                <span></span><span></span><span></span>
+                <span></span><span></span>
             </div>
             <div class="row g-5">
                 <div class="col-md-3">
-                    <div class="mb-3">
-                        <img src="inclusive_dna_about_1774954807811.png" alt="Inclusivity" class="rounded-4 shadow-sm"
-                            style="width: 100%; max-height: 120px; object-fit: cover;">
+                    <div class="mb-4">
+                        <div class="hexagon-wrapper hexagon-md">
+                            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80"
+                                alt="Inclusivity" class="hexagon-image">
+                        </div>
                     </div>
                     <h5 class="fw-bold">Inclusivity</h5>
                     <p class="text-muted small">Every child, every background, and every ability is cherished and
                         welcomed in our musical circle.</p>
                 </div>
                 <div class="col-md-3">
-                    <div class="mb-3">
-                        <img src="creative_dna_about_1774954822811.png" alt="Creativity" class="rounded-4 shadow-sm"
-                            style="width: 100%; max-height: 120px; object-fit: cover;">
+                    <div class="mb-4">
+                        <div class="hexagon-wrapper hexagon-md">
+                            <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80"
+                                alt="Creative" class="hexagon-image">
+                        </div>
                     </div>
                     <h5 class="fw-bold">Creativity</h5>
                     <p class="text-muted small">We encourage spontaneous expression and celebrate the unique musical
                         voice of every young explorer.</p>
                 </div>
                 <div class="col-md-3">
-                    <div class="mb-3">
-                        <img src="growth_dna_about_1774954836402.png" alt="Growth" class="rounded-4 shadow-sm"
-                            style="width: 100%; max-height: 120px; object-fit: cover;">
+                    <div class="mb-4">
+                        <div class="hexagon-wrapper hexagon-md">
+                            <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=600&q=80"
+                                alt="Growth" class="hexagon-image">
+                        </div>
                     </div>
                     <h5 class="fw-bold">Growth</h5>
                     <p class="text-muted small">Our programs are designed to support critical developmental milestones
                         from birth through age five.</p>
                 </div>
                 <div class="col-md-3">
-                    <div class="mb-3">
-                        <img src="happy_dna_about_1774954853282.png" alt="Happiness" class="rounded-4 shadow-sm"
-                            style="width: 100%; max-height: 120px; object-fit: cover;">
+                    <div class="mb-4">
+                        <div class="hexagon-wrapper hexagon-md">
+                            <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80"
+                                alt="Happy" class="hexagon-image">
+                        </div>
                     </div>
                     <h5 class="fw-bold">Happiness</h5>
                     <p class="text-muted small">Above all, we believe that the journey should be joyful, spirited, and
@@ -290,16 +312,16 @@
         <div class="container-fluid px-md-5 px-4">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="img/logo.png" alt="Logo" height="40" class="me-2">
-                        <span class="brand-font fs-4 text-primary">Joyful Notes</span>
-                    </div>
+                    <a href="index.html" class="d-flex align-items-center mb-4 text-decoration-none">
+                        <img src="img/logo.png" alt="Joyful Notes Logo">
+                        <span class="brand-font text-primary">Joyful Notes</span>
+                    </a>
                     <p class="text-muted">Nurturing young minds through the joy of music and community. Join us in a
                         musical journey that starts from the very beginning.</p>
-                    <div class="d-flex gap-3 fs-5">
-                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="footer-social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 ms-lg-auto">

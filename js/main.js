@@ -3,12 +3,23 @@
 */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Preloader Logic
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+            }, 500); // Small delay for smooth feel
+        });
+    }
+
     const themeToggle = document.getElementById('theme-toggle');
     const rtlToggle = document.getElementById('rtl-toggle');
     const html = document.documentElement;
 
     // Dark Mode Toggle Logic
-    if (localStorage.getItem('theme') === 'dark') {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
         html.setAttribute('data-theme', 'dark');
         if (themeToggle) themeToggle.innerHTML = '<i class="bi bi-sun-fill"></i>';
     }
@@ -29,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // RTL Toggle Logic
-    if (localStorage.getItem('dir') === 'rtl') {
+    const savedDir = localStorage.getItem('dir');
+    if (savedDir === 'rtl') {
         html.setAttribute('dir', 'rtl');
         if (rtlToggle) rtlToggle.innerText = 'LTR';
     }
@@ -51,24 +63,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sticky Header Scroll Logic
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('navbar-scrolled');
-            navbar.style.padding = '0.5rem 0';
-        } else {
-            navbar.classList.remove('navbar-scrolled');
-            navbar.style.padding = '1rem 0';
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+                navbar.style.padding = '0.5rem 0';
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+                navbar.style.padding = '1rem 0';
+            }
+        });
+    }
 
-    // Simple Audio Player Initialization (for Resources Page)
+    // Scroll Reveal Intersection Observer
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Simple Audio Player Initialization
     const audioPlayers = document.querySelectorAll('.custom-audio-player');
     audioPlayers.forEach(player => {
         const audio = player.querySelector('audio');
         const playBtn = player.querySelector('.play-btn');
         const progressBar = player.querySelector('.progress-bar-inner');
         
-        if (playBtn) {
+        if (playBtn && audio) {
             playBtn.addEventListener('click', () => {
                 if (audio.paused) {
                     audio.play();
@@ -78,9 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     playBtn.innerHTML = '<i class="bi bi-play-fill"></i>';
                 }
             });
-        }
 
-        if (audio) {
             audio.addEventListener('timeupdate', () => {
                 const progress = (audio.currentTime / audio.duration) * 100;
                 if (progressBar) progressBar.style.width = `${progress}%`;
@@ -97,11 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (href === currentPath || (currentPath === '' && href === 'index.html')) {
             link.classList.add('active');
             
-            // Highlight the home-card if applicable
             const homeCard = link.querySelector('.home-card');
             if (homeCard) homeCard.classList.add('active');
 
-            // Handle the parent dropdown (if inside one)
             const dropdown = link.closest('.nav-item.dropdown');
             if (dropdown) {
                 const parentNav = dropdown.querySelector('.nav-link');
@@ -111,30 +134,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Scroll to Top Injection & Logic
-    const scrollTopBtn = document.createElement('button');
-    scrollTopBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
-    scrollTopBtn.className = 'scroll-top';
-    scrollTopBtn.setAttribute('title', 'Scroll to Top');
-    document.body.appendChild(scrollTopBtn);
+    const setupScrollTop = () => {
+        const scrollTopBtn = document.createElement('button');
+        scrollTopBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+        scrollTopBtn.className = 'scroll-top';
+        scrollTopBtn.setAttribute('title', 'Scroll to Top');
+        document.body.appendChild(scrollTopBtn);
 
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollTopBtn.classList.add('show');
-        } else {
-            scrollTopBtn.classList.remove('show');
-        }
-    });
-
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
         });
-    });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    };
+    setupScrollTop();
 
     // Decorative Background Injection
     const injectDecorations = () => {
-        // Corner Icons Injection
         const corners = [
             { icon: 'bi-music-note-beamed', pos: 'tl' },
             { icon: 'bi-mic-fill', pos: 'tr' },
@@ -150,36 +172,47 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     injectDecorations();
 
-    // Global Form Validation
+    // Global Form Validation (Bootstrap style)
     const initFormValidation = () => {
-        const forms = document.querySelectorAll('form');
+        const forms = document.querySelectorAll('.needs-validation');
+        
         forms.forEach(form => {
             form.addEventListener('submit', (e) => {
-                let isValid = true;
-                const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
-                
-                inputs.forEach(input => {
-                    if (!input.value.trim()) {
-                        isValid = false;
-                        input.classList.add('is-invalid');
-                    } else {
-                        input.classList.remove('is-invalid');
-                    }
-                });
-
-                if (!isValid) {
+                if (!form.checkValidity()) {
                     e.preventDefault();
                     e.stopPropagation();
-                    alert('Please fill out all required fields.');
                 } else {
-                    // If it's a login or signup form, redirect to dashboard as a demo
-                    if (form.id === 'login-form' || form.id === 'signup-form') {
+                    if (form.id === 'login-form' || form.id === 'signup-form' || form.id === 'booking-form') {
                         e.preventDefault();
-                        window.location.href = 'dashboard.html';
+                        const successModal = document.getElementById('successModal');
+                        if (successModal) {
+                            const modal = new bootstrap.Modal(successModal);
+                            modal.show();
+                        } else {
+                             window.location.href = 'dashboard.html';
+                        }
                     }
                 }
-            });
+                form.classList.add('was-validated');
+            }, false);
         });
     };
     initFormValidation();
+
+    // Dashboard Sidebar Logic
+    window.toggleSidebar = () => {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        if (sidebar) {
+            sidebar.classList.toggle('active');
+            if (overlay) overlay.classList.toggle('active');
+        }
+    };
+
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', () => {
+            window.toggleSidebar();
+        });
+    }
 });

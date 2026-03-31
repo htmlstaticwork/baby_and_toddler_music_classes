@@ -25,14 +25,18 @@
     </style>
 </head>
 
-<body>
+<body id="resources-page">
+    <!-- Site-wide Preloader -->
+    <div id="preloader">
+        <div class="loader-note"><i class="bi bi-music-note-beamed"></i></div>
+    </div>
 
     <!-- Header & Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="img/logo.png" alt="Joyful Notes Logo" class="me-2">
-                <span class="brand-font fs-3 text-primary">Joyful Notes</span>
+                <img src="img/logo.png" alt="Joyful Notes Logo">
+                <span class="brand-font text-primary">Joyful Notes</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -91,10 +95,10 @@
     </nav>
 
     <!-- Resources Header -->
-    <header class="bg-soft section-padding text-center position-relative overflow-hidden">
+    <header class="bg-soft section-padding text-center position-relative overflow-hidden reveal">
         <div class="container position-relative z-1">
             <h1 class="display-4 fw-bold text-secondary mb-3">Family Resources</h1>
-            <p class="lead text-muted mx-auto" style="max-width: 700px;">Continue the musical journey at home with our
+            <p class=" text-muted mx-auto" style="max-width: 700px;">Continue the musical journey at home with our
                 curated songs, activity guides, and developmental articles.</p>
         </div>
         <!-- Decorative Music Icons -->
@@ -107,15 +111,15 @@
     </header>
 
     <!-- Song Library -->
-    <section class="section-padding">
+    <section class="section-padding reveal">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-12 text-center">
                     <h3 class="fw-bold text-secondary mb-2">Our Song Library</h3>
                     <div class="section-divider justify-content-center mb-5">
-                        <span></span><span></span><span></span>
+                        <span></span><span></span>
                         <i class="bi bi-star-fill"></i>
-                        <span></span><span></span><span></span>
+                        <span></span><span></span>
                     </div>
 
                     <div class="row g-4">
@@ -241,7 +245,7 @@
     </section>
 
     <!-- Lyrics & Activities Relocation -->
-    <section class="section-padding border-top">
+    <section class="section-padding border-top reveal">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -249,10 +253,10 @@
                         <div class="row">
                             <div class="col-md-6 border-end">
                                 <h4 class="fw-bold text-secondary mb-3">Lyrics & Notes</h4>
-                                <div class="section-divider justify-content-start mb-3">
-                                    <span></span><span></span><span></span>
+                                <div class="section-divider  mb-3">
+                                    <span></span><span></span>
                                     <i class="bi bi-star-fill"></i>
-                                    <span></span><span></span><span></span>
+                                    <span></span><span></span>
                                 </div>
                                 <h6 class="fw-bold text-primary">Chorus - Hello Song</h6>
                                 <p class="text-muted">Hello everyone, we're glad you're here today!<br>Singing, dancing,
@@ -263,10 +267,10 @@
                             </div>
                             <div class="col-md-6 border-start ps-md-5">
                                 <h4 class="fw-bold text-secondary mb-3">At-Home Activities</h4>
-                                <div class="section-divider justify-content-start mb-3">
-                                    <span></span><span></span><span></span>
+                                <div class="section-divider  mb-3">
+                                    <span></span><span></span>
                                     <i class="bi bi-star-fill"></i>
-                                    <span></span><span></span><span></span>
+                                    <span></span><span></span>
                                 </div>
                                 <ul class="list-unstyled">
                                     <li class="mb-3 d-flex align-items-center"><i
@@ -286,21 +290,21 @@
     </section>
 
     <!-- New Expert Resources Section -->
-    <section class="section-padding bg-soft border-top">
+    <section class="section-padding bg-soft border-top reveal">
         <div class="container">
             <div class="text-center mb-5">
                 <h3 class="fw-bold text-secondary mb-2">Expert Guides & Insights</h3>
                 <div class="section-divider justify-content-center">
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                     <i class="bi bi-star-fill"></i>
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                 </div>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm hover-lift overflow-hidden">
-                        <img src="musical_reading_corner_1774953659925.png" class="card-img-top"
-                            alt="Musical Reading Corner" style="height: 200px; object-fit: cover;">
+                        <img src="https://i.redd.it/y18mrzzkkbea1.jpg" class="card-img-top" alt="Musical Reading Corner"
+                            style="height: 200px; object-fit: cover;">
                         <div class="card-body p-4">
                             <h5 class="fw-bold mb-3">Musical Reading Corner</h5>
                             <p class="text-muted small">Curated books that inspire rhythm and melody in toddlers, from
@@ -312,8 +316,8 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm hover-lift overflow-hidden">
-                        <img src="home_instrument_guide_1774953675321.png" class="card-img-top"
-                            alt="Home Instrument Guide" style="height: 200px; object-fit: cover;">
+                        <img src="https://www.chennaitop10.com/wp-content/uploads/2024/03/children-playing-instruments-music-class-2-scaled.jpg"
+                            class="card-img-top" alt="Home Instrument Guide" style="height: 200px; object-fit: cover;">
                         <div class="card-body p-4">
                             <h5 class="fw-bold mb-3">Home Instrument Guide</h5>
                             <p class="text-muted small">Practical advice on choosing age-appropriate instruments like
@@ -326,8 +330,8 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm hover-lift overflow-hidden">
-                        <img src="science_of_song_1774953692626.png" class="card-img-top" alt="The Science of Song"
-                            style="height: 200px; object-fit: cover;">
+                        <img src="https://www.ajournalofmusicalthings.com/wp-content/uploads/2021/11/lemmon-stage87-scaled.jpg"
+                            class="card-img-top" alt="The Science of Song" style="height: 200px; object-fit: cover;">
                         <div class="card-body p-4">
                             <h5 class="fw-bold mb-3">The Science of Song</h5>
                             <p class="text-muted small">In-depth articles from pediatric experts on how musical
@@ -342,43 +346,48 @@
     </section>
 
     <!-- Digital Experience & Support Section -->
-    <section class="section-padding border-top">
+    <section class="section-padding border-top reveal">
         <div class="container">
             <div class="text-center mb-5">
                 <h3 class="fw-bold text-secondary mb-2">Digital Experience & Support</h3>
                 <div class="section-divider justify-content-center">
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                     <i class="bi bi-star-fill"></i>
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                 </div>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="col-lg-6">
-                    <div class="card h-100 border-0 shadow-sm p-4 hover-lift">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="icon-box bg-primary-subtle text-primary p-3 rounded-4 me-3">
+                <div class="col-lg-5">
+                    <div class="card h-100 border-0 shadow-sm p-4 hover-lift text-center">
+                        <div class="mb-4 mx-auto">
+                            <div class="icon-box bg-primary-subtle text-primary p-3 rounded-4"
+                                style="width: fit-content; margin: 0 auto;">
                                 <i class="bi bi-person-gear fs-3"></i>
                             </div>
-                            <h5 class="fw-bold mb-0">Parent Portal Tutorial</h5>
                         </div>
-                        <p class="text-muted small">Learn how to manage your student profiles, book upcoming classes,
+                        <h5 class="fw-bold mb-3">Parent Portal Tutorial</h5>
+                        <p class="text-muted small mb-4">Learn how to manage your student profiles, book upcoming
+                            classes,
                             and check your musical schedule effortlessly from your dashboard.</p>
-                        <a href="dashboard.html" class="text-primary text-decoration-none fw-bold mt-auto">Go to
+                        <a href="dashboard.html"
+                            class="text-primary text-decoration-none fw-bold mt-auto d-inline-block">Go to
                             Dashboard <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card h-100 border-0 shadow-sm p-4 hover-lift">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="icon-box bg-primary-subtle text-primary p-3 rounded-4 me-3">
+                <div class="col-lg-5">
+                    <div class="card h-100 border-0 shadow-sm p-4 hover-lift text-center">
+                        <div class="mb-4 mx-auto">
+                            <div class="icon-box bg-primary-subtle text-primary p-3 rounded-4"
+                                style="width: fit-content; margin: 0 auto;">
                                 <i class="bi bi-mouse3 fs-3"></i>
                             </div>
-                            <h5 class="fw-bold mb-0">Website & Library Tour</h5>
                         </div>
-                        <p class="text-muted small">Discover expert tips on quickly navigating our song collections,
+                        <h5 class="fw-bold mb-3">Website & Library Tour</h5>
+                        <p class="text-muted small mb-4">Discover expert tips on quickly navigating our song
+                            collections,
                             finding activity sheets, and exploring our pedagogical insights.</p>
-                        <a href="#" class="text-primary text-decoration-none fw-bold mt-auto">Start the Tour <i
-                                class="bi bi-arrow-right"></i></a>
+                        <a href="#" class="text-primary text-decoration-none fw-bold mt-auto d-inline-block">Start the
+                            Tour <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -390,16 +399,16 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="img/logo.png" alt="Logo" height="40" class="me-2">
-                        <span class="brand-font fs-4 text-primary">Joyful Notes</span>
-                    </div>
+                    <a href="index.html" class="d-flex align-items-center mb-4 text-decoration-none">
+                        <img src="img/logo.png" alt="Joyful Notes Logo">
+                        <span class="brand-font text-primary">Joyful Notes</span>
+                    </a>
                     <p class="text-muted">Nurturing young minds through the joy of music and community. Join us in a
                         musical journey that starts from the very beginning.</p>
-                    <div class="d-flex gap-3 fs-5">
-                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="footer-social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 ms-lg-auto">

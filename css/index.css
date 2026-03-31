@@ -19,13 +19,58 @@
     --white: #FFFFFF;
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     --border-radius: 20px;
-    --transition: all 0.3s ease;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     /* Dashboard Light Mode default */
     --dash-sidebar-bg: #FFFFFF;
     --dash-main-bg: #F8FAFC;
     --dash-border: rgba(0, 0, 0, 0.05);
     --dash-card-bg: #FFFFFF;
+}
+
+/* Custom Branded Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-soft);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+    border: 3px solid var(--bg-soft);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
+/* Site-wide Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader-note {
+    font-size: 4rem;
+    color: var(--primary);
+    animation: bounce 1.5s infinite;
+}
+
+#preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
 }
 
 /* Global Bootstrap Overrides - Force Orange */
@@ -254,10 +299,28 @@ body {
     overflow-x: hidden;
 }
 
+.navbar-brand img {
+    height: 48px !important;
+    width: auto !important;
+}
+
 .brand-font {
     font-family: 'Fredoka', sans-serif;
     color: var(--secondary) !important;
+    font-size: 1.75rem !important;
+    /* Standardized fs-3 equivalent */
     white-space: nowrap;
+    line-height: 1;
+    margin-inline-start: 10px;
+    /* Consistent gap between logo and text */
+}
+
+/* Unified Brand Logo Size */
+.navbar-brand img,
+.auth-card img,
+footer .d-flex.align-items-center img {
+    height: 48px !important;
+    width: auto !important;
 }
 
 [data-theme="dark"] .brand-font {
@@ -272,8 +335,8 @@ body {
     transition: var(--transition);
 }
 
-.navbar-brand img {
-    height: 50px;
+.navbar-brand:hover .brand-font {
+    color: var(--hover) !important;
 }
 
 .navbar-brand:hover .brand-font {
@@ -321,8 +384,8 @@ body {
 
 .btn-primary:hover {
     background-color: var(--hover);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 112, 67, 0.4);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 112, 67, 0.3);
     color: white !important;
 }
 
@@ -383,8 +446,15 @@ body {
 
 /* Animations */
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
 }
 
 .bounce {
@@ -449,12 +519,76 @@ body {
 }
 
 .accordion-premium-orange .accordion-button::after {
-    filter: brightness(0) invert(1); /* Makes the arrow white */
+    filter: brightness(0) invert(1);
+    /* Makes the arrow white */
 }
 
 .accordion-premium-orange .accordion-item {
     border: none;
     background: transparent;
+}
+
+/* Hexagon Design Utility */
+.hexagon-wrapper {
+    position: relative;
+    width: 120px;
+    height: 140px;
+    /* Slightly taller for pointy-top aspect ratio */
+    margin: 0 auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+.hexagon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: var(--transition);
+    display: block;
+}
+
+.hexagon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background-color: var(--secondary);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: -1;
+    opacity: 0.2;
+    transition: var(--transition);
+}
+
+.hexagon-wrapper:hover .hexagon-image {
+    transform: scale(1.05);
+}
+
+.hexagon-wrapper:hover::before {
+    opacity: 0.6;
+    transform: scale(1.08);
+}
+
+/* Specific Sizes */
+.hexagon-xs {
+    width: 60px;
+    height: 70px;
+}
+
+.hexagon-sm {
+    width: 80px;
+    height: 92px;
+}
+
+.hexagon-md {
+    width: 120px;
+    height: 139px;
+}
+
+.hexagon-lg {
+    width: 180px;
+    height: 208px;
 }
 
 .nav-icon-link,
@@ -477,7 +611,7 @@ body {
 .toggle-btn:hover {
     background-color: var(--bg-soft);
     color: var(--primary);
-    transform: translateY(-2px);
+    transform: translateY(-5px) scale(1.1);
 }
 
 /* Navbar Icons Spacing */
@@ -726,6 +860,64 @@ body {
     gap: 10px;
 }
 
+/* Footer Social Hover Enhancement */
+footer .bi {
+    transition: var(--transition);
+}
+
+footer a:hover .bi {
+    color: var(--primary) !important;
+    transform: translateY(-5px) scale(1.2);
+    display: inline-block;
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Auth Page Orange Theme Overrides (Dark Mode Protection) */
+[data-theme="dark"] .auth-card {
+    border: 2px solid var(--primary) !important;
+}
+
+[data-theme="dark"] .auth-card h2,
+[data-theme="dark"] .auth-card p,
+[data-theme="dark"] .auth-card label,
+[data-theme="dark"] .auth-card .form-check-label,
+[data-theme="dark"] .auth-card .or-divider {
+    color: var(--text-main) !important;
+}
+
+/* Force Light Mode Logo Color for Auth Cards */
+[data-theme="dark"] .auth-card .brand-font {
+    color: #FF7043 !important;
+}
+
+/* Form Spacing: Auth placeholders */
+.auth-card .form-control {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.auth-card .input-group-text {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+[dir="rtl"] .auth-card .form-control {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+
 .or-divider {
     display: flex;
     align-items: center;
@@ -753,20 +945,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 12px;
+    gap: 8px;
+    padding: 8px 15px;
+    /* Significantly reduced vertical height */
     border-radius: 50px;
     font-weight: 600;
     transition: var(--transition);
-    border: 2px solid var(--secondary);
+    border: 1.5px solid var(--secondary);
+    /* Slightly thinner border */
     background-color: var(--white);
     color: var(--secondary);
     width: 100%;
 }
 
 .social-btn img {
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    /* Scaled down further for a more refined look */
+    height: 14px;
 }
 
 .social-btn:hover {
@@ -968,11 +1163,41 @@ body {
 
 footer {
     background-color: var(--bg-soft);
-    padding: 80px 0 30px;
-    border-top: 1px solid var(--dash-border);
+    padding: 80px 0 40px;
+    border-top: 3px solid var(--primary);
+    /* Premium Accent Border */
     width: 100%;
     position: relative;
     z-index: 1;
+}
+
+/* Premium Social Links */
+.footer-social-link {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 138, 101, 0.1);
+    color: var(--primary) !important;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.footer-social-link:hover {
+    background-color: var(--primary);
+    color: white !important;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 138, 101, 0.3);
+}
+
+[data-theme="dark"] footer {
+    border-top-color: var(--secondary);
+}
+
+[data-theme="dark"] .footer-social-link {
+    background-color: rgba(255, 112, 67, 0.15);
 }
 
 /* Corner Icons Styling */
@@ -1429,4 +1654,126 @@ footer a:hover i {
 .hexagon-wrapper-pedagogy:hover {
     transform: scale(1.05);
     background: #FF7043;
+}
+
+/* Section Divider Utility */
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.section-divider span {
+    height: 8px;
+    width: 8px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+.section-divider i {
+    color: var(--secondary);
+    font-size: 1.1rem;
+}
+
+.section-divider.justify-content-start {
+    justify-content: flex-start !important;
+}
+
+/* Responsive Navbar Overlay Fix */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-light);
+        padding: 1.5rem;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    [data-theme="dark"] .navbar-collapse {
+        background-color: var(--white);
+    }
+}
+
+/* Dashboard Sidebar Mobile Evolution */
+@media (max-width: 991.98px) {
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        bottom: 0;
+        z-index: 1060;
+        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 280px;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    #sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 1055;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+
+    #sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* 1024px Specific Tablet Optimization */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .sidebar {
+        width: 240px;
+    }
+
+    .main-content {
+        margin-left: 240px;
+    }
+
+    .display-4 {
+        font-size: 3rem;
+    }
+}
+
+.section-divider.justify-content-start span:last-child {
+    display: none;
+}
+
+/* Resources Page specific hover theme */
+#resources-page a:hover {
+    color: #E65100 !important;
+}
+
+#resources-page .btn-outline-primary:hover,
+#resources-page .btn-outline-secondary:hover {
+    background-color: #E65100 !important;
+    border-color: #E65100 !important;
+    color: white !important;
+}
+
+#resources-page .nav-link:hover {
+    color: #E65100 !important;
 }

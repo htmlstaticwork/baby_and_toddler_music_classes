@@ -16,13 +16,17 @@
 </head>
 
 <body>
+    <!-- Site-wide Preloader -->
+    <div id="preloader">
+        <div class="loader-note"><i class="bi bi-music-note-beamed"></i></div>
+    </div>
 
     <!-- Header & Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="img/logo.png" alt="Joyful Notes Logo" class="me-2">
-                <span class="brand-font fs-3 text-primary">Joyful Notes</span>
+                <img src="img/logo.png" alt="Joyful Notes Logo">
+                <span class="brand-font text-primary">Joyful Notes</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -81,7 +85,7 @@
     </nav>
 
     <!-- Premium Hero Section -->
-    <header class="premium-hero section-padding overflow-hidden">
+    <header class="premium-hero section-padding overflow-hidden reveal">
         <i class="bi bi-music-note-beamed floating-icon fs-1" style="top: 10%; left: 10%;"></i>
         <i class="bi bi-mic-fill floating-icon fs-2" style="top: 20%; right: 15%;"></i>
         <i class="bi bi-stars floating-icon fs-3" style="bottom: 15%; left: 20%;"></i>
@@ -93,7 +97,7 @@
                     <span class="badge bg-primary rounded-pill px-4 py-2 mb-4">THE GOLD STANDARD</span>
                     <h1 class="display-1 fw-bold text-secondary mb-4">Elevate Your Child's <br><span
                             class="text-primary">Musical Potential</span></h1>
-                    <p class="lead text-muted mb-5 fs-4">Experience an immersive musical journey with exclusive
+                    <p class="text-muted mb-5 fs-4">Experience an immersive musical journey with exclusive
                         resources, smaller <br> groups, and personalized developmental tracking for every milestone.</p>
                     <div class="d-flex flex-column flex-sm-row justify-content-center gap-4">
                         <a href="book.html" class="btn btn-primary btn-lg shadow px-5 py-3"
@@ -107,14 +111,14 @@
     </header>
 
     <!-- Premium Features Grid -->
-    <section id="features" class="section-padding">
+    <section id="features" class="section-padding reveal">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold text-secondary mb-2">Why Premium?</h2>
                 <div class="section-divider">
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                     <i class="bi bi-star-fill"></i>
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                 </div>
                 <p class="text-muted mt-3">Discover the exclusive benefits of our high-tier musical journey.</p>
             </div>
@@ -176,23 +180,26 @@
     </section>
 
     <!-- Musical Growth Roadmap -->
-    <section class="section-padding bg-soft">
+    <section class="section-padding bg-soft reveal">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold text-secondary mb-2">Musical Growth Roadmap</h2>
                 <div class="section-divider">
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                     <i class="bi bi-star-fill"></i>
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                 </div>
                 <p class="text-muted">A research-backed journey of developmental milestones.</p>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100 border-top border-secondary border-4">
-                        <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=400&q=80"
-                            alt="Milestone 1" class="img-fluid rounded-circle mb-4 shadow-sm object-fit-cover"
-                            style="width: 120px; height: 120px;">
+                        <div class="mb-4">
+                            <div class="hexagon-wrapper hexagon-md">
+                                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=400&q=80"
+                                    alt="Milestone 1" class="hexagon-image">
+                            </div>
+                        </div>
                         <h5 class="fw-bold text-primary">Sensory Spark</h5>
                         <p class="text-muted small">0-12 Months: Establishing steady beats through gentle touch and
                             lullabies.</p>
@@ -200,9 +207,12 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100 border-top border-secondary border-4">
-                        <img src="https://blog.native-instruments.com/wp-content/uploads/dynamic/2024/01/understanding-the-basics-of-rhythm-in-music-2-1920x0-c-default.jpg"
-                            alt="Rhythm Pulse" class="img-fluid rounded-circle mb-4 shadow-sm object-fit-cover"
-                            style="width: 120px; height: 120px;">
+                        <div class="mb-4">
+                            <div class="hexagon-wrapper hexagon-md">
+                                <img src="https://blog.native-instruments.com/wp-content/uploads/dynamic/2024/01/understanding-the-basics-of-rhythm-in-music-2-1920x0-c-default.jpg"
+                                    alt="Rhythm Pulse" class="hexagon-image">
+                            </div>
+                        </div>
                         <h5 class="fw-bold text-primary">Rhythm Pulse</h5>
                         <p class="text-muted small">1-2 Years: Physical coordination through percussion and motor-skill
                             play.</p>
@@ -210,9 +220,12 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100 border-top border-secondary border-4">
-                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=400&q=80"
-                            alt="Milestone 3" class="img-fluid rounded-circle mb-4 shadow-sm object-fit-cover"
-                            style="width: 120px; height: 120px;">
+                        <div class="mb-4">
+                            <div class="hexagon-wrapper hexagon-md">
+                                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=400&q=80"
+                                    alt="Milestone 3" class="hexagon-image">
+                            </div>
+                        </div>
                         <h5 class="fw-bold text-primary">Social Harmony</h5>
                         <p class="text-muted small">2-3 Years: Collaborative music-making and emotional empathy skills.
                         </p>
@@ -220,9 +233,12 @@
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="p-4 bg-white rounded-4 shadow-sm h-100 border-top border-secondary border-4">
-                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80"
-                            alt="Milestone 4" class="img-fluid rounded-circle mb-4 shadow-sm object-fit-cover"
-                            style="width: 120px; height: 120px;">
+                        <div class="mb-4">
+                            <div class="hexagon-wrapper hexagon-md">
+                                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80"
+                                    alt="Milestone 4" class="hexagon-image">
+                            </div>
+                        </div>
                         <h5 class="fw-bold text-primary">Creative Flux</h5>
                         <p class="text-muted small">3-5 Years: Storytelling through melody and exploring complex social
                             roles.</p>
@@ -233,14 +249,14 @@
     </section>
 
     <!-- Interactive Methodology -->
-    <section class="section-padding bg-soft">
+    <section class="section-padding bg-soft reveal">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold text-secondary mb-2">Our Unique Methodology</h2>
                 <div class="section-divider mb-4">
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                     <i class="bi bi-star-fill"></i>
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                 </div>
             </div>
             <div class="row align-items-center">
@@ -252,8 +268,8 @@
                     <div class="accordion accordion-premium-orange" id="methodologyAccordion">
                         <div class="accordion-item border-0 mb-3 rounded shadow-sm">
                             <h2 class="accordion-header">
-                                <button class="accordion-button rounded bg-secondary text-white shadow-none" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne">
+                                <button class="accordion-button rounded bg-secondary text-white shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                                     <i class="bi bi-1-circle-fill me-2 text-white"></i> Sensory-First Approach
                                 </button>
                             </h2>
@@ -267,8 +283,8 @@
                         </div>
                         <div class="accordion-item border-0 mb-3 rounded shadow-sm">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed rounded bg-secondary text-white shadow-none" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                <button class="accordion-button collapsed rounded bg-secondary text-white shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
                                     <i class="bi bi-2-circle-fill me-2 text-white"></i> Rhythmic Brain Mapping
                                 </button>
                             </h2>
@@ -282,8 +298,8 @@
                         </div>
                         <div class="accordion-item border-0 rounded shadow-sm">
                             <h2 class="accordion-header">
-                                <button class="accordion-button collapsed rounded bg-secondary text-white shadow-none" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                <button class="accordion-button collapsed rounded bg-secondary text-white shadow-none"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
                                     <i class="bi bi-3-circle-fill me-2 text-white"></i> Guided Social Bonding
                                 </button>
                             </h2>
@@ -302,27 +318,28 @@
     </section>
 
     <!-- Premium Testimonials -->
-    <section class="section-padding">
+    <section class="section-padding reveal">
         <div class="container">
             <h2 class="display-5 fw-bold text-secondary text-center mb-2">Voices of Joy</h2>
             <div class="section-divider mb-5">
-                <span></span><span></span><span></span>
+                <span></span><span></span>
                 <i class="bi bi-star-fill"></i>
-                <span></span><span></span><span></span>
+                <span></span><span></span>
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="card testimonial-premium h-100 p-4 border-0 shadow-sm">
                         <div class="mb-4">
-                            <img src="https://i.pravatar.cc/150?u=maria" alt="Maria Garcia"
-                                class="rounded-circle shadow-sm" width="80" height="80">
+                            <div class="hexagon-wrapper hexagon-xs">
+                                <img src="https://i.pravatar.cc/150?u=maria" alt="Maria Garcia" class="hexagon-image">
+                            </div>
                         </div>
                         <div class="text-warning mb-3">
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i>
                         </div>
-                        <p class="fs-6 lead mb-4">"The premium subscription changed how we spend our weekends. The home
+                        <p class="fs-6  mb-4">"The premium subscription changed how we spend our weekends. The home
                             resources are just as valuable as the in-person classes!"</p>
                         <div class="mt-auto">
                             <div class="fw-bold text-secondary">Maria Garcia</div>
@@ -333,15 +350,16 @@
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="card testimonial-premium h-100 p-4 border-0 shadow-sm">
                         <div class="mb-4">
-                            <img src="https://i.pravatar.cc/150?u=james" alt="James Wilson"
-                                class="rounded-circle shadow-sm" width="80" height="80">
+                            <div class="hexagon-wrapper hexagon-xs">
+                                <img src="https://i.pravatar.cc/150?u=james" alt="James Wilson" class="hexagon-image">
+                            </div>
                         </div>
                         <div class="text-warning mb-3">
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i>
                         </div>
-                        <p class="fs-6 lead mb-4">"The developmental reports helped us understand why our daughter was
+                        <p class="fs-6  mb-4">"The developmental reports helped us understand why our daughter was
                             so ahead in her verbal skills. Music works wonders!"</p>
                         <div class="mt-auto">
                             <div class="fw-bold text-secondary">James Wilson</div>
@@ -352,15 +370,16 @@
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="card testimonial-premium h-100 p-4 border-0 shadow-sm">
                         <div class="mb-4">
-                            <img src="https://i.pravatar.cc/150?u=sophie" alt="Sophie Chen"
-                                class="rounded-circle shadow-sm" width="80" height="80">
+                            <div class="hexagon-wrapper hexagon-xs">
+                                <img src="https://i.pravatar.cc/150?u=sophie" alt="Sophie Chen" class="hexagon-image">
+                            </div>
                         </div>
                         <div class="text-warning mb-3">
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i>
                         </div>
-                        <p class="fs-6 lead mb-4">"The elite instructors are top-tier. They don't just teach music; they
+                        <p class="fs-6  mb-4">"The elite instructors are top-tier. They don't just teach music; they
                             understand early childhood psychology deeply."</p>
                         <div class="mt-auto">
                             <div class="fw-bold text-secondary">Sophie Chen</div>
@@ -373,14 +392,14 @@
     </section>
 
     <!-- IMmersive Gallery -->
-    <section class="section-padding bg-soft">
+    <section class="section-padding bg-soft reveal">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold text-secondary mb-2">Immersive Moments</h2>
                 <div class="section-divider">
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                     <i class="bi bi-star-fill"></i>
-                    <span></span><span></span><span></span>
+                    <span></span><span></span>
                 </div>
             </div>
             <div class="row g-3">
@@ -415,7 +434,7 @@
     <section class="section-padding bg-primary text-white text-center">
         <div class="container">
             <h2 class="display-4 fw-bold mb-4">Experience the Gold Standard</h2>
-            <p class="lead mb-5 opacity-90">Limited spots available for our premium musical cohorts.</p>
+            <p class=" mb-5 opacity-90">Limited spots available for our premium musical cohorts.</p>
             <a href="book.html" class="btn btn-light btn-lg px-5 rounded-pill fw-bold text-secondary shadow-sm">Apply
                 for Membership</a>
         </div>
@@ -426,10 +445,10 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <img src="img/logo.png" alt="Logo" height="40" class="me-2">
-                        <span class="brand-font fs-4 text-primary">Joyful Notes</span>
-                    </div>
+                    <a href="index.html" class="d-flex align-items-center mb-4 text-decoration-none">
+                        <img src="img/logo.png" alt="Joyful Notes Logo">
+                        <span class="brand-font text-primary">Joyful Notes</span>
+                    </a>
                     <p class="text-muted">Nurturing young minds through the joy of music and community. Join us in a
                         musical journey that starts from the very beginning.</p>
                     <div class="d-flex gap-3 fs-5">
