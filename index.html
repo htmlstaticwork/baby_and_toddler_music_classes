@@ -22,7 +22,7 @@
     </div>
 
     <!-- Header & Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="img/logo.png" alt="Joyful Notes Logo">
@@ -33,13 +33,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item dropdown">
+                    <!-- Desktop Home Dropdown -->
+                    <li class="nav-item dropdown d-none d-xl-block">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="index.html">Home 1 (Organic)</a></li>
                             <li><a class="dropdown-item" href="home2.html">Home 2 (Premium)</a></li>
                         </ul>
                     </li>
+                    <!-- Mobile Home Links -->
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="index.html">Home 1 (Organic)</a></li>
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="home2.html">Home 2 (Premium)</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="classes.html">Classes</a></li>
                     <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
@@ -48,7 +52,8 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
                     <!-- Icons Section -->
-                    <li class="nav-item nav-icon-item dropdown">
+                    <!-- Desktop Dashboard Dropdown -->
+                    <li class="nav-item nav-icon-item dropdown d-none d-xl-block">
                         <a href="#" class="nav-icon-link nav-icon-bordered dropdown-toggle no-caret" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false" title="Dashboard">
                             <i class="bi bi-speedometer2"></i>
@@ -63,6 +68,14 @@
                                         class="bi bi-shield-lock-fill me-2 text-secondary"></i> Admin Dashboard</a></li>
                         </ul>
                     </li>
+                    <!-- Mobile Dashboard Links -->
+                    <li class="nav-item d-xl-none border-top pt-2 mt-2">
+                        <h6 class="dropdown-header small text-uppercase px-0 opacity-50">Dashboards</h6>
+                    </li>
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="dashboard.html?role=parent">Parents
+                            Dashboard</a></li>
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="dashboard.html?role=teacher">Admin
+                            Dashboard</a></li>
                     <li class="nav-item nav-icon-item">
                         <button id="theme-toggle" class="toggle-btn nav-icon-bordered" title="Toggle Theme"><i
                                 class="bi bi-moon-fill"></i></button>
@@ -120,11 +133,11 @@
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="card h-100 text-center">
                         <div class="mb-4">
                             <div class="hexagon-wrapper hexagon-md">
-                                <img src="img/baby_class.png" alt="Baby Classes" class="hexagon-image">
+                                <img src="img/baby_class.png" alt="Baby Classes" class="hexagon-image img-fluid">
                             </div>
                         </div>
                         <h3 class="fw-bold">Baby Classes</h3>
@@ -135,7 +148,7 @@
                             <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="card h-100 text-center">
                         <div class="mb-4">
                             <div class="hexagon-wrapper hexagon-md">
@@ -151,7 +164,7 @@
                             More <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="card h-100 text-center">
                         <div class="mb-4">
                             <div class="hexagon-wrapper hexagon-md">
@@ -281,7 +294,7 @@
 
             <div class="row g-4">
                 <!-- Staff 1 -->
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-xl-3 col-lg-6 col-md-6 text-center">
                     <div class="staff-card">
                         <div class="hexagon-wrapper">
                             <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80"
@@ -294,7 +307,7 @@
                     </div>
                 </div>
                 <!-- Staff 2 -->
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-xl-3 col-lg-6 col-md-6 text-center">
                     <div class="staff-card">
                         <div class="hexagon-wrapper">
                             <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80"
@@ -307,7 +320,7 @@
                     </div>
                 </div>
                 <!-- Staff 3 -->
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-xl-3 col-lg-6 col-md-6 text-center">
                     <div class="staff-card">
                         <div class="hexagon-wrapper">
                             <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80"
@@ -320,7 +333,7 @@
                     </div>
                 </div>
                 <!-- Staff 4 -->
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-xl-3 col-lg-6 col-md-6 text-center">
                     <div class="staff-card">
                         <div class="hexagon-wrapper">
                             <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"

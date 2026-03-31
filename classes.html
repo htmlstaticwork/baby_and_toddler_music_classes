@@ -15,14 +15,14 @@
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/461/461238.png">
 </head>
 
-<body>
+<body id="classes-page">
     <!-- Site-wide Preloader -->
     <div id="preloader">
         <div class="loader-note"><i class="bi bi-music-note-beamed"></i></div>
     </div>
 
     <!-- Header & Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="img/logo.png" alt="Joyful Notes Logo">
@@ -33,13 +33,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item dropdown">
+                    <!-- Desktop Home Dropdown -->
+                    <li class="nav-item dropdown d-none d-xl-block">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="index.html">Home 1 (Organic)</a></li>
                             <li><a class="dropdown-item" href="home2.html">Home 2 (Premium)</a></li>
                         </ul>
                     </li>
+                    <!-- Mobile Home Links -->
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="index.html">Home 1 (Organic)</a></li>
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="home2.html">Home 2 (Premium)</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="classes.html">Classes</a></li>
                     <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
@@ -48,7 +52,8 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
                     <!-- Icons Section -->
-                    <li class="nav-item nav-icon-item dropdown">
+                    <!-- Desktop Dashboard Dropdown -->
+                    <li class="nav-item nav-icon-item dropdown d-none d-xl-block">
                         <a href="#" class="nav-icon-link nav-icon-bordered dropdown-toggle no-caret" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false" title="Dashboard">
                             <i class="bi bi-speedometer2"></i>
@@ -63,6 +68,12 @@
                                         class="bi bi-shield-lock-fill me-2 text-secondary"></i> Admin Dashboard</a></li>
                         </ul>
                     </li>
+                    <!-- Mobile Dashboard Links -->
+                    <li class="nav-item d-xl-none border-top pt-2 mt-2">
+                        <h6 class="dropdown-header small text-uppercase px-0 opacity-50">Dashboards</h6>
+                    </li>
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="dashboard.html?role=parent">Parents Dashboard</a></li>
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="dashboard.html?role=teacher">Admin Dashboard</a></li>
                     <li class="nav-item nav-icon-item">
                         <button id="theme-toggle" class="toggle-btn nav-icon-bordered" title="Toggle Theme"><i
                                 class="bi bi-moon-fill"></i></button>
@@ -115,7 +126,7 @@
                     <div class="section-divider justify-content-start mb-4">
                         <span></span><span></span>
                         <i class="bi bi-star-fill"></i>
-                        <span></span><span></span><span></span>
+                        <span></span><span></span>
                     </div>
                     <p class="mb-4">Our Baby Classes are a gentle introduction to the world of music. We focus on
                         sensory play, bonding, and early brain development through soft sounds, lullabies, and rhythmic
@@ -156,7 +167,7 @@
                     <div class="section-divider justify-content-start mb-4">
                         <span></span><span></span>
                         <i class="bi bi-star-fill"></i>
-                        <span></span><span></span><span></span>
+                        <span></span><span></span>
                     </div>
                     <p class="mb-4">Designed for the energetic and curious toddler, these classes encourage active
                         participation through percussion instruments, dancing, and musical games that promote physical
@@ -197,7 +208,7 @@
                     <div class="section-divider justify-content-start mb-4">
                         <span></span><span></span>
                         <i class="bi bi-star-fill"></i>
-                        <span></span><span></span><span></span>
+                        <span></span><span></span>
                     </div>
                     <p class="mb-4">Perfect for families with more than one child, our Mixed Age classes create a
                         collaborative environment where siblings can learn from each other and participate in musical
@@ -240,7 +251,7 @@
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-xl-4 col-12">
                     <div class="card h-100 text-center">
                         <h4 class="fw-bold mb-4">Trial Class</h4>
                         <div class="display-4 fw-bold text-primary mb-4">$15</div>
@@ -252,7 +263,7 @@
                         <a href="book.html?package=trial" class="btn btn-outline-primary mt-auto">Choose Trial</a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-xl-4 col-12">
                     <div class="card h-100 text-center border-primary shadow-lg"
                         style="border: 2px solid var(--primary) !important;">
                         <span class="badge bg-primary rounded-pill mb-3 align-self-center px-4">Most Popular</span>
@@ -267,7 +278,7 @@
                         <a href="book.html?package=monthly" class="btn btn-primary mt-auto">Choose Monthly</a>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-xl-4 col-12">
                     <div class="card h-100 text-center">
                         <h4 class="fw-bold mb-4">Full Series</h4>
                         <div class="display-4 fw-bold text-primary mb-4">$220</div>

@@ -22,7 +22,7 @@
     </div>
 
     <!-- Header & Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="img/logo.png" alt="Joyful Notes Logo">
@@ -33,13 +33,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item dropdown">
+                    <!-- Desktop Home Dropdown -->
+                    <li class="nav-item dropdown d-none d-xl-block">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="index.html">Home 1 (Organic)</a></li>
                             <li><a class="dropdown-item" href="home2.html">Home 2 (Premium)</a></li>
                         </ul>
                     </li>
+                    <!-- Mobile Home Links -->
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="index.html">Home 1 (Organic)</a></li>
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="home2.html">Home 2 (Premium)</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="classes.html">Classes</a></li>
                     <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
@@ -48,7 +52,8 @@
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 
                     <!-- Icons Section -->
-                    <li class="nav-item nav-icon-item dropdown">
+                    <!-- Desktop Dashboard Dropdown -->
+                    <li class="nav-item nav-icon-item dropdown d-none d-xl-block">
                         <a href="#" class="nav-icon-link nav-icon-bordered dropdown-toggle no-caret" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false" title="Dashboard">
                             <i class="bi bi-speedometer2"></i>
@@ -63,6 +68,12 @@
                                         class="bi bi-shield-lock-fill me-2 text-secondary"></i> Admin Dashboard</a></li>
                         </ul>
                     </li>
+                    <!-- Mobile Dashboard Links -->
+                    <li class="nav-item d-xl-none border-top pt-2 mt-2">
+                        <h6 class="dropdown-header small text-uppercase px-0 opacity-50">Dashboards</h6>
+                    </li>
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="dashboard.html?role=parent">Parents Dashboard</a></li>
+                    <li class="nav-item d-xl-none"><a class="nav-link" href="dashboard.html?role=teacher">Admin Dashboard</a></li>
                     <li class="nav-item nav-icon-item">
                         <button id="theme-toggle" class="toggle-btn nav-icon-bordered" title="Toggle Theme"><i
                                 class="bi bi-moon-fill"></i></button>
@@ -101,20 +112,22 @@
     </header>
 
     <!-- Our Story -->
-    <section class="section-padding reveal">
+    <section class="section-padding reveal text-center">
         <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-secondary mb-2">How it All Began</h2>
+                <div class="section-divider mb-4">
+                    <span></span><span></span>
+                    <i class="bi bi-star-fill"></i>
+                    <span></span><span></span>
+                </div>
+            </div>
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80"
                         alt="Musical Kids" class="img-fluid rounded-4 shadow">
                 </div>
                 <div class="col-lg-6 ps-lg-5">
-                    <h2 class="display-5 fw-bold text-secondary mb-2">How it All Began</h2>
-                    <div class="section-divider justify-content-start mb-4">
-                        <span></span><span></span>
-                        <i class="bi bi-star-fill"></i>
-                        <span></span><span></span><span></span>
-                    </div>
                     <p class="mb-4">Founded in 2018, Joyful Notes began with a simple observation: music has a unique
                         power to connect people, even before they can speak. What started as a small community gathering
                         in a local park has grown into a leading early-childhood music program.</p>
@@ -259,7 +272,7 @@
                 <span></span><span></span>
             </div>
             <div class="row g-5">
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <div class="mb-4">
                         <div class="hexagon-wrapper hexagon-md">
                             <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80"
@@ -270,7 +283,7 @@
                     <p class="text-muted small">Every child, every background, and every ability is cherished and
                         welcomed in our musical circle.</p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <div class="mb-4">
                         <div class="hexagon-wrapper hexagon-md">
                             <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80"
@@ -281,7 +294,7 @@
                     <p class="text-muted small">We encourage spontaneous expression and celebrate the unique musical
                         voice of every young explorer.</p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <div class="mb-4">
                         <div class="hexagon-wrapper hexagon-md">
                             <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=600&q=80"
@@ -292,7 +305,7 @@
                     <p class="text-muted small">Our programs are designed to support critical developmental milestones
                         from birth through age five.</p>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3">
                     <div class="mb-4">
                         <div class="hexagon-wrapper hexagon-md">
                             <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80"

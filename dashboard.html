@@ -24,12 +24,12 @@
     <div class="dashboard-wrapper">
         <!-- Sidebar Overlay (Mobile Only) -->
         <div id="sidebar-overlay"></div>
-        
+
         <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
-            <div class="mb-5 text-center px-4">
+            <div class="mb-4 text-center px-4">
                 <a href="index.html" class="d-flex align-items-center justify-content-center text-decoration-none">
-                    <img src="img/logo.png" alt="Logo">
+                    <img src="img/logo.png" alt="Logo" height="40" class="me-2">
                     <span class="brand-font text-primary">Joyful Notes</span>
                 </a>
             </div>
@@ -125,7 +125,12 @@
                 <div class="d-flex align-items-center">
                     <button class="btn d-lg-none me-3 p-0" onclick="toggleSidebar()"><i
                             class="bi bi-list fs-2 text-primary"></i></button>
-                    <h5 class="fw-bold text-secondary mb-0 d-none d-sm-block" id="section-title">Dashboard</h5>
+                    <!-- Mobile Logo -->
+                    <a href="index.html" class="d-flex d-lg-none align-items-center text-decoration-none me-3">
+                        <img src="img/logo.png" alt="Logo" height="30" class="me-2">
+                        <span class="brand-font text-primary fs-6">Joyful Notes</span>
+                    </a>
+                    <h5 class="fw-bold text-secondary mb-0 d-none d-md-block" id="section-title">Dashboard</h5>
                 </div>
 
                 <div class="d-flex align-items-center gap-2">
@@ -156,12 +161,12 @@
             </header>
 
             <!-- Content Area -->
-            <div class="p-4" id="dashboard-content">
+            <div class="p-3" id="dashboard-content">
 
                 <!-- [PARENT] Home Section -->
                 <section id="section-home" class="dashboard-section">
                     <div
-                        class="card p-4 border-0 mb-4 bg-primary text-white shadow-sm overflow-hidden position-relative rounded-4">
+                        class="card p-3 border-0 mb-3 bg-primary text-white shadow-sm overflow-hidden position-relative rounded-4">
                         <div class="position-relative z-1">
                             <h2 class="fw-bold mb-2">Welcome Back, Jane! 👋</h2>
                             <p class="mb-4 opacity-75">Leo has an upcoming "Baby Music Class" tomorrow at 9:30 AM.</p>
@@ -173,12 +178,12 @@
                             style="font-size: 12rem; right: -20px; bottom: -40px; transform: rotate(15deg);"></i>
                     </div>
 
-                    <div class="row g-4 mb-4">
+                    <div class="row g-3 mb-3">
                         <div class="col-md-8">
                             <div class="star-header">
                                 <h5 class="fw-bold">Upcoming Classes</h5>
                             </div>
-                            <div class="card p-4 border-0 shadow-sm mb-3 rounded-4 stat-card">
+                            <div class="card p-3 border-0 shadow-sm mb-3 rounded-4 stat-card">
                                 <div class="d-flex align-items-center flex-wrap gap-3">
                                     <div class="bg-soft text-primary p-3 rounded-4 me-md-2 text-center"
                                         style="width: 70px;">
@@ -218,12 +223,12 @@
                         </div>
                     </div>
 
-                    <div class="row g-4 mb-4">
+                    <div class="row g-3 mb-3">
                         <div class="col-md-8">
                             <div class="star-header">
                                 <h5 class="fw-bold">Teacher Progress Feedback</h5>
                             </div>
-                            <div class="card p-4 border-0 shadow-sm rounded-4 bg-soft-primary">
+                            <div class="card p-3 border-0 shadow-sm rounded-4 bg-soft-primary">
                                 <div class="d-flex align-items-center mb-3">
                                     <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100"
                                         width="45" class="rounded-circle me-3">
@@ -259,12 +264,12 @@
                         </div>
                     </div>
 
-                    <div class="row g-4">
+                    <div class="row g-3">
                         <div class="col-md-6">
                             <div class="star-header">
                                 <h5 class="fw-bold">Recent Activity Log</h5>
                             </div>
-                            <div class="card p-4 border-0 shadow-sm rounded-4">
+                            <div class="card p-3 border-0 shadow-sm rounded-4">
                                 <div class="vstack gap-3">
                                     <div class="d-flex align-items-center gap-3">
                                         <div class="bg-soft-primary p-2 rounded-3 text-primary"><i
@@ -289,7 +294,7 @@
                             <div class="star-header">
                                 <h5 class="fw-bold">Parenting Tips</h5>
                             </div>
-                            <div class="card p-4 border-0 shadow-sm rounded-4 bg-soft-light"
+                            <div class="card p-3 border-0 shadow-sm rounded-4 bg-soft-light"
                                 style="background-color: #fff8f0 !important;">
                                 <h6 class="fw-bold text-warning mb-2"><i class="bi bi-lightbulb me-2"></i>Practice at
                                     Home</h6>
@@ -302,7 +307,7 @@
 
                 <!-- [PARENT] My Bookings Section -->
                 <section id="section-bookings" class="dashboard-section" style="display:none;">
-                    <div class="card p-4 border-0 shadow-sm mb-4 rounded-4">
+                    <div class="card p-3 border-0 shadow-sm mb-3 rounded-4">
                         <div class="star-header">
                             <h5 class="fw-bold">My Upcoming Classes</h5>
                         </div>
@@ -338,7 +343,7 @@
                 <section id="section-songs" class="dashboard-section" style="display:none;">
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <div class="card p-4 border-0 shadow-sm rounded-4 bg-soft">
+                            <div class="card p-3 border-0 shadow-sm rounded-4 bg-soft">
                                 <h6 class="fw-bold mb-3 text-primary">Recently Added Songs</h6>
                                 <div class="d-flex align-items-center mb-3 p-3 bg-white rounded-3 shadow-sm text-dark">
                                     <i class="bi bi-play-circle-fill fs-2 text-primary me-3"></i>
@@ -385,7 +390,7 @@
 
                 <!-- [PARENT] Payments Section -->
                 <section id="section-payments" class="dashboard-section" style="display:none;">
-                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                    <div class="card p-3 border-0 shadow-sm rounded-4">
                         <div class="star-header">
                             <h5 class="fw-bold">Payment History</h5>
                         </div>
@@ -418,7 +423,7 @@
                 <!-- [ADMIN] Home Section -->
                 <section id="section-admin-home" class="dashboard-section" style="display:none;">
                     <div
-                        class="card p-4 border-0 mb-4 bg-secondary text-white shadow-sm overflow-hidden position-relative rounded-4">
+                        class="card p-3 border-0 mb-3 bg-secondary text-white shadow-sm overflow-hidden position-relative rounded-4">
                         <div class="position-relative z-1">
                             <h2 class="fw-bold mb-2">Admin Dashboard 🎻</h2>
                             <p class="mb-4 opacity-75">You have 3 classes scheduled for today. 12 students expected.</p>
@@ -430,16 +435,16 @@
                             style="font-size: 12rem; right: -20px; bottom: -40px; transform: rotate(-15deg);"></i>
                     </div>
 
-                    <div class="row g-4 mb-4">
+                    <div class="row g-3 mb-3">
                         <div class="col-md-4">
-                            <div class="card p-4 border-0 shadow-sm rounded-4 text-center stat-card h-100">
+                            <div class="card p-3 border-0 shadow-sm rounded-4 text-center stat-card h-100">
                                 <div class="fs-1 text-primary mb-2"><i class="bi bi-people"></i></div>
                                 <h3 class="fw-bold mb-1" id="total-students">45</h3>
                                 <p class="text-muted small mb-0">Total Active Students</p>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="card p-4 border-0 shadow-sm rounded-4 text-center stat-card h-100"
+                            <div class="card p-3 border-0 shadow-sm rounded-4 text-center stat-card h-100"
                                 style="border-left-color: var(--secondary);">
                                 <div class="fs-1 text-secondary mb-2"><i class="bi bi-clock-history"></i></div>
                                 <h3 class="fw-bold mb-1">12</h3>
@@ -447,7 +452,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="card p-4 border-0 shadow-sm rounded-4 text-center stat-card h-100"
+                            <div class="card p-3 border-0 shadow-sm rounded-4 text-center stat-card h-100"
                                 style="border-left-color: var(--accent);">
                                 <div class="fs-1 text-warning mb-2"><i class="bi bi-star-fill"></i></div>
                                 <h3 class="fw-bold mb-1">4.9</h3>
@@ -456,12 +461,12 @@
                         </div>
                     </div>
 
-                    <div class="row g-4 mb-4">
+                    <div class="row g-3 mb-3">
                         <div class="col-md-8">
                             <div class="star-header">
                                 <h5 class="fw-bold mb-0">Recent Student Inquiries</h5>
                             </div>
-                            <div class="card p-4 border-0 shadow-sm rounded-4">
+                            <div class="card p-3 border-0 shadow-sm rounded-4">
                                 <div class="table-responsive">
                                     <table class="table align-middle table-sm border-0">
                                         <thead>
@@ -501,7 +506,7 @@
                             <div class="star-header">
                                 <h5 class="fw-bold mb-0">Attendance Trends</h5>
                             </div>
-                            <div class="card p-4 border-0 shadow-sm rounded-4 h-100">
+                            <div class="card p-3 border-0 shadow-sm rounded-4 h-100">
                                 <div class="d-flex flex-column h-100">
                                     <p class="text-muted small mb-3 text-center">Weekly Engagement Level</p>
                                     <div class="d-flex align-items-end justify-content-between flex-grow-1 px-2"
@@ -528,12 +533,12 @@
 
                 <!-- [ADMIN] Classes Section -->
                 <section id="section-admin-schedule" class="dashboard-section" style="display:none;">
-                    <div class="row g-4 mb-4">
+                    <div class="row g-3 mb-3">
                         <div class="col-md-12">
                             <div class="star-header">
                                 <h5 class="fw-bold">Staff Schedule Overview</h5>
                             </div>
-                            <div class="card p-4 border-0 shadow-sm rounded-4">
+                            <div class="card p-3 border-0 shadow-sm rounded-4">
                                 <div class="table-responsive">
                                     <table class="table align-middle">
                                         <thead>
@@ -578,7 +583,7 @@
 
                 <!-- [ADMIN] Student Roster Section -->
                 <section id="section-admin-students" class="dashboard-section" style="display:none;">
-                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                    <div class="card p-3 border-0 shadow-sm rounded-4">
                         <div class="star-header">
                             <h5 class="fw-bold mb-0">Student Roster</h5>
                             <div class="input-group input-group-sm" style="max-width: 300px;">
@@ -620,7 +625,7 @@
 
                 <!-- [ADMIN] Attendance Section -->
                 <section id="section-admin-attendance" class="dashboard-section" style="display:none;">
-                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                    <div class="card p-3 border-0 shadow-sm rounded-4">
                         <div class="star-header">
                             <h5 class="fw-bold mb-0">Attendance: Baby Music Class</h5>
                             <span class="fw-bold text-muted small">Oct 31, 2026</span>
@@ -661,7 +666,7 @@
 
                 <!-- [ADMIN] Resources Section -->
                 <section id="section-admin-resources" class="dashboard-section" style="display:none;">
-                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                    <div class="card p-3 border-0 shadow-sm rounded-4">
                         <div class="star-header">
                             <h5 class="fw-bold mb-0">Educational Resources</h5>
                             <button class="btn btn-primary btn-sm rounded-pill px-3"><i
@@ -687,7 +692,7 @@
 
                 <!-- [ADMIN] New Sections (Admin Management) -->
                 <section id="section-admin-teachers" class="dashboard-section" style="display:none;">
-                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                    <div class="card p-3 border-0 shadow-sm rounded-4">
                         <div class="star-header">
                             <h5 class="fw-bold mb-0">Teacher Management</h5>
                             <button class="btn btn-primary btn-sm rounded-pill px-3"><i class="bi bi-plus-lg me-1"></i>
@@ -732,15 +737,15 @@
                 </section>
 
                 <section id="section-admin-finance" class="dashboard-section" style="display:none;">
-                    <div class="card p-4 border-0 shadow-sm rounded-4 mb-4">
+                    <div class="card p-3 border-0 shadow-sm rounded-4 mb-4">
                         <div class="star-header">
                             <h5 class="fw-bold">Earnings & Financial Reports</h5>
                             <button class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-bold"><i
                                     class="bi bi-download me-1"></i> Export Report</button>
                         </div>
-                        <div class="row g-4 mb-4">
+                        <div class="row g-3 mb-3">
                             <div class="col-md-6">
-                                <div class="card p-4 border-0 bg-soft-primary rounded-4 h-100">
+                                <div class="card p-3 border-0 bg-soft-primary rounded-4 h-100">
                                     <h6 class="text-muted small text-uppercase fw-bold">Total Monthly Revenue</h6>
                                     <h2 class="fw-bold mb-0 text-primary">$4,250.00</h2>
                                     <p class="text-success small mb-0 mt-2 fw-bold"><i
@@ -748,7 +753,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="card p-4 border-0 bg-soft-secondary rounded-4 h-100">
+                                <div class="card p-3 border-0 bg-soft-secondary rounded-4 h-100">
                                     <h6 class="text-muted small text-uppercase fw-bold">Revenue Forecast (Nov)</h6>
                                     <h2 class="fw-bold mb-0 text-secondary">$5,100.00</h2>
                                     <p class="text-muted small mb-0 mt-2 fw-bold"><i class="bi bi-magic me-2"></i>AI
@@ -757,7 +762,7 @@
                             </div>
                         </div>
 
-                        <div class="card p-4 border bg-light rounded-4">
+                        <div class="card p-3 border bg-light rounded-4">
                             <h6 class="fw-bold mb-3 small opacity-75">Recent Financial Activity</h6>
                             <div class="vstack gap-2">
                                 <div class="d-flex justify-content-between small border-bottom pb-2">
@@ -775,7 +780,7 @@
 
                 <!-- Settings Section -->
                 <section id="section-settings" class="dashboard-section" style="display:none;">
-                    <div class="card p-4 p-md-5 border-0 shadow-sm rounded-4 mb-4">
+                    <div class="card p-3 p-md-4 border-0 shadow-sm rounded-4 mb-3">
                         <div class="star-header">
                             <h5 class="fw-bold">Account Settings</h5>
                         </div>
