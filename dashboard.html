@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Joyful Notes</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/461/461238.png">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="mb-5 text-center px-4">
+                <a href="index.html" class="d-flex align-items-center justify-content-center text-decoration-none">
+                    <img src="img/logo.png" alt="Logo" width="40" class="me-2">
+                    <span class="brand-font fs-4 text-primary">Joyful Notes</span>
+                </a>
+            </div>
+
+            <!-- Parent Navigation (Default) -->
+            <ul class="nav flex-column flex-grow-1" id="nav-parent">
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="showSection('home')" class="sidebar-link active"
+                        id="link-home">
+                        <i class="bi bi-grid-fill"></i> Dashboard Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="showSection('bookings')" class="sidebar-link"
+                        id="link-bookings">
+                        <i class="bi bi-calendar-event-fill"></i> My Bookings
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="showSection('songs')" class="sidebar-link" id="link-songs">
+                        <i class="bi bi-music-note-beamed"></i> My Songs
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="showSection('profile')" class="sidebar-link"
+                        id="link-profile">
+                        <i class="bi bi-person-fill"></i> Child Profile
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="showSection('payments')" class="sidebar-link"
+                        id="link-payments">
+                        <i class="bi bi-credit-card-fill"></i> Payments
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Admin Navigation -->
+            <ul class="nav flex-column flex-grow-1" id="nav-teacher" style="display: none;">
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="showSection('admin-home')" class="sidebar-link"
+                        id="link-admin-home">
+                        <i class="bi bi-grid-fill"></i> Admin Overview
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="showSection('admin-teachers')" class="sidebar-link"
+                        id="link-admin-teachers">
+                        <i class="bi bi-person-vcard-fill"></i> Manage Teachers
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="showSection('admin-students')" class="sidebar-link"
+                        id="link-admin-students">
+                        <i class="bi bi-people-fill"></i> Student Roster
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="showSection('admin-schedule')" class="sidebar-link"
+                        id="link-admin-schedule">
+                        <i class="bi bi-calendar-check-fill"></i> Class Schedules
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="showSection('admin-finance')" class="sidebar-link"
+                        id="link-admin-finance">
+                        <i class="bi bi-wallet2"></i> Earnings & Reports
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" onclick="showSection('admin-resources')" class="sidebar-link"
+                        id="link-admin-resources">
+                        <i class="bi bi-file-earmark-music-fill"></i> Admin Resources
+                    </a>
+                </li>
+            </ul>
+
+            <div class="mt-auto">
+                <a href="javascript:void(0)" onclick="showSection('settings')" class="sidebar-link" id="link-settings">
+                    <i class="bi bi-gear-fill"></i> Settings
+                </a>
+                <hr class="opacity-25">
+                <a href="index.html" class="sidebar-link text-danger">
+                    <i class="bi bi-box-arrow-left"></i> Logout
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="d-flex align-items-center">
+                    <button class="btn d-lg-none me-3 p-0" onclick="toggleSidebar()"><i
+                            class="bi bi-list fs-2 text-primary"></i></button>
+                    <h5 class="fw-bold text-secondary mb-0 d-none d-sm-block" id="section-title">Dashboard</h5>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                    <div class="vr mx-2 opacity-25"></div>
+
+                    <button id="theme-toggle-dash" class="toggle-btn nav-icon-bordered" title="Toggle Theme"><i
+                            class="bi bi-moon-fill"></i></button>
+                    <button id="rtl-toggle-dash" class="toggle-btn nav-icon-bordered" title="Toggle RTL">RTL</button>
+
+                    <div class="vr mx-2 opacity-25"></div>
+
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-decoration-none text-secondary"
+                            data-bs-toggle="dropdown">
+                            <span class="me-2 d-none d-sm-inline fw-bold" id="user-name">Jane Doe</span>
+                            <img src="https://i.pravatar.cc/100?u=jane" class="rounded-circle border" width="35"
+                                height="35" id="user-avatar">
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end rounded-3 shadow-sm border-0">
+                            <li><a class="dropdown-item" href="#">Account Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Help Center</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="p-4" id="dashboard-content">
+
+                <!-- [PARENT] Home Section -->
+                <section id="section-home" class="dashboard-section">
+                    <div
+                        class="card p-4 border-0 mb-4 bg-primary text-white shadow-sm overflow-hidden position-relative rounded-4">
+                        <div class="position-relative z-1">
+                            <h2 class="fw-bold mb-2">Welcome Back, Jane! 👋</h2>
+                            <p class="mb-4 opacity-75">Leo has an upcoming "Baby Music Class" tomorrow at 9:30 AM.</p>
+                            <a href="schedule.html"
+                                class="btn btn-light btn-white px-4 rounded-pill fw-bold text-primary border-0">View
+                                Full Schedule</a>
+                        </div>
+                        <i class="bi bi-music-note-beamed position-absolute opacity-25"
+                            style="font-size: 12rem; right: -20px; bottom: -40px; transform: rotate(15deg);"></i>
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-8">
+                            <div class="star-header">
+                                <h5 class="fw-bold">Upcoming Classes</h5>
+                            </div>
+                            <div class="card p-4 border-0 shadow-sm mb-3 rounded-4 stat-card">
+                                <div class="d-flex align-items-center flex-wrap gap-3">
+                                    <div class="bg-soft text-primary p-3 rounded-4 me-md-2 text-center"
+                                        style="width: 70px;">
+                                        <div class="small fw-bold">OCT</div>
+                                        <div class="fs-4 fw-bold">29</div>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="fw-bold mb-1">Baby Music Class (45m)</h6>
+                                        <p class="text-muted small mb-0"><i class="bi bi-clock me-2"></i>09:30 AM -
+                                            10:15 AM</p>
+                                    </div>
+                                    <div class="ms-md-auto text-md-end">
+                                        <span class="badge bg-soft text-primary px-3 rounded-pill mb-2">Confirmed</span>
+                                        <p class="small text-muted mb-0">Teacher: Ms. Sarah</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="star-header">
+                                <h5 class="fw-bold">Quick Actions</h5>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <a href="book.html"
+                                        class="btn btn-outline-primary w-100 py-3 text-start px-3 rounded-4">
+                                        <i class="bi bi-calendar-plus me-2"></i> Book New Class
+                                    </a>
+                                </div>
+                                <div class="col-12">
+                                    <a href="resources.html"
+                                        class="btn btn-outline-secondary w-100 py-3 text-start px-3 rounded-4">
+                                        <i class="bi bi-file-earmark-music me-2"></i> My Resources
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-8">
+                            <div class="star-header">
+                                <h5 class="fw-bold">Teacher Progress Feedback</h5>
+                            </div>
+                            <div class="card p-4 border-0 shadow-sm rounded-4 bg-soft-primary">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100"
+                                        width="45" class="rounded-circle me-3">
+                                    <div>
+                                        <h6 class="fw-bold mb-0">Ms. Sarah Harrison</h6>
+                                        <p class="text-muted small mb-0">Piano Instructor</p>
+                                    </div>
+                                    <span
+                                        class="ms-auto badge bg-white text-primary rounded-pill border">Yesterday</span>
+                                </div>
+                                <p class="mb-0 text-secondary">"Leo had a fantastic session yesterday! He is becoming
+                                    much more confident with his rhythmic clapping. We'll start introducing the
+                                    tambourine next week."</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="star-header">
+                                <h5 class="fw-bold">School Announcements</h5>
+                            </div>
+                            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item p-3 border-0">
+                                        <p class="fw-bold small mb-1 text-primary">Winter Recital 2026</p>
+                                        <p class="text-muted xsmall mb-0">Signups now open for all classes.</p>
+                                    </li>
+                                    <li class="list-group-item p-3 border-0 bg-soft-light"
+                                        style="background-color: rgba(255, 112, 67, 0.05) !important;">
+                                        <p class="fw-bold small mb-1 text-secondary">Holiday Schedule</p>
+                                        <p class="text-muted xsmall mb-0">Studio closed Dec 24 - Jan 2.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="star-header">
+                                <h5 class="fw-bold">Recent Activity Log</h5>
+                            </div>
+                            <div class="card p-4 border-0 shadow-sm rounded-4">
+                                <div class="vstack gap-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bg-soft-primary p-2 rounded-3 text-primary"><i
+                                                class="bi bi-check-circle"></i></div>
+                                        <div class="flex-grow-1">
+                                            <p class="fw-bold small mb-0">Attended Baby Music Class</p>
+                                            <p class="text-muted xsmall mb-0">Oct 29, 2026 • MS. Sarah</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="bg-soft-secondary p-2 rounded-3 text-secondary"><i
+                                                class="bi bi-star-fill"></i></div>
+                                        <div class="flex-grow-1">
+                                            <p class="fw-bold small mb-0">Earned "Rhythm Master" Badge</p>
+                                            <p class="text-muted xsmall mb-0">Oct 22, 2026 • Achievement</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="star-header">
+                                <h5 class="fw-bold">Parenting Tips</h5>
+                            </div>
+                            <div class="card p-4 border-0 shadow-sm rounded-4 bg-soft-light"
+                                style="background-color: #fff8f0 !important;">
+                                <h6 class="fw-bold text-warning mb-2"><i class="bi bi-lightbulb me-2"></i>Practice at
+                                    Home</h6>
+                                <p class="text-muted small mb-0">Keep a steady beat while listening to your favorite
+                                    nursery rhymes this week. It helps with early coordination!</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- [PARENT] My Bookings Section -->
+                <section id="section-bookings" class="dashboard-section" style="display:none;">
+                    <div class="card p-4 border-0 shadow-sm mb-4 rounded-4">
+                        <div class="star-header">
+                            <h5 class="fw-bold">My Upcoming Classes</h5>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Class Name</th>
+                                        <th>Date & Time</th>
+                                        <th>Status</th>
+                                        <th class="text-end">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Baby Music Class</td>
+                                        <td>Oct 29, 2026 - 9:30 AM</td>
+                                        <td><span
+                                                class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Confirmed</span>
+                                        </td>
+                                        <td class="text-end">
+                                            <button class="btn btn-sm btn-light border me-1">Reschedule</button>
+                                            <button class="btn btn-sm btn-light border text-danger">Cancel</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- [PARENT] My Songs Section -->
+                <section id="section-songs" class="dashboard-section" style="display:none;">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card p-4 border-0 shadow-sm rounded-4 bg-soft">
+                                <h6 class="fw-bold mb-3 text-primary">Recently Added Songs</h6>
+                                <div class="d-flex align-items-center mb-3 p-3 bg-white rounded-3 shadow-sm text-dark">
+                                    <i class="bi bi-play-circle-fill fs-2 text-primary me-3"></i>
+                                    <div>
+                                        <p class="fw-bold mb-0">The Tambourine Dance</p>
+                                        <p class="text-muted small mb-0">PDF Lyrics & Audio</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary ms-auto rounded-circle"
+                                        style="width: 35px; height: 35px; padding: 0;"><i
+                                            class="bi bi-download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- [PARENT] Child Profile Section -->
+                <section id="section-profile" class="dashboard-section" style="display:none;">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card p-4 border-0 shadow-sm text-center rounded-4">
+                                <img src="https://i.pravatar.cc/150?u=leo"
+                                    class="rounded-circle mx-auto mb-3 border border-3 border-primary" width="120">
+                                <h4 class="fw-bold mb-1">Leo Doe</h4>
+                                <p class="text-muted mb-4">18 Months Old • Baby Class</p>
+                                <button class="btn btn-primary rounded-pill px-4 btn-sm fw-bold">Edit Profile</button>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card p-4 border-0 shadow-sm h-100 rounded-4">
+                                <h5 class="fw-bold mb-4">Development Milestones</h5>
+                                <div class="bg-soft p-3 rounded-4 mb-3 border-start border-primary border-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <p class="fw-bold mb-0">Rhythm Recognition</p>
+                                        <span class="badge bg-primary rounded-pill">On Track</span>
+                                    </div>
+                                    <p class="text-muted small mb-0">Leo is showing great progress in clapping along to
+                                        steady beats.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- [PARENT] Payments Section -->
+                <section id="section-payments" class="dashboard-section" style="display:none;">
+                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                        <div class="star-header">
+                            <h5 class="fw-bold">Payment History</h5>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Class Bundle</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Invoice</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Oct 01, 2026</td>
+                                        <td>8-Week Baby Class</td>
+                                        <td class="fw-bold">$160.00</td>
+                                        <td><span class="badge bg-success rounded-pill px-3">Paid</span></td>
+                                        <td><a href="#" class="text-primary text-decoration-none"><i
+                                                    class="bi bi-file-earmark-pdf me-1"></i> PDF</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- [ADMIN] Home Section -->
+                <section id="section-admin-home" class="dashboard-section" style="display:none;">
+                    <div
+                        class="card p-4 border-0 mb-4 bg-secondary text-white shadow-sm overflow-hidden position-relative rounded-4">
+                        <div class="position-relative z-1">
+                            <h2 class="fw-bold mb-2">Admin Dashboard 🎻</h2>
+                            <p class="mb-4 opacity-75">You have 3 classes scheduled for today. 12 students expected.</p>
+                            <button onclick="showSection('teacher-classes')"
+                                class="btn btn-light btn-white px-4 rounded-pill fw-bold text-secondary border-0">View
+                                Classes</button>
+                        </div>
+                        <i class="bi bi-music-note-list position-absolute opacity-25"
+                            style="font-size: 12rem; right: -20px; bottom: -40px; transform: rotate(-15deg);"></i>
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-4">
+                            <div class="card p-4 border-0 shadow-sm rounded-4 text-center stat-card h-100">
+                                <div class="fs-1 text-primary mb-2"><i class="bi bi-people"></i></div>
+                                <h3 class="fw-bold mb-1" id="total-students">45</h3>
+                                <p class="text-muted small mb-0">Total Active Students</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card p-4 border-0 shadow-sm rounded-4 text-center stat-card h-100"
+                                style="border-left-color: var(--secondary);">
+                                <div class="fs-1 text-secondary mb-2"><i class="bi bi-clock-history"></i></div>
+                                <h3 class="fw-bold mb-1">12</h3>
+                                <p class="text-muted small mb-0">Classes This Week</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card p-4 border-0 shadow-sm rounded-4 text-center stat-card h-100"
+                                style="border-left-color: var(--accent);">
+                                <div class="fs-1 text-warning mb-2"><i class="bi bi-star-fill"></i></div>
+                                <h3 class="fw-bold mb-1">4.9</h3>
+                                <p class="text-muted small mb-0">Parent Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-8">
+                            <div class="star-header">
+                                <h5 class="fw-bold mb-0">Recent Student Inquiries</h5>
+                            </div>
+                            <div class="card p-4 border-0 shadow-sm rounded-4">
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-sm border-0">
+                                        <thead>
+                                            <tr class="text-muted small">
+                                                <th>Parent Name</th>
+                                                <th>Child Age</th>
+                                                <th>Class Interest</th>
+                                                <th class="text-end">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><span class="fw-bold">Michael Brown</span></td>
+                                                <td>12 Months</td>
+                                                <td><span class="badge bg-soft text-primary px-2">Baby Music</span></td>
+                                                <td class="text-end"><button
+                                                        class="btn btn-sm btn-primary rounded-pill px-3">Call</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><span class="fw-bold">Emily Watson</span></td>
+                                                <td>3 Years</td>
+                                                <td><span class="badge bg-soft text-secondary px-2">Toddler
+                                                        Rhythm</span></td>
+                                                <td class="text-end"><button
+                                                        class="btn btn-sm btn-primary rounded-pill px-3">Call</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <button class="btn btn-link text-primary text-decoration-none small p-0 mt-2 fw-bold"
+                                    onclick="showSection('admin-students')">View All Leads →</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="star-header">
+                                <h5 class="fw-bold mb-0">Attendance Trends</h5>
+                            </div>
+                            <div class="card p-4 border-0 shadow-sm rounded-4 h-100">
+                                <div class="d-flex flex-column h-100">
+                                    <p class="text-muted small mb-3 text-center">Weekly Engagement Level</p>
+                                    <div class="d-flex align-items-end justify-content-between flex-grow-1 px-2"
+                                        style="min-height: 100px;">
+                                        <div class="bg-primary rounded-top" style="width: 15%; height: 70%;"
+                                            title="Mon: 70%"></div>
+                                        <div class="bg-secondary rounded-top" style="width: 15%; height: 85%;"
+                                            title="Tue: 85%"></div>
+                                        <div class="bg-primary rounded-top" style="width: 15%; height: 60%;"
+                                            title="Wed: 60%"></div>
+                                        <div class="bg-secondary rounded-top" style="width: 15%; height: 95%;"
+                                            title="Thu: 95%"></div>
+                                        <div class="bg-primary rounded-top" style="width: 15%; height: 40%;"
+                                            title="Fri: 40%"></div>
+                                    </div>
+                                    <div class="d-flex justify-content-between text-muted xsmall mt-2 px-1">
+                                        <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- [ADMIN] Classes Section -->
+                <section id="section-admin-schedule" class="dashboard-section" style="display:none;">
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-12">
+                            <div class="star-header">
+                                <h5 class="fw-bold">Staff Schedule Overview</h5>
+                            </div>
+                            <div class="card p-4 border-0 shadow-sm rounded-4">
+                                <div class="table-responsive">
+                                    <table class="table align-middle">
+                                        <thead>
+                                            <tr class="text-muted small">
+                                                <th>Instructor</th>
+                                                <th>Today's Classes</th>
+                                                <th>Main Specialty</th>
+                                                <th>Availability</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center"><img
+                                                            src="https://i.pravatar.cc/100?u=sarah" width="30"
+                                                            class="rounded-circle me-2">Sarah Harrison</div>
+                                                </td>
+                                                <td><span class="badge bg-soft text-primary">3 Classes</span></td>
+                                                <td>Piano / Early Years</td>
+                                                <td><span
+                                                        class="badge bg-success-subtle text-success border border-success-subtle px-3 rounded-pill">On
+                                                        Duty</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center"><img
+                                                            src="https://i.pravatar.cc/100?u=jack" width="30"
+                                                            class="rounded-circle me-2">Jack Wilson</div>
+                                                </td>
+                                                <td><span class="badge bg-soft text-secondary">2 Classes</span></td>
+                                                <td>Guitar / Toddler</td>
+                                                <td><span class="badge bg-light text-muted border px-3 rounded-pill">Off
+                                                        Duty</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- [ADMIN] Student Roster Section -->
+                <section id="section-admin-students" class="dashboard-section" style="display:none;">
+                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                        <div class="star-header">
+                            <h5 class="fw-bold mb-0">Student Roster</h5>
+                            <div class="input-group input-group-sm" style="max-width: 300px;">
+                                <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+                                <input type="text" class="form-control border-start-0 shadow-none"
+                                    placeholder="Search student name...">
+                            </div>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card p-3 border rounded-4 d-flex flex-row align-items-center gap-3">
+                                    <img src="https://i.pravatar.cc/100?u=leo" width="60" height="60"
+                                        class="rounded-circle border-2 border border-primary">
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Leo Doe</h6>
+                                        <p class="text-muted small mb-1">Baby Class • Mon 9:30</p>
+                                        <span class="badge bg-soft text-primary px-2 py-1">Active</span>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-primary ms-auto rounded-pill"
+                                        title="View Progress"><i class="bi bi-eye"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-3 border rounded-4 d-flex flex-row align-items-center gap-3">
+                                    <img src="https://i.pravatar.cc/100?u=emma" width="60" height="60"
+                                        class="rounded-circle border-2 border border-primary">
+                                    <div>
+                                        <h6 class="fw-bold mb-1">Emma Smith</h6>
+                                        <p class="text-muted small mb-1">Toddler • Wed 11:00</p>
+                                        <span class="badge bg-soft text-primary px-2 py-1">New</span>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-primary ms-auto rounded-pill"
+                                        title="View Progress"><i class="bi bi-eye"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- [ADMIN] Attendance Section -->
+                <section id="section-admin-attendance" class="dashboard-section" style="display:none;">
+                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                        <div class="star-header">
+                            <h5 class="fw-bold mb-0">Attendance: Baby Music Class</h5>
+                            <span class="fw-bold text-muted small">Oct 31, 2026</span>
+                        </div>
+                        <div class="list-group list-group-flush border-top">
+                            <div class="list-group-item d-flex justify-content-between align-items-center py-3 px-0">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/100?u=leo" width="40" height="40"
+                                        class="rounded-circle me-3">
+                                    <span class="fw-bold">Leo Doe</span>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <input type="radio" class="btn-check" name="status-leo" id="leo-present" checked>
+                                    <label class="btn btn-outline-success px-3" for="leo-present">Present</label>
+                                    <input type="radio" class="btn-check" name="status-leo" id="leo-absent">
+                                    <label class="btn btn-outline-danger px-3" for="leo-absent">Absent</label>
+                                </div>
+                            </div>
+                            <div class="list-group-item d-flex justify-content-between align-items-center py-3 px-0">
+                                <div class="d-flex align-items-center">
+                                    <img src="https://i.pravatar.cc/100?u=emma" width="40" height="40"
+                                        class="rounded-circle me-3">
+                                    <span class="fw-bold">Emma Smith</span>
+                                </div>
+                                <div class="btn-group btn-group-sm">
+                                    <input type="radio" class="btn-check" name="status-emma" id="emma-present" checked>
+                                    <label class="btn btn-outline-success px-3" for="emma-present">Present</label>
+                                    <input type="radio" class="btn-check" name="status-emma" id="emma-absent">
+                                    <label class="btn btn-outline-danger px-3" for="emma-absent">Absent</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-end mt-4">
+                            <button class="btn btn-primary rounded-pill px-5 fw-bold">Save Attendance</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- [ADMIN] Resources Section -->
+                <section id="section-admin-resources" class="dashboard-section" style="display:none;">
+                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                        <div class="star-header">
+                            <h5 class="fw-bold mb-0">Educational Resources</h5>
+                            <button class="btn btn-primary btn-sm rounded-pill px-3"><i
+                                    class="bi bi-cloud-arrow-up me-2"></i>Upload New</button>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="p-3 border rounded-4 d-flex align-items-center gap-3 bg-soft">
+                                    <div class="bg-primary text-white p-2 rounded-3">
+                                        <i class="bi bi-file-earmark-music fs-4"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="fw-bold mb-0">Baby Rhythm Guide.pdf</h6>
+                                        <p class="text-muted xsmall mb-0">shared with: Baby Music Class</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-light border rounded-circle"><i
+                                            class="bi bi-three-dots-vertical"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- [ADMIN] New Sections (Admin Management) -->
+                <section id="section-admin-teachers" class="dashboard-section" style="display:none;">
+                    <div class="card p-4 border-0 shadow-sm rounded-4">
+                        <div class="star-header">
+                            <h5 class="fw-bold mb-0">Teacher Management</h5>
+                            <button class="btn btn-primary btn-sm rounded-pill px-3"><i class="bi bi-plus-lg me-1"></i>
+                                Add Teacher</button>
+                        </div>
+                        <div class="alert alert-soft-primary border-0 rounded-4">
+                            <i class="bi bi-info-circle me-2"></i> Oversee your teaching staff, monitor their class
+                            loads, and manage instructor profiles.
+                        </div>
+                        <div class="table-responsive mt-3">
+                            <table class="table table-hover align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Specialty</th>
+                                        <th>Weekly Classes</th>
+                                        <th>Status</th>
+                                        <th class="text-end">Contact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center"><img
+                                                    src="https://i.pravatar.cc/100?u=sarah" width="35"
+                                                    class="rounded-circle me-2">Sarah Harrison</div>
+                                        </td>
+                                        <td>Piano / Early Years</td>
+                                        <td><span class="badge bg-soft text-primary px-3 rounded-pill">12 Classes</span>
+                                        </td>
+                                        <td><span
+                                                class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Active</span>
+                                        </td>
+                                        <td class="text-end"><button
+                                                class="btn btn-sm btn-light border rounded-circle"><i
+                                                    class="bi bi-chat-dots-fill"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-admin-finance" class="dashboard-section" style="display:none;">
+                    <div class="card p-4 border-0 shadow-sm rounded-4 mb-4">
+                        <div class="star-header">
+                            <h5 class="fw-bold">Earnings & Financial Reports</h5>
+                            <button class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-bold"><i
+                                    class="bi bi-download me-1"></i> Export Report</button>
+                        </div>
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-6">
+                                <div class="card p-4 border-0 bg-soft-primary rounded-4 h-100">
+                                    <h6 class="text-muted small text-uppercase fw-bold">Total Monthly Revenue</h6>
+                                    <h2 class="fw-bold mb-0 text-primary">$4,250.00</h2>
+                                    <p class="text-success small mb-0 mt-2 fw-bold"><i
+                                            class="bi bi-graph-up-arrow me-2"></i>+12.5% vs last month</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card p-4 border-0 bg-soft-secondary rounded-4 h-100">
+                                    <h6 class="text-muted small text-uppercase fw-bold">Revenue Forecast (Nov)</h6>
+                                    <h2 class="fw-bold mb-0 text-secondary">$5,100.00</h2>
+                                    <p class="text-muted small mb-0 mt-2 fw-bold"><i class="bi bi-magic me-2"></i>AI
+                                        Projected Growth</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card p-4 border bg-light rounded-4">
+                            <h6 class="fw-bold mb-3 small opacity-75">Recent Financial Activity</h6>
+                            <div class="vstack gap-2">
+                                <div class="d-flex justify-content-between small border-bottom pb-2">
+                                    <span>Tuition Fees: Oct 2026</span>
+                                    <span class="fw-bold">$3,800.00</span>
+                                </div>
+                                <div class="d-flex justify-content-between small border-bottom pb-2">
+                                    <span>Merchandise & Instruments</span>
+                                    <span class="fw-bold">$450.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="section-settings" class="dashboard-section" style="display:none;">
+                    <div class="card p-4 p-md-5 border-0 shadow-sm rounded-4 mb-4">
+                        <div class="star-header">
+                            <h5 class="fw-bold">Account Settings</h5>
+                        </div>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold text-muted">Full Name</label>
+                                <input type="text" class="form-control form-control-lg shadow-none" value="Jane Doe"
+                                    id="setting-name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold text-muted">Email Address</label>
+                                <input type="email" class="form-control form-control-lg shadow-none"
+                                    value="jane@example.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold text-muted">Phone Number</label>
+                                <input type="tel" class="form-control form-control-lg shadow-none"
+                                    value="+1 (555) 123-4567">
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary px-5 py-2 rounded-pill mt-3 fw-bold">Update
+                                    Account</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Bottom Spacing for mobile -->
+            <div class="d-lg-none" style="height: 60px;"></div>
+
+        </main>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Main Section Management
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.dashboard-section').forEach(s => s.style.display = 'none');
+            // Deactivate all sidebar links
+            document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+
+            // Show target section
+            const section = document.getElementById('section-' + sectionId);
+            if (section) section.style.display = 'block';
+
+            // Activate corresponding sidebar link
+            const link = document.getElementById('link-' + sectionId);
+            if (link) link.classList.add('active');
+
+            // Update page title
+            const titles = {
+                'home': 'Parents Dashboard',
+                'bookings': 'My Bookings',
+                'songs': 'My Songs Library',
+                'profile': 'Child Profile Details',
+                'payments': 'Payment History',
+                'settings': 'Account Settings',
+                'admin-home': 'Admin Dashboard',
+                'admin-teachers': 'Teacher Management',
+                'admin-students': 'Global Student Roster',
+                'admin-schedule': 'Master Class Schedule',
+                'admin-finance': 'Revenue & Financials',
+                'admin-resources': 'Site & Teacher Resources'
+            };
+            document.getElementById('section-title').innerText = titles[sectionId] || 'Dashboard';
+
+            // Close mobile sidebar
+            if (window.innerWidth < 992) {
+                document.getElementById('sidebar').classList.remove('show');
+            }
+
+            localStorage.setItem('dashboard-last-section', sectionId);
+        }
+
+        // Role Toggle Functionality
+        function switchRole(role) {
+            const navParent = document.getElementById('nav-parent');
+            const navTeacher = document.getElementById('nav-teacher');
+            const btnParent = document.getElementById('role-parent');
+            const btnTeacher = document.getElementById('role-teacher');
+            const userName = document.getElementById('user-name');
+            const userAvatar = document.getElementById('user-avatar');
+
+            if (role === 'teacher') {
+                navParent.style.display = 'none';
+                navTeacher.style.display = 'flex';
+                userName.innerText = 'Sarah Harrison';
+                userAvatar.src = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80';
+
+                // Switch to home if coming from a parent section
+                const lastSection = localStorage.getItem('dashboard-last-section');
+                if (!lastSection || !lastSection.startsWith('admin-')) {
+                    showSection('admin-home');
+                } else {
+                    showSection(lastSection);
+                }
+            } else {
+                navParent.style.display = 'flex';
+                navTeacher.style.display = 'none';
+                userName.innerText = 'Jane Doe';
+                userAvatar.src = 'https://i.pravatar.cc/100?u=jane';
+
+                const lastSection = localStorage.getItem('dashboard-last-section');
+                if (!lastSection || lastSection.startsWith('admin-')) {
+                    showSection('home');
+                } else {
+                    showSection(lastSection);
+                }
+            }
+
+            localStorage.setItem('dashboard-role', role);
+        }
+
+        // Mobile Sidebar Toggle
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('show');
+        }
+
+        // Dashboard specific theme/RTL toggles (since dashboard doesn't use the standard header)
+        document.getElementById('theme-toggle-dash').addEventListener('click', function () {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                html.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                this.innerHTML = '<i class="bi bi-moon-fill"></i>';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                this.innerHTML = '<i class="bi bi-sun-fill"></i>';
+            }
+        });
+
+        document.getElementById('rtl-toggle-dash').addEventListener('click', function () {
+            const html = document.documentElement;
+            if (html.getAttribute('dir') === 'rtl') {
+                html.removeAttribute('dir');
+                localStorage.setItem('dir', 'ltr');
+                this.innerText = 'RTL';
+            } else {
+                html.setAttribute('dir', 'rtl');
+                localStorage.setItem('dir', 'rtl');
+                this.innerText = 'LTR';
+            }
+        });
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Restore theme and RTL first
+            const savedTheme = localStorage.getItem('theme');
+            const savedDir = localStorage.getItem('dir');
+
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('theme-toggle-dash').innerHTML = '<i class="bi bi-sun-fill"></i>';
+            }
+            if (savedDir === 'rtl') {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.getElementById('rtl-toggle-dash').innerText = 'LTR';
+            }
+
+            // Determine Role: Priority 1 (URL Param) > Priority 2 (localStorage) > Default (parent)
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlRole = urlParams.get('role');
+            const savedRole = localStorage.getItem('dashboard-role') || 'parent';
+
+            const roleToSet = urlRole || savedRole;
+            switchRole(roleToSet);
+        });
+    </script>
+</body>
+
+</html>

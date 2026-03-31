@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Joyful Notes</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/461/461238.png">
+    <style>
+        .auth-card {
+            max-width: 450px;
+            width: 100%;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            background-color: var(--white);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Top Controls -->
+    <div class="auth-controls-fixed">
+        <button id="theme-toggle" class="toggle-btn nav-icon-bordered" title="Toggle Theme"><i
+                class="bi bi-moon-fill"></i></button>
+        <button id="rtl-toggle" class="toggle-btn nav-icon-bordered" title="Toggle RTL">RTL</button>
+    </div>
+
+    <div class="auth-section">
+        <div class="card auth-card text-center border-0 shadow-lg">
+            <!-- Logo link -->
+            <a href="index.html" class="mb-4 d-flex align-items-center justify-content-center text-decoration-none">
+                <img src="img/logo.png" alt="Joyful Notes Logo" height="50">
+                <span class="brand-font fs-3 text-primary ms-2">Joyful Notes</span>
+            </a>
+
+            <h2 class="fw-bold text-secondary mb-2">Welcome Back!</h2>
+            <p class="text-muted mb-4 small">Login to access your parent dashboard.</p>
+
+            <!-- Login Form -->
+            <form id="login-form">
+                <div class="mb-3 text-start">
+                    <label class="form-label fw-bold small">Email Address</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-envelope"></i></span>
+                        <input type="email" class="form-control border-start-0 ps-0" placeholder="Email" required>
+                    </div>
+                </div>
+                <div class="mb-4 text-start">
+                    <label class="form-label fw-bold small">Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-lock-fill"></i></span>
+                        <input type="password" class="form-control border-start-0 ps-0" placeholder="Password" required>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mb-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="remember">
+                        <label class="form-check-label small" for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="small text-primary text-decoration-none">Forgot?</a>
+                </div>
+                <!-- Updated button to type="submit" -->
+                <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold mb-4">Login Now</button>
+
+                <div class="or-divider small">OR CONNECT WITH</div>
+
+                <div class="row g-2">
+                    <div class="col-6">
+                        <button type="button" class="social-btn py-2">
+                            <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" alt="Google">
+                            <span class="small">Google</span>
+                        </button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" class="social-btn py-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
+                                alt="Facebook">
+                            <span class="small">Facebook</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <p class="text-muted mt-4">
+                Don't have an account? <a href="signup.html" class="text-primary fw-bold text-decoration-none">Sign
+                    up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Our Teachers | Joyful Notes</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/461/461238.png">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/logo.png" alt="Joyful Notes Logo" class="me-2">
+                <span class="brand-font fs-3 text-primary">Joyful Notes</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1 (Organic)</a></li>
+                            <li><a class="dropdown-item" href="home2.html">Home 2 (Premium)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="classes.html">Classes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <!-- Icons Section -->
+                    <li class="nav-item nav-icon-item dropdown">
+                        <a href="#" class="nav-icon-link nav-icon-bordered dropdown-toggle no-caret" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" title="Dashboard">
+                            <i class="bi bi-speedometer2"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2 mt-2">
+                            <li>
+                                <h6 class="dropdown-header small text-uppercase opacity-50">Select Dashboard</h6>
+                            </li>
+                            <li><a class="dropdown-item rounded-3 py-2" href="dashboard.html?role=parent"><i
+                                        class="bi bi-person-fill me-2 text-primary"></i> Parents Dashboard</a></li>
+                            <li><a class="dropdown-item rounded-3 py-2" href="dashboard.html?role=teacher"><i
+                                        class="bi bi-shield-lock-fill me-2 text-secondary"></i> Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <button id="theme-toggle" class="toggle-btn nav-icon-bordered" title="Toggle Theme"><i
+                                class="bi bi-moon-fill"></i></button>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <button id="rtl-toggle" class="toggle-btn nav-icon-bordered" title="Toggle RTL">RTL</button>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <a href="login.html" class="nav-icon-link nav-icon-bordered" title="User Profile"><i
+                                class="bi bi-person-circle"></i></a>
+                    </li>
+
+                    <!-- Book Button -->
+                    <li class="nav-item ms-lg-3">
+                        <a href="book.html" class="btn btn-primary px-4">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Teachers Header -->
+    <header class="bg-soft section-padding text-center position-relative overflow-hidden">
+        <div class="container position-relative z-1">
+            <h1 class="display-4 fw-bold text-secondary mb-3">Meet Our Amazing Teachers</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">Our educators are not just musicians, but
+                specialists in early childhood development who love what they do.</p>
+        </div>
+        <!-- Decorative Shapes -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 pointer-events-none opacity-10">
+            <i class="bi bi-music-note-beamed position-absolute text-primary fs-1" style="top: 12%; left: 4%;"></i>
+            <i class="bi bi-music-note position-absolute text-primary fs-1" style="bottom: 15%; right: 6%;"></i>
+            <i class="bi bi-mic position-absolute text-primary fs-1" style="top: 25%; right: 3%;"></i>
+            <i class="bi bi-music-note-list position-absolute text-primary fs-1" style="bottom: 8%; left: 10%;"></i>
+        </div>
+    </header>
+
+    <!-- Teacher Profiles Grid -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-5 px-2 align-items-stretch">
+                <!-- Teacher 1: Ms. Sarah -->
+                <div class="col-lg-4 mb-4">
+                    <div class="teacher-card-premium">
+                        <span class="musical-badge">Pianist</span>
+                        <div class="hexagon-wrapper-teacher">
+                            <div class="avatar-glow-hex"></div>
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80"
+                                class="hexagon-img-teacher" alt="Ms. Sarah">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="fw-bold mb-1">Ms. Sarah Harrison</h3>
+                            <p class="text-primary small fw-bold mb-3">Director & Lead Educator</p>
+                            <div class="teacher-stats d-flex justify-content-center gap-3 mb-4">
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">15+</div>
+                                    <div class="small text-muted">Years Exp</div>
+                                </div>
+                                <div class="vr"></div>
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">MA</div>
+                                    <div class="small text-muted">Music Therapy</div>
+                                </div>
+                            </div>
+                            <p class="text-muted small">Specializes in using melody to support emotional development in
+                                babies.</p>
+                            <div class="teacher-bio-pop">
+                                <p class="small text-muted mb-3">Sarah's nurturing approach creates a safe, exploratory
+                                    space for our youngest musicians to thrive.</p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a href="#" class="text-secondary"><i class="bi bi-facebook fs-5"></i></a>
+                                    <a href="#" class="text-secondary"><i class="bi bi-instagram fs-5"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 2: Mr. David -->
+                <div class="col-lg-4 mb-4">
+                    <div class="teacher-card-premium">
+                        <span class="musical-badge">Drums</span>
+                        <div class="hexagon-wrapper-teacher">
+                            <div class="avatar-glow-hex"></div>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
+                                class="hexagon-img-teacher" alt="Mr. David">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="fw-bold mb-1">Mr. David Chen</h3>
+                            <p class="text-primary small fw-bold mb-3">Percussion Specialist</p>
+                            <div class="teacher-stats d-flex justify-content-center gap-3 mb-4">
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">8+</div>
+                                    <div class="small text-muted">Years Exp</div>
+                                </div>
+                                <div class="vr"></div>
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">BA</div>
+                                    <div class="small text-muted">Percussion</div>
+                                </div>
+                            </div>
+                            <p class="text-muted small">Focuses on coordination and social play through high-energy
+                                beats.</p>
+                            <div class="teacher-bio-pop">
+                                <p class="small text-muted mb-3">David brings excitement to every class with interactive
+                                    drum circles and rhythm games.</p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a href="#" class="text-secondary"><i class="bi bi-youtube fs-5"></i></a>
+                                    <a href="#" class="text-secondary"><i class="bi bi-instagram fs-5"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 3: Ms. Emily -->
+                <div class="col-lg-4 mb-4">
+                    <div class="teacher-card-premium">
+                        <span class="musical-badge">Vocalist</span>
+                        <div class="hexagon-wrapper-teacher">
+                            <div class="avatar-glow-hex"></div>
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80"
+                                class="hexagon-img-teacher" alt="Ms. Emily">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="fw-bold mb-1">Ms. Emily Rivera</h3>
+                            <p class="text-primary small fw-bold mb-3">Toddler Program Lead</p>
+                            <div class="teacher-stats d-flex justify-content-center gap-3 mb-4">
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">10+</div>
+                                    <div class="small text-muted">Years Exp</div>
+                                </div>
+                                <div class="vr"></div>
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">Cert.</div>
+                                    <div class="small text-muted">Early Learning</div>
+                                </div>
+                            </div>
+                            <p class="text-muted small">Passionate about storytelling through song and sensory
+                                exploration.</p>
+                            <div class="teacher-bio-pop">
+                                <p class="small text-muted mb-3">Emily's classes are a magical blend of puppets,
+                                    singing, and imaginative musical journeys.</p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a href="#" class="text-secondary"><i class="bi bi-facebook fs-5"></i></a>
+                                    <a href="#" class="text-secondary"><i class="bi bi-twitter fs-5"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 4: Ms. Clara -->
+                <div class="col-lg-4 mb-4">
+                    <div class="teacher-card-premium">
+                        <span class="musical-badge">Violinist</span>
+                        <div class="hexagon-wrapper-teacher">
+                            <div class="avatar-glow-hex"></div>
+                            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=400&q=80"
+                                class="hexagon-img-teacher" alt="Ms. Clara">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="fw-bold mb-1">Ms. Clara Sterling</h3>
+                            <p class="text-primary small fw-bold mb-3">String Specialist</p>
+                            <div class="teacher-stats d-flex justify-content-center gap-3 mb-4">
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">12+</div>
+                                    <div class="small text-muted">Years Exp</div>
+                                </div>
+                                <div class="vr"></div>
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">MMus</div>
+                                    <div class="small text-muted">Violin Perf.</div>
+                                </div>
+                            </div>
+                            <p class="text-muted small">Introducing young ears to the beauty of strings and classical
+                                rhythm.</p>
+                            <div class="teacher-bio-pop">
+                                <p class="small text-muted mb-3">Clara's classes focus on delicate listening skills and
+                                    fine motor coordination through violin play.</p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a href="#" class="text-secondary"><i class="bi bi-instagram fs-5"></i></a>
+                                    <a href="#" class="text-secondary"><i class="bi bi-linkedin fs-5"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 5: Mr. Leo -->
+                <div class="col-lg-4 mb-4">
+                    <div class="teacher-card-premium">
+                        <span class="musical-badge">Guitarist</span>
+                        <div class="hexagon-wrapper-teacher">
+                            <div class="avatar-glow-hex"></div>
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
+                                class="hexagon-img-teacher" alt="Mr. Leo">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="fw-bold mb-1">Mr. Leo Brooks</h3>
+                            <p class="text-primary small fw-bold mb-3">Acoustic Program Lead</p>
+                            <div class="teacher-stats d-flex justify-content-center gap-3 mb-4">
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">7+</div>
+                                    <div class="small text-muted">Years Exp</div>
+                                </div>
+                                <div class="vr"></div>
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">BA</div>
+                                    <div class="small text-muted">Music Ed.</div>
+                                </div>
+                            </div>
+                            <p class="text-muted small">Leading sing-alongs and teaching basic chords in a high-energy
+                                environment.</p>
+                            <div class="teacher-bio-pop">
+                                <p class="small text-muted mb-3">Leo's high-energy guitar sessions are a favorite for
+                                    children who love to dance and sing along.</p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a href="#" class="text-secondary"><i class="bi bi-facebook fs-5"></i></a>
+                                    <a href="#" class="text-secondary"><i class="bi bi-youtube fs-5"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 6: Ms. Maya -->
+                <div class="col-lg-4 mb-4">
+                    <div class="teacher-card-premium">
+                        <span class="musical-badge">Movement</span>
+                        <div class="hexagon-wrapper-teacher">
+                            <div class="avatar-glow-hex"></div>
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80"
+                                class="hexagon-img-teacher" alt="Ms. Maya">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="fw-bold mb-1">Ms. Maya Patel</h3>
+                            <p class="text-primary small fw-bold mb-3">Dance & Rhythm Lead</p>
+                            <div class="teacher-stats d-flex justify-content-center gap-3 mb-4">
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">6+</div>
+                                    <div class="small text-muted">Years Exp</div>
+                                </div>
+                                <div class="vr"></div>
+                                <div class="text-center">
+                                    <div class="fw-bold fs-5">Cert.</div>
+                                    <div class="small text-muted">Yoga for Kids</div>
+                                </div>
+                            </div>
+                            <p class="text-muted small">Focusing on physical milestones through melody and expressive
+                                dance.</p>
+                            <div class="teacher-bio-pop">
+                                <p class="small text-muted mb-3">Maya's classes combine the joy of movement with musical
+                                    cues to support physical discovery.</p>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <a href="#" class="text-secondary"><i class="bi bi-instagram fs-5"></i></a>
+                                    <a href="#" class="text-secondary"><i class="bi bi-tiktok fs-5"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW Section: The Joyful Pedagogy -->
+    <section class="section-padding bg-soft border-top">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold text-secondary mb-2">The Joyful Pedagogy</h2>
+            <div class="section-divider mb-5">
+                <span></span><span></span><span></span>
+                <i class="bi bi-star-fill"></i>
+                <span></span><span></span><span></span>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="hexagon-wrapper-pedagogy">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=400&q=80"
+                            alt="Play-First Learning">
+                    </div>
+                    <h4 class="fw-bold text-primary mb-3">Play-First Learning</h4>
+                    <p class="text-muted small px-3">We believe music is caught, not taught. Every lesson is
+                        structured as as adventurous play session.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="hexagon-wrapper-pedagogy">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80"
+                            alt="Rhythm-Rooted">
+                    </div>
+                    <h4 class="fw-bold text-primary mb-3">Rhythm-Rooted</h4>
+                    <p class="text-muted small px-3">Steady beat is the foundation of all later learning, from math
+                        to coordination and social movement.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="hexagon-wrapper-pedagogy">
+                        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=400&q=80"
+                            alt="Sensory Milestones">
+                    </div>
+                    <h4 class="fw-bold text-primary mb-3">Sensory Milestones</h4>
+                    <p class="text-muted small px-3">Using tactile instruments and visual cues to reach cognitive
+                        developmental milestones with joy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="display-5 fw-bold mb-4">Are You an Educator?</h2>
+            <p class="mb-4">We're always looking for passionate people to join our musical family.</p>
+            <a href="contact.html" class="btn btn-light btn-lg btn-white px-5 rounded-pill fw-bold text-primary">Join
+                Our Team</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="img/logo.png" alt="Logo" height="40" class="me-2">
+                        <span class="brand-font fs-4 text-primary">Joyful Notes</span>
+                    </div>
+                    <p class="text-muted">Nurturing young minds through the joy of music and community. Join us in a
+                        musical journey that starts from the very beginning.</p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 ms-lg-auto">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="classes.html" class="text-muted text-decoration-none">Classes</a></li>
+                        <li class="mb-2"><a href="schedule.html" class="text-muted text-decoration-none">Schedule</a>
+                        </li>
+                        <li class="mb-2"><a href="resources.html" class="text-muted text-decoration-none">Resources</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="testimonials.html"
+                                class="text-muted text-decoration-none">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-4">Contact Info</h5>
+                    <p class="text-muted mb-2"><i class="bi bi-geo-alt-fill text-primary me-2"></i> 123 Music Lane,
+                        Piano City</p>
+                    <p class="text-muted mb-2"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (555) 123-4567
+                    </p>
+                    <p class="text-muted mb-2"><i class="bi bi-envelope-fill text-primary me-2"></i>
+                        hello@joyfulnotes.com</p>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center text-muted">
+                <p class="small mb-0">&copy; 2026 Joyful Notes Music Classes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

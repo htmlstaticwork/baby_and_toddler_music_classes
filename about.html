@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Joyful Notes</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/461/461238.png">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/logo.png" alt="Joyful Notes Logo" class="me-2">
+                <span class="brand-font fs-3 text-primary">Joyful Notes</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1 (Organic)</a></li>
+                            <li><a class="dropdown-item" href="home2.html">Home 2 (Premium)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="classes.html">Classes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <!-- Icons Section -->
+                    <li class="nav-item nav-icon-item dropdown">
+                        <a href="#" class="nav-icon-link nav-icon-bordered dropdown-toggle no-caret" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" title="Dashboard">
+                            <i class="bi bi-speedometer2"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2 mt-2">
+                            <li>
+                                <h6 class="dropdown-header small text-uppercase opacity-50">Select Dashboard</h6>
+                            </li>
+                            <li><a class="dropdown-item rounded-3 py-2" href="dashboard.html?role=parent"><i
+                                        class="bi bi-person-fill me-2 text-primary"></i> Parents Dashboard</a></li>
+                            <li><a class="dropdown-item rounded-3 py-2" href="dashboard.html?role=teacher"><i
+                                        class="bi bi-shield-lock-fill me-2 text-secondary"></i> Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <button id="theme-toggle" class="toggle-btn nav-icon-bordered" title="Toggle Theme"><i
+                                class="bi bi-moon-fill"></i></button>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <button id="rtl-toggle" class="toggle-btn nav-icon-bordered" title="Toggle RTL">RTL</button>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <a href="login.html" class="nav-icon-link nav-icon-bordered" title="User Profile"><i
+                                class="bi bi-person-circle"></i></a>
+                    </li>
+
+                    <!-- Book Button -->
+                    <li class="nav-item ms-lg-3">
+                        <a href="book.html" class="btn btn-primary px-4">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Header -->
+    <header class="bg-soft section-padding text-center position-relative overflow-hidden">
+        <div class="container position-relative z-1">
+            <h1 class="display-4 fw-bold text-secondary mb-3">Our Story & Mission</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">Learn why we're passionate about bringing music
+                into the lives of the littlest learners.</p>
+        </div>
+        <!-- Decorative Music Icons -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 pointer-events-none opacity-10">
+            <i class="bi bi-music-note-beamed position-absolute text-primary fs-1" style="top: 10%; left: 5%;"></i>
+            <i class="bi bi-music-note position-absolute text-primary fs-1" style="bottom: 20%; right: 10%;"></i>
+            <i class="bi bi-mic position-absolute text-primary fs-1" style="top: 30%; right: 5%;"></i>
+            <i class="bi bi-music-note-list position-absolute text-primary fs-1" style="bottom: 10%; left: 15%;"></i>
+        </div>
+    </header>
+
+    <!-- Our Story -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80"
+                        alt="Musical Kids" class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h2 class="display-5 fw-bold text-secondary mb-2">How it All Began</h2>
+                    <div class="section-divider justify-content-start mb-4">
+                        <span></span><span></span><span></span>
+                        <i class="bi bi-star-fill"></i>
+                        <span></span><span></span><span></span>
+                    </div>
+                    <p class="mb-4">Founded in 2018, Joyful Notes began with a simple observation: music has a unique
+                        power to connect people, even before they can speak. What started as a small community gathering
+                        in a local park has grown into a leading early-childhood music program.</p>
+                    <div class="bg-soft p-4 rounded-4 mb-4">
+                        <h5 class="fw-bold text-primary mb-3"><i class="bi bi-eye-fill"></i> Our Vision</h5>
+                        <p class="text-muted small">To create a world where every child has the opportunity to explore
+                            their musical potential in a safe, joyful, and nurturing environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Philosophy -->
+    <section class="section-padding bg-soft">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold text-secondary mb-2">Our Learning Philosophy</h2>
+            <div class="section-divider mb-5">
+                <span></span><span></span><span></span>
+                <i class="bi bi-star-fill"></i>
+                <span></span><span></span><span></span>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0">
+                        <div class="mb-3">
+                            <img src="play_centered_philosophy_1774954673495.png" alt="Play-Centered"
+                                class="rounded-4 shadow-sm" style="width: 80px; height: 80px; object-fit: cover;">
+                        </div>
+                        <h4 class="fw-bold">Play-Centered</h4>
+                        <p class="text-muted">We believe children learn best when they don't even know they're
+                            learning—it's all about pure, musical play.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0">
+                        <div class="mb-3">
+                            <img src="community_centered_philosophy_1774954690616.png" alt="Community-Based"
+                                class="rounded-4 shadow-sm" style="width: 80px; height: 80px; object-fit: cover;">
+                        </div>
+                        <h4 class="fw-bold">Community Based</h4>
+                        <p class="text-muted">Building connections between parents and families is just as important as
+                            the music we make together.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0">
+                        <div class="mb-3">
+                            <img src="development_centered_philosophy_1774954707120.png" alt="Developmental"
+                                class="rounded-4 shadow-sm" style="width: 80px; height: 80px; object-fit: cover;">
+                        </div>
+                        <h4 class="fw-bold">Developmental Approach</h4>
+                        <p class="text-muted">Every activity is grounded in research to support physical, cognitive, and
+                            emotional milestones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us? (Redesigned) -->
+    <section class="section-padding border-top">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-secondary mb-2">Why Families Love Us</h2>
+                <div class="section-divider mb-5">
+                    <span></span><span></span><span></span>
+                    <i class="bi bi-star-fill"></i>
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center hover-lift">
+                        <div class="mb-3">
+                            <img src="safe_clean_studio_about_1774954734517.png" alt="Safe Studio"
+                                class="rounded-circle shadow-sm"
+                                style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;">
+                        </div>
+                        <h5 class="fw-bold">Safe & Clean</h5>
+                        <p class="text-muted small mb-0">Our studios are sanitized between every session, ensuring a
+                            pristine environment for your little ones to explore.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center hover-lift">
+                        <div class="mb-3">
+                            <img src="expert_teacher_about_1774954751867.png" alt="Expert Teacher"
+                                class="rounded-circle shadow-sm"
+                                style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;">
+                        </div>
+                        <h5 class="fw-bold">Expert Faculty</h5>
+                        <p class="text-muted small mb-0">Every teacher is a certified early childhood specialist with a
+                            deep passion for nurturing musical curiosity.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center hover-lift">
+                        <div class="mb-3">
+                            <img src="research_backed_about_1774954767217.png" alt="Research Backed"
+                                class="rounded-circle shadow-sm"
+                                style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;">
+                        </div>
+                        <h5 class="fw-bold">Research-Backed</h5>
+                        <p class="text-muted small mb-0">Our curriculum is grounded in the latest neuroscience regarding
+                            musical play and cognitive development.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm p-4 text-center hover-lift">
+                        <div class="mb-3">
+                            <img src="community_families_about_1774954785385.png" alt="Community"
+                                class="rounded-circle shadow-sm"
+                                style="width: 100px; height: 100px; object-fit: cover; margin: 0 auto;">
+                        </div>
+                        <h5 class="fw-bold">Family First</h5>
+                        <p class="text-muted small mb-0">Beyond classes, we foster a warm community where parents
+                            connect and grow together through music.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Core Values (New Section) -->
+    <section class="section-padding bg-soft border-top">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold text-secondary mb-2">Our Musical DNA</h2>
+            <div class="section-divider mb-5">
+                <span></span><span></span><span></span>
+                <i class="bi bi-star-fill"></i>
+                <span></span><span></span><span></span>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <img src="inclusive_dna_about_1774954807811.png" alt="Inclusivity" class="rounded-4 shadow-sm"
+                            style="width: 100%; max-height: 120px; object-fit: cover;">
+                    </div>
+                    <h5 class="fw-bold">Inclusivity</h5>
+                    <p class="text-muted small">Every child, every background, and every ability is cherished and
+                        welcomed in our musical circle.</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <img src="creative_dna_about_1774954822811.png" alt="Creativity" class="rounded-4 shadow-sm"
+                            style="width: 100%; max-height: 120px; object-fit: cover;">
+                    </div>
+                    <h5 class="fw-bold">Creativity</h5>
+                    <p class="text-muted small">We encourage spontaneous expression and celebrate the unique musical
+                        voice of every young explorer.</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <img src="growth_dna_about_1774954836402.png" alt="Growth" class="rounded-4 shadow-sm"
+                            style="width: 100%; max-height: 120px; object-fit: cover;">
+                    </div>
+                    <h5 class="fw-bold">Growth</h5>
+                    <p class="text-muted small">Our programs are designed to support critical developmental milestones
+                        from birth through age five.</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="mb-3">
+                        <img src="happy_dna_about_1774954853282.png" alt="Happiness" class="rounded-4 shadow-sm"
+                            style="width: 100%; max-height: 120px; object-fit: cover;">
+                    </div>
+                    <h5 class="fw-bold">Happiness</h5>
+                    <p class="text-muted small">Above all, we believe that the journey should be joyful, spirited, and
+                        filled with laughter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid px-md-5 px-4">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="img/logo.png" alt="Logo" height="40" class="me-2">
+                        <span class="brand-font fs-4 text-primary">Joyful Notes</span>
+                    </div>
+                    <p class="text-muted">Nurturing young minds through the joy of music and community. Join us in a
+                        musical journey that starts from the very beginning.</p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 ms-lg-auto">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="classes.html" class="text-muted text-decoration-none">Classes</a></li>
+                        <li class="mb-2"><a href="schedule.html" class="text-muted text-decoration-none">Schedule</a>
+                        </li>
+                        <li class="mb-2"><a href="resources.html" class="text-muted text-decoration-none">Resources</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="testimonials.html"
+                                class="text-muted text-decoration-none">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-4">Contact Info</h5>
+                    <p class="text-muted mb-2"><i class="bi bi-geo-alt-fill text-primary me-2"></i> 123 Music Lane,
+                        Piano City</p>
+                    <p class="text-muted mb-2"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (555) 123-4567
+                    </p>
+                    <p class="text-muted mb-2"><i class="bi bi-envelope-fill text-primary me-2"></i>
+                        hello@joyfulnotes.com</p>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center text-muted">
+                <p class="small mb-0">&copy; 2026 Joyful Notes Music Classes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

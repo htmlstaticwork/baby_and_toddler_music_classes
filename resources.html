@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs & Resources | Joyful Notes</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/461/461238.png">
+    <style>
+        .audio-card {
+            border-left: 5px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .audio-card:hover {
+            border-left: 10px solid var(--secondary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/logo.png" alt="Joyful Notes Logo" class="me-2">
+                <span class="brand-font fs-3 text-primary">Joyful Notes</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1 (Organic)</a></li>
+                            <li><a class="dropdown-item" href="home2.html">Home 2 (Premium)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="classes.html">Classes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <!-- Icons Section -->
+                    <li class="nav-item nav-icon-item dropdown">
+                        <a href="#" class="nav-icon-link nav-icon-bordered dropdown-toggle no-caret" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" title="Dashboard">
+                            <i class="bi bi-speedometer2"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2 mt-2">
+                            <li>
+                                <h6 class="dropdown-header small text-uppercase opacity-50">Select Dashboard</h6>
+                            </li>
+                            <li><a class="dropdown-item rounded-3 py-2" href="dashboard.html?role=parent"><i
+                                        class="bi bi-person-fill me-2 text-primary"></i> Parents Dashboard</a></li>
+                            <li><a class="dropdown-item rounded-3 py-2" href="dashboard.html?role=teacher"><i
+                                        class="bi bi-shield-lock-fill me-2 text-secondary"></i> Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <button id="theme-toggle" class="toggle-btn nav-icon-bordered" title="Toggle Theme"><i
+                                class="bi bi-moon-fill"></i></button>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <button id="rtl-toggle" class="toggle-btn nav-icon-bordered" title="Toggle RTL">RTL</button>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <a href="login.html" class="nav-icon-link nav-icon-bordered" title="User Profile"><i
+                                class="bi bi-person-circle"></i></a>
+                    </li>
+
+                    <!-- Book Button -->
+                    <li class="nav-item ms-lg-3">
+                        <a href="book.html" class="btn btn-primary px-4">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resources Header -->
+    <header class="bg-soft section-padding text-center position-relative overflow-hidden">
+        <div class="container position-relative z-1">
+            <h1 class="display-4 fw-bold text-secondary mb-3">Family Resources</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">Continue the musical journey at home with our
+                curated songs, activity guides, and developmental articles.</p>
+        </div>
+        <!-- Decorative Music Icons -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 pointer-events-none opacity-10">
+            <i class="bi bi-music-note-beamed position-absolute text-primary fs-1" style="top: 10%; left: 5%;"></i>
+            <i class="bi bi-music-note position-absolute text-primary fs-1" style="bottom: 20%; right: 10%;"></i>
+            <i class="bi bi-mic position-absolute text-primary fs-1" style="top: 30%; right: 5%;"></i>
+            <i class="bi bi-music-note-list position-absolute text-primary fs-1" style="bottom: 10%; left: 15%;"></i>
+        </div>
+    </header>
+
+    <!-- Song Library -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-12 text-center">
+                    <h3 class="fw-bold text-secondary mb-2">Our Song Library</h3>
+                    <div class="section-divider justify-content-center mb-5">
+                        <span></span><span></span><span></span>
+                        <i class="bi bi-star-fill"></i>
+                        <span></span><span></span><span></span>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-lg-4">
+                            <div
+                                class="card audio-card p-4 h-100 border-0 shadow-sm custom-audio-player text-center d-flex flex-column align-items-center">
+                                <div class="mb-3">
+                                    <button class="btn btn-primary rounded-circle play-btn mb-3 mx-auto"
+                                        style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-play-fill fs-2"></i>
+                                    </button>
+                                    <h5 class="fw-bold mb-1">Hello Song</h5>
+                                    <p class="text-muted small">The perfect start to every musical session.</p>
+                                </div>
+                                <div class="progress mb-3 mx-auto" style="height: 6px; width: 100%;">
+                                    <div class="progress-bar-inner bg-primary h-100" style="width: 0%;"></div>
+                                </div>
+                                <audio src="audio/hello.mp3" class="d-none"></audio>
+                                <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill w-100 mt-auto"><i
+                                        class="bi bi-download me-2"></i>Download</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div
+                                class="card audio-card p-4 h-100 border-0 shadow-sm custom-audio-player text-center d-flex flex-column align-items-center">
+                                <div class="mb-3">
+                                    <button class="btn btn-primary rounded-circle play-btn mb-3 mx-auto"
+                                        style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-play-fill fs-2"></i>
+                                    </button>
+                                    <h5 class="fw-bold mb-1">Row Your Boat</h5>
+                                    <p class="text-muted small">Rhythmic movement for big and small oarsmen.</p>
+                                </div>
+                                <div class="progress mb-3 mx-auto" style="height: 6px; width: 100%;">
+                                    <div class="progress-bar-inner bg-primary h-100" style="width: 0%;"></div>
+                                </div>
+                                <audio src="audio/row_boat.mp3" class="d-none"></audio>
+                                <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill w-100 mt-auto"><i
+                                        class="bi bi-download me-2"></i>Download</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div
+                                class="card audio-card p-4 h-100 border-0 shadow-sm custom-audio-player text-center d-flex flex-column align-items-center">
+                                <div class="mb-3">
+                                    <button class="btn btn-primary rounded-circle play-btn mb-3 mx-auto"
+                                        style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-play-fill fs-2"></i>
+                                    </button>
+                                    <h5 class="fw-bold mb-1">Twinkle Twinkle</h5>
+                                    <p class="text-muted small">A gentle lullaby for your little star's peaceful sleep.
+                                    </p>
+                                </div>
+                                <div class="progress mb-3 mx-auto" style="height: 6px; width: 100%;">
+                                    <div class="progress-bar-inner bg-primary h-100" style="width: 0%;"></div>
+                                </div>
+                                <audio src="audio/twinkle.mp3" class="d-none"></audio>
+                                <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill w-100 mt-auto"><i
+                                        class="bi bi-download me-2"></i>Download</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div
+                                class="card audio-card p-4 h-100 border-0 shadow-sm custom-audio-player text-center d-flex flex-column align-items-center">
+                                <div class="mb-3">
+                                    <button class="btn btn-primary rounded-circle play-btn mb-3 mx-auto"
+                                        style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-play-fill fs-2"></i>
+                                    </button>
+                                    <h5 class="fw-bold mb-1">Old MacDonald</h5>
+                                    <p class="text-muted small">Have fun with farm animal sounds and rhythms.</p>
+                                </div>
+                                <div class="progress mb-3 mx-auto" style="height: 6px; width: 100%;">
+                                    <div class="progress-bar-inner bg-primary h-100" style="width: 0%;"></div>
+                                </div>
+                                <audio src="audio/macdonald.mp3" class="d-none"></audio>
+                                <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill w-100 mt-auto"><i
+                                        class="bi bi-download me-2"></i>Download</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div
+                                class="card audio-card p-4 h-100 border-0 shadow-sm custom-audio-player text-center d-flex flex-column align-items-center">
+                                <div class="mb-3">
+                                    <button class="btn btn-primary rounded-circle play-btn mb-3 mx-auto"
+                                        style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-play-fill fs-2"></i>
+                                    </button>
+                                    <h5 class="fw-bold mb-1">Itsy Bitsy Spider</h5>
+                                    <p class="text-muted small">Fingertip exercise and melodic climbing fun.</p>
+                                </div>
+                                <div class="progress mb-3 mx-auto" style="height: 6px; width: 100%;">
+                                    <div class="progress-bar-inner bg-primary h-100" style="width: 0%;"></div>
+                                </div>
+                                <audio src="audio/spider.mp3" class="d-none"></audio>
+                                <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill w-100 mt-auto"><i
+                                        class="bi bi-download me-2"></i>Download</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div
+                                class="card audio-card p-4 h-100 border-0 shadow-sm custom-audio-player text-center d-flex flex-column align-items-center">
+                                <div class="mb-3">
+                                    <button class="btn btn-primary rounded-circle play-btn mb-3 mx-auto"
+                                        style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="bi bi-play-fill fs-2"></i>
+                                    </button>
+                                    <h5 class="fw-bold mb-1">Goodbye Song</h5>
+                                    <p class="text-muted small">A gentle melody to wrap up our time together.</p>
+                                </div>
+                                <div class="progress mb-3 mx-auto" style="height: 6px; width: 100%;">
+                                    <div class="progress-bar-inner bg-primary h-100" style="width: 0%;"></div>
+                                </div>
+                                <audio src="audio/goodbye.mp3" class="d-none"></audio>
+                                <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill w-100 mt-auto"><i
+                                        class="bi bi-download me-2"></i>Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lyrics & Activities Relocation -->
+    <section class="section-padding border-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card h-100 border-0 shadow-sm p-5 bg-soft">
+                        <div class="row">
+                            <div class="col-md-6 border-end">
+                                <h4 class="fw-bold text-secondary mb-3">Lyrics & Notes</h4>
+                                <div class="section-divider justify-content-start mb-3">
+                                    <span></span><span></span><span></span>
+                                    <i class="bi bi-star-fill"></i>
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <h6 class="fw-bold text-primary">Chorus - Hello Song</h6>
+                                <p class="text-muted">Hello everyone, we're glad you're here today!<br>Singing, dancing,
+                                    in
+                                    a melodic way.<br>Clap your hands and stomp your feet,<br>Make the rhythm and feel
+                                    the
+                                    beat!</p>
+                            </div>
+                            <div class="col-md-6 border-start ps-md-5">
+                                <h4 class="fw-bold text-secondary mb-3">At-Home Activities</h4>
+                                <div class="section-divider justify-content-start mb-3">
+                                    <span></span><span></span><span></span>
+                                    <i class="bi bi-star-fill"></i>
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3 d-flex align-items-center"><i
+                                            class="bi bi-file-earmark-pdf-fill text-danger me-3 fs-3"></i><span>Rhythm
+                                            Scavenger Hunt</span></li>
+                                    <li class="mb-3 d-flex align-items-center"><i
+                                            class="bi bi-file-earmark-pdf-fill text-danger me-3 fs-3"></i><span>Musical
+                                            Coloring Pages</span></li>
+                                </ul>
+                                <a href="#" class="btn btn-outline-primary w-100">Download All Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Expert Resources Section -->
+    <section class="section-padding bg-soft border-top">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h3 class="fw-bold text-secondary mb-2">Expert Guides & Insights</h3>
+                <div class="section-divider justify-content-center">
+                    <span></span><span></span><span></span>
+                    <i class="bi bi-star-fill"></i>
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm hover-lift overflow-hidden">
+                        <img src="musical_reading_corner_1774953659925.png" class="card-img-top"
+                            alt="Musical Reading Corner" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">Musical Reading Corner</h5>
+                            <p class="text-muted small">Curated books that inspire rhythm and melody in toddlers, from
+                                "Barnyard Dance" to "The Jazz Fly."</p>
+                            <a href="#" class="text-primary text-decoration-none fw-bold mt-auto d-inline-block">View
+                                Book List <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm hover-lift overflow-hidden">
+                        <img src="home_instrument_guide_1774953675321.png" class="card-img-top"
+                            alt="Home Instrument Guide" style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">Home Instrument Guide</h5>
+                            <p class="text-muted small">Practical advice on choosing age-appropriate instruments like
+                                egg shakers and hand drums for your home.</p>
+                            <a href="#"
+                                class="text-primary text-decoration-none fw-bold mt-auto d-inline-block">Download Guide
+                                <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm hover-lift overflow-hidden">
+                        <img src="science_of_song_1774953692626.png" class="card-img-top" alt="The Science of Song"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">The Science of Song</h5>
+                            <p class="text-muted small">In-depth articles from pediatric experts on how musical
+                                exploration triggers cognitive developmental milestones.</p>
+                            <a href="#" class="text-primary text-decoration-none fw-bold mt-auto d-inline-block">Read
+                                Articles <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Experience & Support Section -->
+    <section class="section-padding border-top">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h3 class="fw-bold text-secondary mb-2">Digital Experience & Support</h3>
+                <div class="section-divider justify-content-center">
+                    <span></span><span></span><span></span>
+                    <i class="bi bi-star-fill"></i>
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm p-4 hover-lift">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-box bg-primary-subtle text-primary p-3 rounded-4 me-3">
+                                <i class="bi bi-person-gear fs-3"></i>
+                            </div>
+                            <h5 class="fw-bold mb-0">Parent Portal Tutorial</h5>
+                        </div>
+                        <p class="text-muted small">Learn how to manage your student profiles, book upcoming classes,
+                            and check your musical schedule effortlessly from your dashboard.</p>
+                        <a href="dashboard.html" class="text-primary text-decoration-none fw-bold mt-auto">Go to
+                            Dashboard <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm p-4 hover-lift">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-box bg-primary-subtle text-primary p-3 rounded-4 me-3">
+                                <i class="bi bi-mouse3 fs-3"></i>
+                            </div>
+                            <h5 class="fw-bold mb-0">Website & Library Tour</h5>
+                        </div>
+                        <p class="text-muted small">Discover expert tips on quickly navigating our song collections,
+                            finding activity sheets, and exploring our pedagogical insights.</p>
+                        <a href="#" class="text-primary text-decoration-none fw-bold mt-auto">Start the Tour <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="img/logo.png" alt="Logo" height="40" class="me-2">
+                        <span class="brand-font fs-4 text-primary">Joyful Notes</span>
+                    </div>
+                    <p class="text-muted">Nurturing young minds through the joy of music and community. Join us in a
+                        musical journey that starts from the very beginning.</p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 ms-lg-auto">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="classes.html" class="text-muted text-decoration-none">Classes</a></li>
+                        <li class="mb-2"><a href="schedule.html" class="text-muted text-decoration-none">Schedule</a>
+                        </li>
+                        <li class="mb-2"><a href="resources.html" class="text-muted text-decoration-none">Resources</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="testimonials.html"
+                                class="text-muted text-decoration-none">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-4">Contact Info</h5>
+                    <p class="text-muted mb-2"><i class="bi bi-geo-alt-fill text-primary me-2"></i> 123 Music Lane,
+                        Piano City</p>
+                    <p class="text-muted mb-2"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (555) 123-4567
+                    </p>
+                    <p class="text-muted mb-2"><i class="bi bi-envelope-fill text-primary me-2"></i>
+                        hello@joyfulnotes.com</p>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center text-muted">
+                <p class="small mb-0">&copy; 2026 Joyful Notes Music Classes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

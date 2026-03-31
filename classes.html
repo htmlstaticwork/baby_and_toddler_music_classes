@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Classes | Joyful Notes</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/461/461238.png">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="img/logo.png" alt="Joyful Notes Logo" class="me-2">
+                <span class="brand-font fs-3 text-primary">Joyful Notes</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1 (Organic)</a></li>
+                            <li><a class="dropdown-item" href="home2.html">Home 2 (Premium)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="classes.html">Classes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <!-- Icons Section -->
+                    <li class="nav-item nav-icon-item dropdown">
+                        <a href="#" class="nav-icon-link nav-icon-bordered dropdown-toggle no-caret" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" title="Dashboard">
+                            <i class="bi bi-speedometer2"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-4 p-2 mt-2">
+                            <li>
+                                <h6 class="dropdown-header small text-uppercase opacity-50">Select Dashboard</h6>
+                            </li>
+                            <li><a class="dropdown-item rounded-3 py-2" href="dashboard.html?role=parent"><i
+                                        class="bi bi-person-fill me-2 text-primary"></i> Parents Dashboard</a></li>
+                            <li><a class="dropdown-item rounded-3 py-2" href="dashboard.html?role=teacher"><i
+                                        class="bi bi-shield-lock-fill me-2 text-secondary"></i> Admin Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <button id="theme-toggle" class="toggle-btn nav-icon-bordered" title="Toggle Theme"><i
+                                class="bi bi-moon-fill"></i></button>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <button id="rtl-toggle" class="toggle-btn nav-icon-bordered" title="Toggle RTL">RTL</button>
+                    </li>
+                    <li class="nav-item nav-icon-item">
+                        <a href="login.html" class="nav-icon-link nav-icon-bordered" title="User Profile"><i
+                                class="bi bi-person-circle"></i></a>
+                    </li>
+
+                    <!-- Book Button -->
+                    <li class="nav-item ms-lg-3">
+                        <a href="book.html" class="btn btn-primary px-4">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Classes Header -->
+    <header class="bg-soft section-padding text-center position-relative overflow-hidden">
+        <div class="container position-relative z-1">
+            <h1 class="display-4 fw-bold text-secondary mb-3">Our Music Classes</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">Musical journeys designed for every stage of
+                early development, from newborn to three years old.</p>
+        </div>
+        <!-- Decorative Music Icons -->
+        <div class="position-absolute top-0 start-0 w-100 h-100 pointer-events-none opacity-10">
+            <i class="bi bi-music-note-beamed position-absolute text-primary fs-1" style="top: 10%; left: 5%;"></i>
+            <i class="bi bi-music-note position-absolute text-primary fs-1" style="bottom: 20%; right: 10%;"></i>
+            <i class="bi bi-mic position-absolute text-primary fs-1" style="top: 30%; right: 5%;"></i>
+            <i class="bi bi-music-note-list position-absolute text-primary fs-1" style="bottom: 10%; left: 15%;"></i>
+        </div>
+    </header>
+
+    <!-- Class Categories -->
+    <section class="section-padding">
+        <div class="container">
+            <!-- Baby Classes -->
+            <div id="baby" class="row align-items-center mb-5 pb-5 border-bottom">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="baby_music_class_1774954250443.png" alt="Baby Music Class"
+                        class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <span class="badge bg-primary px-3 py-2 rounded-pill mb-3">0 – 12 Months</span>
+                    <h2 class="display-5 fw-bold text-secondary mb-2">Baby Classes</h2>
+                    <div class="section-divider justify-content-start mb-4">
+                        <span></span><span></span><span></span>
+                        <i class="bi bi-star-fill"></i>
+                        <span></span><span></span><span></span>
+                    </div>
+                    <p class="mb-4">Our Baby Classes are a gentle introduction to the world of music. We focus on
+                        sensory play, bonding, and early brain development through soft sounds, lullabies, and rhythmic
+                        movement.</p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold"><i class="bi bi-clock text-primary me-2"></i> Duration</h5>
+                            <p class="text-muted">45 Minutes per session</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold"><i class="bi bi-activity text-primary me-2"></i> Activities</h5>
+                            <p class="text-muted">Singing, Movement, Gentle Sensory Play</p>
+                        </div>
+                    </div>
+                    <div class="bg-soft p-4 rounded-4 mb-4">
+                        <h5 class="fw-bold text-secondary mb-3">Learning Outcomes</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Sensory
+                                Recognition</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Parental Bonding
+                            </li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Emotional Regulation</li>
+                        </ul>
+                    </div>
+                    <a href="book.html?class=baby" class="btn btn-primary">Book This Class</a>
+                </div>
+            </div>
+
+            <!-- Toddler Classes -->
+            <div id="toddler" class="row align-items-center mb-5 pb-5 border-bottom">
+                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                    <img src="toddler_music_class_1774954267960.png" alt="Toddler Music Class"
+                        class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-lg-6 pe-lg-5 order-lg-1">
+                    <span class="badge bg-secondary px-3 py-2 rounded-pill mb-3">1 – 3 Years</span>
+                    <h2 class="display-5 fw-bold text-secondary mb-2">Toddler Classes</h2>
+                    <div class="section-divider justify-content-start mb-4">
+                        <span></span><span></span><span></span>
+                        <i class="bi bi-star-fill"></i>
+                        <span></span><span></span><span></span>
+                    </div>
+                    <p class="mb-4">Designed for the energetic and curious toddler, these classes encourage active
+                        participation through percussion instruments, dancing, and musical games that promote physical
+                        and social skills.</p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold"><i class="bi bi-clock text-primary me-2"></i> Duration</h5>
+                            <p class="text-muted">45 Minutes per session</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold"><i class="bi bi-activity text-primary me-2"></i> Activities</h5>
+                            <p class="text-muted">Drumming, Dancing, Group Singing</p>
+                        </div>
+                    </div>
+                    <div class="bg-soft p-4 rounded-4 mb-4">
+                        <h5 class="fw-bold text-secondary mb-3">Learning Outcomes</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Rhythm &
+                                Coordination</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Social
+                                Interaction Skills</li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Language Development</li>
+                        </ul>
+                    </div>
+                    <a href="book.html?class=toddler" class="btn btn-primary">Book This Class</a>
+                </div>
+            </div>
+
+            <!-- Mixed Age Classes -->
+            <div id="mixed" class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="mixed_age_music_class_1774954285340.png" alt="Mixed Age Music Class"
+                        class="img-fluid rounded-4 shadow">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <span class="badge bg-accent text-dark px-3 py-2 rounded-pill mb-3">All Ages (0 – 5 Years)</span>
+                    <h2 class="display-5 fw-bold text-secondary mb-2">Mixed Age Classes</h2>
+                    <div class="section-divider justify-content-start mb-4">
+                        <span></span><span></span><span></span>
+                        <i class="bi bi-star-fill"></i>
+                        <span></span><span></span><span></span>
+                    </div>
+                    <p class="mb-4">Perfect for families with more than one child, our Mixed Age classes create a
+                        collaborative environment where siblings can learn from each other and participate in musical
+                        play together.</p>
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold"><i class="bi bi-clock text-primary me-2"></i> Duration</h5>
+                            <p class="text-muted">45 Minutes per session</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold"><i class="bi bi-activity text-primary me-2"></i> Activities</h5>
+                            <p class="text-muted">Storytelling, Collaborative Play, Multi-Instrument</p>
+                        </div>
+                    </div>
+                    <div class="bg-soft p-4 rounded-4 mb-4">
+                        <h5 class="fw-bold text-secondary mb-3">Learning Outcomes</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Family Bonding
+                            </li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Peer-to-Peer
+                                Learning</li>
+                            <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Creative Expression</li>
+                        </ul>
+                    </div>
+                    <a href="book.html?class=mixed" class="btn btn-primary">Book This Class</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Packages -->
+    <section class="section-padding bg-soft">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-secondary mb-2">Pricing Packages</h2>
+                <div class="section-divider">
+                    <span></span><span></span><span></span>
+                    <i class="bi bi-star-fill"></i>
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 text-center">
+                        <h4 class="fw-bold mb-4">Trial Class</h4>
+                        <div class="display-4 fw-bold text-primary mb-4">$15</div>
+                        <ul class="list-unstyled mb-5">
+                            <li class="mb-3 text-muted">Single session entry</li>
+                            <li class="mb-3 text-muted">Meet the teachers</li>
+                            <li class="mb-3 text-muted">A taste of our method</li>
+                        </ul>
+                        <a href="book.html?package=trial" class="btn btn-outline-primary mt-auto">Choose Trial</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center border-primary shadow-lg"
+                        style="border: 2px solid var(--primary) !important;">
+                        <span class="badge bg-primary rounded-pill mb-3 align-self-center px-4">Most Popular</span>
+                        <h4 class="fw-bold mb-4">Monthly Pass</h4>
+                        <div class="display-4 fw-bold text-primary mb-4">$85</div>
+                        <ul class="list-unstyled mb-5">
+                            <li class="mb-3">4 Classes per month</li>
+                            <li class="mb-3">Priority scheduling</li>
+                            <li class="mb-3">Resource access</li>
+                            <li class="mb-3">Bring a friend once</li>
+                        </ul>
+                        <a href="book.html?package=monthly" class="btn btn-primary mt-auto">Choose Monthly</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center">
+                        <h4 class="fw-bold mb-4">Full Series</h4>
+                        <div class="display-4 fw-bold text-primary mb-4">$220</div>
+                        <ul class="list-unstyled mb-5">
+                            <li class="mb-3 text-muted">12 Classes (Full Term)</li>
+                            <li class="mb-3 text-muted">Free Songbook</li>
+                            <li class="mb-3 text-muted">Exclusive events</li>
+                        </ul>
+                        <a href="book.html?package=series" class="btn btn-outline-primary mt-auto">Choose Series</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid px-md-5 px-4">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="img/logo.png" alt="Logo" height="40" class="me-2">
+                        <span class="brand-font fs-4 text-primary">Joyful Notes</span>
+                    </div>
+                    <p class="text-muted">Nurturing young minds through the joy of music and community. Join us in a
+                        musical journey that starts from the very beginning.</p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="text-secondary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 ms-lg-auto">
+                    <h5 class="fw-bold mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="classes.html" class="text-muted text-decoration-none">Classes</a></li>
+                        <li class="mb-2"><a href="schedule.html" class="text-muted text-decoration-none">Schedule</a>
+                        </li>
+                        <li class="mb-2"><a href="resources.html" class="text-muted text-decoration-none">Resources</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-4">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-muted text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="faq.html" class="text-muted text-decoration-none">FAQ</a></li>
+                        <li class="mb-2"><a href="testimonials.html"
+                                class="text-muted text-decoration-none">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-4">Contact Info</h5>
+                    <p class="text-muted mb-2"><i class="bi bi-geo-alt-fill text-primary me-2"></i> 123 Music Lane,
+                        Piano City</p>
+                    <p class="text-muted mb-2"><i class="bi bi-telephone-fill text-primary me-2"></i> +1 (555) 123-4567
+                    </p>
+                    <p class="text-muted mb-2"><i class="bi bi-envelope-fill text-primary me-2"></i>
+                        hello@joyfulnotes.com</p>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center text-muted">
+                <p class="small mb-0">&copy; 2026 Joyful Notes Music Classes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
