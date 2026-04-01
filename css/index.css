@@ -712,26 +712,16 @@ footer .d-flex.align-items-center img {
 /* Universal Star Header Styling */
 .star-header {
     position: relative;
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-    border-bottom: 2px solid var(--dash-border);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 15px;
 }
 
 .star-header::after {
-    content: "\f586";
-    /* star-fill */
-    font-family: "bootstrap-icons";
-    position: absolute;
-    bottom: -14px;
-    left: 20px;
-    background: var(--dash-card-bg);
-    padding: 0 10px;
-    color: var(--primary);
-    font-size: 1.2rem;
-    transition: var(--transition);
+    display: none;
 }
 
 .star-header h5 {
@@ -806,7 +796,7 @@ footer .d-flex.align-items-center img {
 
 [data-theme="dark"] .staff-card h4 {
     color: #ffffff !important;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .scroll-top {
@@ -1749,32 +1739,33 @@ footer a:hover i {
     .navbar-brand img {
         height: 38px !important;
     }
-    
+
     .brand-font {
         font-size: 1.4rem !important;
     }
-    
+
     .nav-link {
         margin: 0 0.15rem !important;
         font-size: 0.85rem !important;
         padding-left: 5px !important;
         padding-right: 5px !important;
     }
-    
+
     .nav-icon-item {
         margin: 0 2px !important;
     }
-    
-    .nav-icon-link, .toggle-btn {
+
+    .nav-icon-link,
+    .toggle-btn {
         width: 36px !important;
         height: 36px !important;
     }
-    
+
     .navbar .btn-primary {
         padding: 0.6rem 1.2rem !important;
         font-size: 0.85rem !important;
     }
-    
+
     .container {
         max-width: 100% !important;
         padding-left: 20px !important;
@@ -1824,6 +1815,7 @@ footer a:hover i {
         align-items: center !important;
         text-align: center !important;
     }
+
     .schedule-filters .col-md-auto {
         width: 100% !important;
         display: flex !important;
@@ -1831,10 +1823,12 @@ footer a:hover i {
         align-items: center !important;
         margin-bottom: 20px !important;
     }
+
     .schedule-filters label {
         margin-right: 0 !important;
         margin-bottom: 8px !important;
     }
+
     .schedule-filters select {
         width: 100% !important;
         max-width: 280px !important;
@@ -1843,14 +1837,17 @@ footer a:hover i {
 
 /* Classes Page: Universal Tablet/Mobile Centering */
 @media (max-width: 1024px) {
-    #classes-page section:not(footer), 
+
+    #classes-page section:not(footer),
     .classes-section {
         text-align: center !important;
     }
+
     #classes-page .section-divider {
         margin-left: auto !important;
         margin-right: auto !important;
     }
+
     #classes-page .row {
         justify-content: center !important;
     }
@@ -1873,10 +1870,12 @@ footer a:hover i {
         height: 185px !important;
         margin-bottom: 15px !important;
     }
+
     .hexagon-md {
         width: 100px !important;
         height: 115px !important;
     }
+
     .hexagon-lg {
         width: 150px !important;
         height: 173px !important;
@@ -1888,6 +1887,7 @@ footer a:hover i {
         width: 140px !important;
         height: 162px !important;
     }
+
     .hexagon-md {
         width: 90px !important;
         height: 104px !important;
@@ -1900,12 +1900,15 @@ footer a:hover i {
         text-align: center;
         padding-top: 2rem;
     }
+
     .display-1 {
         font-size: 3.5rem !important;
     }
+
     .display-4 {
         font-size: 2.8rem !important;
     }
+
     .section-padding {
         padding: 60px 0;
     }
@@ -1913,10 +1916,12 @@ footer a:hover i {
 
 /* Global Tablet/Mobile Alignment for Section Headings and Dividers */
 @media (max-width: 991.98px) {
+
     .section-padding h2,
     .section-padding .display-5 {
         text-align: center !important;
     }
+
     .section-padding .section-divider {
         justify-content: center !important;
         margin-left: auto !important;
@@ -1929,16 +1934,77 @@ footer a:hover i {
     .top-bar {
         padding: 0 15px;
     }
-    
+
     #dashboard-content {
         padding: 12px !important;
     }
-    
+
     .stat-card .fs-4 {
         font-size: 1.2rem !important;
     }
-    
+
     .sidebar {
         width: 260px;
+    }
+}
+
+/* Responsive Tables - Stacking Card Pattern */
+@media (max-width: 767.98px) {
+
+    .dashboard-section .table-responsive table,
+    .dashboard-section .table-responsive thead,
+    .dashboard-section .table-responsive tbody,
+    .dashboard-section .table-responsive th,
+    .dashboard-section .table-responsive td,
+    .dashboard-section .table-responsive tr {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .dashboard-section .table-responsive thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .dashboard-section .table-responsive tr {
+        border: 1px solid var(--dash-border);
+        border-radius: 12px;
+        margin-bottom: 20px;
+        padding: 15px;
+        background: var(--dash-card-bg);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .dashboard-section .table-responsive td {
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        position: relative;
+        padding: 8px 0 !important;
+        text-align: center !important;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center !important;
+        word-break: break-word;
+    }
+
+    .dashboard-section .table-responsive td:last-child {
+        border-bottom: 0;
+        margin-top: 5px;
+    }
+
+    .dashboard-section .table-responsive td::before {
+        content: attr(data-label);
+        position: static;
+        width: 100%;
+        margin-bottom: 4px;
+        text-align: center;
+        font-weight: 700;
+        color: var(--primary);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
 }

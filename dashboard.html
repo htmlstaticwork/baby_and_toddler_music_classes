@@ -123,26 +123,19 @@
             <!-- Top Bar -->
             <header class="top-bar">
                 <div class="d-flex align-items-center">
-                    <button class="btn d-lg-none me-3 p-0" onclick="toggleSidebar()"><i
-                            class="bi bi-list fs-2 text-primary"></i></button>
                     <!-- Mobile Logo -->
-                    <a href="index.html" class="d-flex d-lg-none align-items-center text-decoration-none me-3">
+                    <a href="index.html" class="d-flex d-lg-none align-items-center text-decoration-none me-2">
                         <img src="img/logo.png" alt="Logo" height="30" class="me-2">
                         <span class="brand-font text-primary fs-6">Joyful Notes</span>
                     </a>
-                    <h5 class="fw-bold text-secondary mb-0 d-none d-md-block" id="section-title">Dashboard</h5>
                 </div>
 
-                <div class="d-flex align-items-center gap-2">
-                    <div class="vr mx-2 opacity-25"></div>
-
+                <div class="d-flex align-items-center gap-2 position-relative">
                     <button id="theme-toggle-dash" class="toggle-btn nav-icon-bordered" title="Toggle Theme"><i
                             class="bi bi-moon-fill"></i></button>
                     <button id="rtl-toggle-dash" class="toggle-btn nav-icon-bordered" title="Toggle RTL">RTL</button>
 
-                    <div class="vr mx-2 opacity-25"></div>
-
-                    <div class="dropdown">
+                    <div class="dropdown d-none d-lg-block">
                         <a href="#" class="d-flex align-items-center text-decoration-none text-secondary"
                             data-bs-toggle="dropdown">
                             <span class="me-2 d-none d-sm-inline fw-bold" id="user-name">Jane Doe</span>
@@ -150,12 +143,104 @@
                                 height="35" id="user-avatar">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end rounded-3 shadow-sm border-0">
-                            <li><a class="dropdown-item" href="#">Account Profile</a></li>
+                            <li><a class="dropdown-item" href="javascript:void(0)"
+                                    onclick="showSection('profile')">Account Profile</a></li>
                             <li><a class="dropdown-item" href="#">Help Center</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                         </ul>
+                    </div>
+
+                    <button class="navbar-toggler d-lg-none ms-2 p-1 border-0" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#dashMobileMenu">
+                        <i class="bi bi-list fs-1 text-primary"></i>
+                    </button>
+
+                    <!-- Dashboard Mobile Menu (Floating Dropdown) -->
+                    <div class="collapse d-lg-none bg-white shadow-lg rounded-4 border" id="dashMobileMenu"
+                        style="position: absolute; width: 280px; right: 0; top: calc(100% + 15px); z-index: 1050; border-color: rgba(0,0,0,0.08);">
+                        <div class="p-3">
+                            <!-- Mobile User Profile -->
+                            <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
+                                <img src="https://i.pravatar.cc/100?u=jane" class="rounded-circle border me-3"
+                                    width="45" height="45" id="user-avatar-mobile">
+                                <div class="overflow-hidden">
+                                    <h6 class="fw-bold mb-0 text-dark text-truncate" id="user-name-mobile">Jane Doe</h6>
+                                    <a href="javascript:void(0)" onclick="showSection('profile')"
+                                        class="xsmall text-primary text-decoration-none">View Profile</a>
+                                </div>
+                            </div>
+                            <ul class="nav flex-column gap-1" id="nav-parent-mobile">
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" onclick="showSection('home')"
+                                        class="sidebar-link active rounded-pill">
+                                        <i class="bi bi-grid-fill"></i> Dashboard Home
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" onclick="showSection('bookings')"
+                                        class="sidebar-link rounded-pill">
+                                        <i class="bi bi-calendar-event-fill"></i> My Bookings
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" onclick="showSection('songs')"
+                                        class="sidebar-link rounded-pill">
+                                        <i class="bi bi-music-note-beamed"></i> My Songs
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" onclick="showSection('profile')"
+                                        class="sidebar-link rounded-pill">
+                                        <i class="bi bi-person-fill"></i> Child Profile
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" onclick="showSection('payments')"
+                                        class="sidebar-link rounded-pill">
+                                        <i class="bi bi-credit-card-fill"></i> Payments
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav flex-column gap-1" id="nav-teacher-mobile" style="display: none;">
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" onclick="showSection('admin-home')"
+                                        class="sidebar-link rounded-pill">
+                                        <i class="bi bi-grid-fill"></i> Admin Overview
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" onclick="showSection('admin-teachers')"
+                                        class="sidebar-link rounded-pill">
+                                        <i class="bi bi-person-vcard-fill"></i> Manage Teachers
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" onclick="showSection('admin-students')"
+                                        class="sidebar-link rounded-pill">
+                                        <i class="bi bi-people-fill"></i> Student Roster
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" onclick="showSection('admin-schedule')"
+                                        class="sidebar-link rounded-pill">
+                                        <i class="bi bi-calendar-check-fill"></i> Class Schedules
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:void(0)" onclick="showSection('admin-finance')"
+                                        class="sidebar-link rounded-pill">
+                                        <i class="bi bi-wallet2"></i> Earnings
+                                    </a>
+                                </li>
+                            </ul>
+                            <hr class="opacity-10 my-2">
+                            <a href="index.html" class="sidebar-link text-danger rounded-pill">
+                                <i class="bi bi-box-arrow-left"></i> Logout
+                            </a>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -168,7 +253,8 @@
                     <div
                         class="card p-3 border-0 mb-3 bg-primary text-white shadow-sm overflow-hidden position-relative rounded-4">
                         <div class="position-relative z-1">
-                            <h2 class="fw-bold mb-2">Welcome Back, Jane! 👋</h2>
+                            <h2 class="fw-bold mb-2">Parents Dashboard</h2>
+                            <h3 class="fw-bold mb-2">Welcome Back, Jane! 👋</h3>
                             <p class="mb-4 opacity-75">Leo has an upcoming "Baby Music Class" tomorrow at 9:30 AM.</p>
                             <a href="schedule.html"
                                 class="btn btn-light btn-white px-4 rounded-pill fw-bold text-primary border-0">View
@@ -184,8 +270,8 @@
                                 <h5 class="fw-bold">Upcoming Classes</h5>
                             </div>
                             <div class="card p-3 border-0 shadow-sm mb-3 rounded-4 stat-card">
-                                <div class="d-flex align-items-center flex-wrap gap-3">
-                                    <div class="bg-soft text-primary p-3 rounded-4 me-md-2 text-center"
+                                <div class="d-flex align-items-center flex-wrap gap-2 gap-md-3">
+                                    <div class="bg-soft text-primary p-2 p-md-3 rounded-4 me-md-2 text-center"
                                         style="width: 70px;">
                                         <div class="small fw-bold">OCT</div>
                                         <div class="fs-4 fw-bold">29</div>
@@ -195,8 +281,8 @@
                                         <p class="text-muted small mb-0"><i class="bi bi-clock me-2"></i>09:30 AM -
                                             10:15 AM</p>
                                     </div>
-                                    <div class="ms-md-auto text-md-end">
-                                        <span class="badge bg-soft text-primary px-3 rounded-pill mb-2">Confirmed</span>
+                                    <div class="ms-md-auto text-md-end w-100 w-md-auto mt-2 mt-md-0 d-flex flex-row flex-md-column justify-content-between align-items-center align-items-md-end">
+                                        <span class="badge bg-soft text-primary px-3 rounded-pill mb-md-2">Confirmed</span>
                                         <p class="small text-muted mb-0">Teacher: Ms. Sarah</p>
                                     </div>
                                 </div>
@@ -225,10 +311,11 @@
 
                     <div class="row g-3 mb-3">
                         <div class="col-md-8">
-                            <div class="star-header">
-                                <h5 class="fw-bold">Teacher Progress Feedback</h5>
-                            </div>
-                            <div class="card p-3 border-0 shadow-sm rounded-4 bg-soft-primary">
+
+                            <div class="card p-3 border-0 shadow-sm rounded-4 bg-soft-primary text-center">
+                                <div class="star-header">
+                                    <h5 class="fw-bold">Teacher Progress Feedback</h5>
+                                </div>
                                 <div class="d-flex align-items-center mb-3">
                                     <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100"
                                         width="45" class="rounded-circle me-3">
@@ -264,45 +351,6 @@
                         </div>
                     </div>
 
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="star-header">
-                                <h5 class="fw-bold">Recent Activity Log</h5>
-                            </div>
-                            <div class="card p-3 border-0 shadow-sm rounded-4">
-                                <div class="vstack gap-3">
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="bg-soft-primary p-2 rounded-3 text-primary"><i
-                                                class="bi bi-check-circle"></i></div>
-                                        <div class="flex-grow-1">
-                                            <p class="fw-bold small mb-0">Attended Baby Music Class</p>
-                                            <p class="text-muted xsmall mb-0">Oct 29, 2026 • MS. Sarah</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex align-items-center gap-3">
-                                        <div class="bg-soft-secondary p-2 rounded-3 text-secondary"><i
-                                                class="bi bi-star-fill"></i></div>
-                                        <div class="flex-grow-1">
-                                            <p class="fw-bold small mb-0">Earned "Rhythm Master" Badge</p>
-                                            <p class="text-muted xsmall mb-0">Oct 22, 2026 • Achievement</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="star-header">
-                                <h5 class="fw-bold">Parenting Tips</h5>
-                            </div>
-                            <div class="card p-3 border-0 shadow-sm rounded-4 bg-soft-light"
-                                style="background-color: #fff8f0 !important;">
-                                <h6 class="fw-bold text-warning mb-2"><i class="bi bi-lightbulb me-2"></i>Practice at
-                                    Home</h6>
-                                <p class="text-muted small mb-0">Keep a steady beat while listening to your favorite
-                                    nursery rhymes this week. It helps with early coordination!</p>
-                            </div>
-                        </div>
-                    </div>
                 </section>
 
                 <!-- [PARENT] My Bookings Section -->
@@ -323,12 +371,12 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Baby Music Class</td>
-                                        <td>Oct 29, 2026 - 9:30 AM</td>
-                                        <td><span
+                                        <td data-label="Class Name">Baby Music Class</td>
+                                        <td data-label="Date & Time">Oct 29, 2026 - 9:30 AM</td>
+                                        <td data-label="Status"><span
                                                 class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Confirmed</span>
                                         </td>
-                                        <td class="text-end">
+                                        <td data-label="Actions" class="text-end">
                                             <button class="btn btn-sm btn-light border me-1">Reschedule</button>
                                             <button class="btn btn-sm btn-light border text-danger">Cancel</button>
                                         </td>
@@ -407,11 +455,13 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Oct 01, 2026</td>
-                                        <td>8-Week Baby Class</td>
-                                        <td class="fw-bold">$160.00</td>
-                                        <td><span class="badge bg-success rounded-pill px-3">Paid</span></td>
-                                        <td><a href="#" class="text-primary text-decoration-none"><i
+                                        <td data-label="Date">Oct 01, 2026</td>
+                                        <td data-label="Class Bundle">8-Week Baby Class</td>
+                                        <td data-label="Amount" class="fw-bold">$160.00</td>
+                                        <td data-label="Status"><span
+                                                class="badge bg-success rounded-pill px-3">Paid</span></td>
+                                        <td data-label="Invoice"><a href="#"
+                                                class="text-primary text-decoration-none"><i
                                                     class="bi bi-file-earmark-pdf me-1"></i> PDF</a></td>
                                     </tr>
                                 </tbody>
@@ -540,10 +590,10 @@
                             </div>
                             <div class="card p-3 border-0 shadow-sm rounded-4">
                                 <div class="table-responsive">
-                                    <table class="table align-middle">
+                                    <table class="table align-middle text-center text-md-start">
                                         <thead>
                                             <tr class="text-muted small">
-                                                <th>Instructor</th>
+                                                <th class="text-center text-md-start">Instructor</th>
                                                 <th>Today's Classes</th>
                                                 <th>Main Specialty</th>
                                                 <th>Availability</th>
@@ -552,9 +602,11 @@
                                         <tbody>
                                             <tr>
                                                 <td>
-                                                    <div class="d-flex align-items-center"><img
-                                                            src="https://i.pravatar.cc/100?u=sarah" width="30"
-                                                            class="rounded-circle me-2">Sarah Harrison</div>
+                                                    <div
+                                                        class="d-flex align-items-center justify-content-center justify-content-md-start">
+                                                        <img src="https://i.pravatar.cc/100?u=sarah" width="30"
+                                                            class="rounded-circle me-2">Sarah Harrison
+                                                    </div>
                                                 </td>
                                                 <td><span class="badge bg-soft text-primary">3 Classes</span></td>
                                                 <td>Piano / Early Years</td>
@@ -564,9 +616,11 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <div class="d-flex align-items-center"><img
-                                                            src="https://i.pravatar.cc/100?u=jack" width="30"
-                                                            class="rounded-circle me-2">Jack Wilson</div>
+                                                    <div
+                                                        class="d-flex align-items-center justify-content-center justify-content-md-start">
+                                                        <img src="https://i.pravatar.cc/100?u=jack" width="30"
+                                                            class="rounded-circle me-2">Jack Wilson
+                                                    </div>
                                                 </td>
                                                 <td><span class="badge bg-soft text-secondary">2 Classes</span></td>
                                                 <td>Guitar / Toddler</td>
@@ -584,11 +638,12 @@
                 <!-- [ADMIN] Student Roster Section -->
                 <section id="section-admin-students" class="dashboard-section" style="display:none;">
                     <div class="card p-3 border-0 shadow-sm rounded-4">
-                        <div class="star-header">
-                            <h5 class="fw-bold mb-0">Student Roster</h5>
-                            <div class="input-group input-group-sm" style="max-width: 300px;">
+                        <div class="star-header flex-column flex-md-row text-center text-md-start">
+                            <h5 class="fw-bold mb-3 mb-md-0">Student Roster</h5>
+                            <div class="input-group input-group-sm w-100 w-md-auto" style="max-width: 300px;">
                                 <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
-                                <input type="text" class="form-control border-start-0 shadow-none"
+                                <input type="text"
+                                    class="form-control border-start-0 shadow-none text-center text-md-start"
                                     placeholder="Search student name...">
                             </div>
                         </div>
@@ -693,9 +748,10 @@
                 <!-- [ADMIN] New Sections (Admin Management) -->
                 <section id="section-admin-teachers" class="dashboard-section" style="display:none;">
                     <div class="card p-3 border-0 shadow-sm rounded-4">
-                        <div class="star-header">
-                            <h5 class="fw-bold mb-0">Teacher Management</h5>
-                            <button class="btn btn-primary btn-sm rounded-pill px-3"><i class="bi bi-plus-lg me-1"></i>
+                        <div class="star-header flex-column flex-md-row text-center text-md-start">
+                            <h5 class="fw-bold mb-3 mb-md-0">Teacher Management</h5>
+                            <button class="btn btn-primary btn-sm rounded-pill px-4 py-2 w-100 w-md-auto shadow-sm"><i
+                                    class="bi bi-plus-lg me-1"></i>
                                 Add Teacher</button>
                         </div>
                         <div class="alert alert-soft-primary border-0 rounded-4">
@@ -703,22 +759,24 @@
                             loads, and manage instructor profiles.
                         </div>
                         <div class="table-responsive mt-3">
-                            <table class="table table-hover align-middle">
+                            <table class="table table-hover align-middle text-center text-md-start">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
+                                        <th class="text-center text-md-start">Name</th>
                                         <th>Specialty</th>
                                         <th>Weekly Classes</th>
                                         <th>Status</th>
-                                        <th class="text-end">Contact</th>
+                                        <th class="text-center text-md-end">Contact</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <div class="d-flex align-items-center"><img
-                                                    src="https://i.pravatar.cc/100?u=sarah" width="35"
-                                                    class="rounded-circle me-2">Sarah Harrison</div>
+                                            <div
+                                                class="d-flex align-items-center justify-content-center justify-content-md-start">
+                                                <img src="https://i.pravatar.cc/100?u=sarah" width="35"
+                                                    class="rounded-circle me-2">Sarah Harrison
+                                            </div>
                                         </td>
                                         <td>Piano / Early Years</td>
                                         <td><span class="badge bg-soft text-primary px-3 rounded-pill">12 Classes</span>
@@ -726,7 +784,7 @@
                                         <td><span
                                                 class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Active</span>
                                         </td>
-                                        <td class="text-end"><button
+                                        <td class="text-center text-md-end"><button
                                                 class="btn btn-sm btn-light border rounded-circle"><i
                                                     class="bi bi-chat-dots-fill"></i></button></td>
                                     </tr>
@@ -738,9 +796,10 @@
 
                 <section id="section-admin-finance" class="dashboard-section" style="display:none;">
                     <div class="card p-3 border-0 shadow-sm rounded-4 mb-4">
-                        <div class="star-header">
-                            <h5 class="fw-bold">Earnings & Financial Reports</h5>
-                            <button class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-bold"><i
+                        <div class="star-header flex-column flex-md-row text-center text-md-start">
+                            <h5 class="fw-bold mb-3 mb-md-0">Earnings & Financial Reports</h5>
+                            <button
+                                class="btn btn-sm btn-outline-primary rounded-pill px-4 py-2 w-100 w-md-auto fw-bold"><i
                                     class="bi bi-download me-1"></i> Export Report</button>
                         </div>
                         <div class="row g-3 mb-3">
@@ -821,19 +880,19 @@
     <script src="js/main.js"></script>
     <script>
         // Main Section Management
+        // Main Section Management
         function showSection(sectionId) {
             // Hide all sections
             document.querySelectorAll('.dashboard-section').forEach(s => s.style.display = 'none');
-            // Deactivate all sidebar links
+            // Deactivate all links (sidebar and mobile menu)
             document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
 
             // Show target section
             const section = document.getElementById('section-' + sectionId);
             if (section) section.style.display = 'block';
 
-            // Activate corresponding sidebar link
-            const link = document.getElementById('link-' + sectionId);
-            if (link) link.classList.add('active');
+            // Activate corresponding links
+            document.querySelectorAll(`[onclick="showSection('${sectionId}')"]`).forEach(l => l.classList.add('active'));
 
             // Update page title
             const titles = {
@@ -852,9 +911,20 @@
             };
             document.getElementById('section-title').innerText = titles[sectionId] || 'Dashboard';
 
-            // Close mobile sidebar
-            if (window.innerWidth < 992) {
-                document.getElementById('sidebar').classList.remove('show');
+            // Immediate Close for all mobile navigation
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar) sidebar.classList.remove('show');
+            const overlay = document.getElementById('sidebar-overlay');
+            if (overlay) {
+                overlay.style.display = 'none';
+                overlay.classList.remove('show');
+            }
+
+            const menu = document.getElementById('dashMobileMenu');
+            if (menu) {
+                const bsCollapse = bootstrap.Collapse.getInstance(menu) || new bootstrap.Collapse(menu, { toggle: false });
+                bsCollapse.hide();
+                menu.classList.remove('show');
             }
 
             localStorage.setItem('dashboard-last-section', sectionId);
@@ -864,16 +934,24 @@
         function switchRole(role) {
             const navParent = document.getElementById('nav-parent');
             const navTeacher = document.getElementById('nav-teacher');
-            const btnParent = document.getElementById('role-parent');
-            const btnTeacher = document.getElementById('role-teacher');
+            const navParentMobile = document.getElementById('nav-parent-mobile');
+            const navTeacherMobile = document.getElementById('nav-teacher-mobile');
             const userName = document.getElementById('user-name');
             const userAvatar = document.getElementById('user-avatar');
 
             if (role === 'teacher') {
                 navParent.style.display = 'none';
                 navTeacher.style.display = 'flex';
-                userName.innerText = 'Sarah Harrison';
-                userAvatar.src = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80';
+                if (navParentMobile) navParentMobile.style.display = 'none';
+                if (navTeacherMobile) navTeacherMobile.style.display = 'flex';
+
+                const name = 'Sarah Harrison';
+                const avatar = 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80';
+
+                userName.innerText = name;
+                userAvatar.src = avatar;
+                if (document.getElementById('user-name-mobile')) document.getElementById('user-name-mobile').innerText = name;
+                if (document.getElementById('user-avatar-mobile')) document.getElementById('user-avatar-mobile').src = avatar;
 
                 // Switch to home if coming from a parent section
                 const lastSection = localStorage.getItem('dashboard-last-section');
@@ -885,8 +963,16 @@
             } else {
                 navParent.style.display = 'flex';
                 navTeacher.style.display = 'none';
-                userName.innerText = 'Jane Doe';
-                userAvatar.src = 'https://i.pravatar.cc/100?u=jane';
+                if (navParentMobile) navParentMobile.style.display = 'flex';
+                if (navTeacherMobile) navTeacherMobile.style.display = 'none';
+
+                const name = 'Jane Doe';
+                const avatar = 'https://i.pravatar.cc/100?u=jane';
+
+                userName.innerText = name;
+                userAvatar.src = avatar;
+                if (document.getElementById('user-name-mobile')) document.getElementById('user-name-mobile').innerText = name;
+                if (document.getElementById('user-avatar-mobile')) document.getElementById('user-avatar-mobile').src = avatar;
 
                 const lastSection = localStorage.getItem('dashboard-last-section');
                 if (!lastSection || lastSection.startsWith('admin-')) {
@@ -899,9 +985,10 @@
             localStorage.setItem('dashboard-role', role);
         }
 
-        // Mobile Sidebar Toggle
+        // Mobile Sidebar Toggle (For manual overrides if sidebar is visible)
         function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('show');
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar) sidebar.classList.toggle('show');
         }
 
         // Dashboard specific theme/RTL toggles (since dashboard doesn't use the standard header)

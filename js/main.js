@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const audio = player.querySelector('audio');
         const playBtn = player.querySelector('.play-btn');
         const progressBar = player.querySelector('.progress-bar-inner');
-        
+
         if (playBtn && audio) {
             playBtn.addEventListener('click', () => {
                 if (audio.paused) {
@@ -116,12 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Active Link Logic
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link, .dropdown-item, .home-dropdown-menu a');
-    
+
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (href === currentPath || (currentPath === '' && href === 'index.html')) {
             link.classList.add('active');
-            
+
             const homeCard = link.querySelector('.home-card');
             if (homeCard) homeCard.classList.add('active');
 
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Global Form Validation (Bootstrap style)
     const initFormValidation = () => {
         const forms = document.querySelectorAll('.needs-validation');
-        
+
         forms.forEach(form => {
             form.addEventListener('submit', (e) => {
                 if (!form.checkValidity()) {
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             const modal = new bootstrap.Modal(successModal);
                             modal.show();
                         } else {
-                             window.location.href = 'dashboard.html';
+                            window.location.href = 'dashboard.html';
                         }
                     }
                 }
@@ -204,8 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('sidebar-overlay');
         if (sidebar) {
-            sidebar.classList.toggle('active');
-            if (overlay) overlay.classList.toggle('active');
+            sidebar.classList.toggle('show');
+            if (overlay) overlay.classList.toggle('show');
         }
     };
 
