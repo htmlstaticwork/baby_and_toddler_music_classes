@@ -245,4 +245,17 @@ document.addEventListener('DOMContentLoaded', () => {
             window.toggleSidebar();
         });
     }
+
+    // Navbar Mobile Scroll Lock
+    const navbarCollapse = document.getElementById('navbarNav');
+    if (navbarCollapse) {
+        navbarCollapse.addEventListener('show.bs.collapse', () => {
+            if (window.innerWidth < 1200) {
+                document.body.style.overflow = 'hidden';
+            }
+        });
+        navbarCollapse.addEventListener('hide.bs.collapse', () => {
+            document.body.style.overflow = '';
+        });
+    }
 });
