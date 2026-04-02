@@ -159,7 +159,7 @@
 
                     <!-- Dashboard Mobile Menu (Floating Dropdown) -->
                     <div class="collapse d-lg-none bg-white shadow-lg rounded-4 border" id="dashMobileMenu"
-                        style="position: absolute; width: 280px; right: 0; top: calc(100% + 15px); z-index: 1050; border-color: rgba(0,0,0,0.08);">
+                        style="position: fixed; width: 280px; right: 20px; top: 75px; z-index: 2000; border-color: rgba(0,0,0,0.08);">
                         <div class="p-3">
                             <!-- Mobile User Profile -->
                             <div class="d-flex align-items-center mb-3 pb-3 border-bottom">
@@ -173,31 +173,35 @@
                             </div>
                             <ul class="nav flex-column gap-1" id="nav-parent-mobile">
                                 <li class="nav-item">
-                                    <a href="javascript:void(0)" onclick="showSection('home')"
-                                        class="sidebar-link active rounded-pill">
+                                    <a href="javascript:void(0)" onclick="showSection('home')" data-bs-toggle="collapse"
+                                        data-bs-target="#dashMobileMenu" class="sidebar-link active rounded-pill">
                                         <i class="bi bi-grid-fill"></i> Dashboard Home
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:void(0)" onclick="showSection('bookings')"
+                                        data-bs-toggle="collapse" data-bs-target="#dashMobileMenu"
                                         class="sidebar-link rounded-pill">
                                         <i class="bi bi-calendar-event-fill"></i> My Bookings
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:void(0)" onclick="showSection('songs')"
+                                        data-bs-toggle="collapse" data-bs-target="#dashMobileMenu"
                                         class="sidebar-link rounded-pill">
                                         <i class="bi bi-music-note-beamed"></i> My Songs
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:void(0)" onclick="showSection('profile')"
+                                        data-bs-toggle="collapse" data-bs-target="#dashMobileMenu"
                                         class="sidebar-link rounded-pill">
                                         <i class="bi bi-person-fill"></i> Child Profile
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:void(0)" onclick="showSection('payments')"
+                                        data-bs-toggle="collapse" data-bs-target="#dashMobileMenu"
                                         class="sidebar-link rounded-pill">
                                         <i class="bi bi-credit-card-fill"></i> Payments
                                     </a>
@@ -207,30 +211,35 @@
                             <ul class="nav flex-column gap-1" id="nav-teacher-mobile" style="display: none;">
                                 <li class="nav-item">
                                     <a href="javascript:void(0)" onclick="showSection('admin-home')"
+                                        data-bs-toggle="collapse" data-bs-target="#dashMobileMenu"
                                         class="sidebar-link rounded-pill">
                                         <i class="bi bi-grid-fill"></i> Admin Overview
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:void(0)" onclick="showSection('admin-teachers')"
+                                        data-bs-toggle="collapse" data-bs-target="#dashMobileMenu"
                                         class="sidebar-link rounded-pill">
                                         <i class="bi bi-person-vcard-fill"></i> Manage Teachers
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:void(0)" onclick="showSection('admin-students')"
+                                        data-bs-toggle="collapse" data-bs-target="#dashMobileMenu"
                                         class="sidebar-link rounded-pill">
                                         <i class="bi bi-people-fill"></i> Student Roster
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:void(0)" onclick="showSection('admin-schedule')"
+                                        data-bs-toggle="collapse" data-bs-target="#dashMobileMenu"
                                         class="sidebar-link rounded-pill">
                                         <i class="bi bi-calendar-check-fill"></i> Class Schedules
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:void(0)" onclick="showSection('admin-finance')"
+                                        data-bs-toggle="collapse" data-bs-target="#dashMobileMenu"
                                         class="sidebar-link rounded-pill">
                                         <i class="bi bi-wallet2"></i> Earnings
                                     </a>
@@ -281,8 +290,9 @@
                                         <p class="text-muted small mb-0"><i class="bi bi-clock me-2"></i>09:30 AM -
                                             10:15 AM</p>
                                     </div>
-                                    <div class="ms-md-auto text-md-end w-100 w-md-auto mt-2 mt-md-0 d-flex flex-row flex-md-column justify-content-between align-items-center align-items-md-end">
-                                        <span class="badge bg-soft text-primary px-3 rounded-pill mb-md-2">Confirmed</span>
+                                    <div
+                                        class="ms-md-auto text-center w-100 w-md-auto mt-2 mt-md-0 d-flex flex-column justify-content-center align-items-center">
+                                        <span class="badge bg-soft text-primary px-3 rounded-pill mb-2">Confirmed</span>
                                         <p class="small text-muted mb-0">Teacher: Ms. Sarah</p>
                                     </div>
                                 </div>
@@ -313,20 +323,20 @@
                         <div class="col-md-8">
 
                             <div class="card p-3 border-0 shadow-sm rounded-4 bg-soft-primary text-center">
-                                <div class="star-header">
+                                <div class="star-header justify-content-center">
                                     <h5 class="fw-bold">Teacher Progress Feedback</h5>
                                 </div>
-                                <div class="d-flex align-items-center mb-3">
+                                <div class="d-flex flex-column align-items-center text-center mb-3">
                                     <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100"
-                                        width="45" class="rounded-circle me-3">
+                                        width="45" class="rounded-circle mb-2">
                                     <div>
                                         <h6 class="fw-bold mb-0">Ms. Sarah Harrison</h6>
-                                        <p class="text-muted small mb-0">Piano Instructor</p>
+                                        <p class="text-muted small mb-2">Piano Instructor</p>
                                     </div>
-                                    <span
-                                        class="ms-auto badge bg-white text-primary rounded-pill border">Yesterday</span>
+                                    <span class="badge bg-white text-primary rounded-pill border">Yesterday</span>
                                 </div>
-                                <p class="mb-0 text-secondary">"Leo had a fantastic session yesterday! He is becoming
+                                <p class="mb-0 text-secondary text-center">"Leo had a fantastic session yesterday! He is
+                                    becoming
                                     much more confident with his rhythmic clapping. We'll start introducing the
                                     tambourine next week."</p>
                             </div>
@@ -911,20 +921,13 @@
             };
             document.getElementById('section-title').innerText = titles[sectionId] || 'Dashboard';
 
-            // Immediate Close for all mobile navigation
+            // Immediate Close for mobile navigation (Sidebar and Collapse Menu)
             const sidebar = document.getElementById('sidebar');
             if (sidebar) sidebar.classList.remove('show');
             const overlay = document.getElementById('sidebar-overlay');
             if (overlay) {
                 overlay.style.display = 'none';
                 overlay.classList.remove('show');
-            }
-
-            const menu = document.getElementById('dashMobileMenu');
-            if (menu) {
-                const bsCollapse = bootstrap.Collapse.getInstance(menu) || new bootstrap.Collapse(menu, { toggle: false });
-                bsCollapse.hide();
-                menu.classList.remove('show');
             }
 
             localStorage.setItem('dashboard-last-section', sectionId);

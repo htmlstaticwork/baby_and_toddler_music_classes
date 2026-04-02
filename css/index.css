@@ -118,6 +118,10 @@
     background-color: var(--secondary) !important;
 }
 
+.bg-accent {
+    background-color: var(--accent) !important;
+}
+
 [data-theme="dark"] {
     --bg-light: #121212;
     --bg-soft: #1E1E1E;
@@ -138,6 +142,25 @@
     --bs-secondary-color: var(--text-muted);
     --bs-tertiary-color: rgba(255, 255, 255, 0.5);
     --bs-emphasis-color: #FFFFFF;
+}
+
+/* Global table visibility refinement in dark mode */
+[data-theme="dark"] .table tr td,
+[data-theme="dark"] .table tr th {
+    color: var(--text-main) !important;
+}
+
+/* Fix subtle backgrounds for dark mode */
+[data-theme="dark"] .bg-primary-subtle {
+    background-color: rgba(255, 138, 101, 0.15) !important;
+    color: #FFA28D !important;
+    border: 1px solid rgba(255, 138, 101, 0.25);
+}
+
+[data-theme="dark"] .bg-secondary-subtle {
+    background-color: rgba(255, 112, 67, 0.15) !important;
+    color: #FFB399 !important;
+    border: 1px solid rgba(255, 112, 67, 0.25);
 }
 
 /* Global Dark Mode Fixes for Bootstrap Components */
@@ -223,6 +246,11 @@
     color: #FFFFFF !important;
 }
 
+/* Fix Calendar Icon in Dark Mode */
+[data-theme="dark"] .form-control::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(100%);
+}
+
 [data-theme="dark"] .form-control::placeholder {
     color: #A0AEC0 !important;
 }
@@ -258,6 +286,29 @@
 [data-theme="dark"] .text-dark,
 [data-theme="dark"] .text-black {
     color: var(--text-main) !important;
+}
+
+/* Ensure contrast in dark mode for badges with yellow accent background */
+[data-theme="dark"] .badge.bg-accent.text-dark {
+    color: #2D3436 !important;
+}
+
+[data-theme="dark"] .bg-success-subtle {
+    background-color: rgba(25, 135, 84, 0.2) !important;
+    color: #4ade80 !important;
+    border: 1px solid rgba(25, 135, 84, 0.3);
+}
+
+/* Fix for table-light rows in dark mode to avoid light-on-light visibility issues */
+[data-theme="dark"] .table-light {
+    --bs-table-bg: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-main) !important;
+}
+
+/* Fix for light badges in dark mode */
+[data-theme="dark"] .badge.bg-light {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #E2E8F0 !important;
 }
 
 [data-theme="dark"] .btn-light {
@@ -1071,10 +1122,13 @@ footer a:hover .bi {
 }
 
 /* Forms */
-.form-control {
+.form-control,
+.form-select {
     border-radius: 12px;
     padding: 0.8rem 1.2rem;
     border: 1px solid #ddd;
+    font-size: 1rem;
+    height: auto;
 }
 
 .form-control:focus {
@@ -1250,7 +1304,7 @@ footer {
     overflow: hidden;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
     .dashboard-wrapper {
         display: flex;
         height: 100vh;
@@ -1403,7 +1457,7 @@ footer {
     filter: invert(1) brightness(100%);
 }
 
-@media (max-width: 1199.98px) {
+@media (max-width: 991.98px) {
     .dashboard-wrapper {
         display: block;
         height: 100vh;
@@ -1713,7 +1767,7 @@ footer a:hover i {
     filter: invert(1) brightness(100%);
 }
 
-@media (max-width: 1199.98px) {
+@media (max-width: 991.98px) {
     .navbar-collapse {
         position: absolute;
         top: 100%;
@@ -1734,8 +1788,8 @@ footer a:hover i {
 
 /* Sidebar mobile evolution handled above with unified styles */
 
-/* 1024px Specific Tablet Optimization */
-@media (max-width: 1200px) {
+/* 1024px / Tablet Optimization */
+@media (max-width: 992px) {
     .navbar-brand img {
         height: 38px !important;
     }
@@ -1856,7 +1910,7 @@ footer a:hover i {
 /* --- Final UI Responsiveness Polish --- */
 
 /* Hexagon Responsiveness: Scale down on tablet/desktop transition */
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
     .hexagon-wrapper {
         width: 180px !important;
         height: 208px !important;
@@ -1894,8 +1948,8 @@ footer a:hover i {
     }
 }
 
-/* Hero & Grid Optimizations for 1024px */
-@media (max-width: 1200px) {
+/* Hero & Grid Optimizations for tablet */
+@media (max-width: 992px) {
     .hero-content {
         text-align: center;
         padding-top: 2rem;
@@ -1948,63 +2002,40 @@ footer a:hover i {
     }
 }
 
-/* Responsive Tables - Stacking Card Pattern */
-@media (max-width: 767.98px) {
+/* Responsive Tables - Internal Scrolling will now handle the layout through Bootstrap's .table-responsive */
 
-    .dashboard-section .table-responsive table,
-    .dashboard-section .table-responsive thead,
-    .dashboard-section .table-responsive tbody,
-    .dashboard-section .table-responsive th,
-    .dashboard-section .table-responsive td,
-    .dashboard-section .table-responsive tr {
-        display: block !important;
-        width: 100% !important;
-    }
+/* Password Visibility Toggle Styles */
+.password-toggle-btn {
+    background: white !important;
+    border: 1px solid #dee2e6 !important;
+    border-left: none !important;
+    color: #636E72 !important;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px !important;
+}
 
-    .dashboard-section .table-responsive thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
+.password-toggle-btn:hover {
+    color: #FF8A65 !important;
+}
 
-    .dashboard-section .table-responsive tr {
-        border: 1px solid var(--dash-border);
-        border-radius: 12px;
-        margin-bottom: 20px;
-        padding: 15px;
-        background: var(--dash-card-bg);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    }
+[data-theme='dark'] .password-toggle-btn {
+    background: #2D3436 !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    color: #A0AEC0 !important;
+}
 
-    .dashboard-section .table-responsive td {
-        border: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-        position: relative;
-        padding: 8px 0 !important;
-        text-align: center !important;
-        min-height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center !important;
-        word-break: break-word;
-    }
+.input-group:focus-within .password-toggle-btn {
+    border-color: #FF8A65 !important;
+}
 
-    .dashboard-section .table-responsive td:last-child {
-        border-bottom: 0;
-        margin-top: 5px;
-    }
+.was-validated .form-control:invalid~.password-toggle-btn {
+    border-color: #dc3545 !important;
+}
 
-    .dashboard-section .table-responsive td::before {
-        content: attr(data-label);
-        position: static;
-        width: 100%;
-        margin-bottom: 4px;
-        text-align: center;
-        font-weight: 700;
-        color: var(--primary);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
+.was-validated .form-control:valid~.password-toggle-btn {
+    border-color: #198754 !important;
 }

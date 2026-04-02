@@ -172,6 +172,28 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     injectDecorations();
 
+    // Password Toggle Logic
+    const initPasswordToggle = () => {
+        const toggleBtns = document.querySelectorAll('.password-toggle-btn');
+        toggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const input = btn.parentElement.querySelector('input');
+                if (!input) return;
+                const icon = btn.querySelector('i');
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('bi-eye');
+                    icon.classList.add('bi-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('bi-eye-slash');
+                    icon.classList.add('bi-eye');
+                }
+            });
+        });
+    };
+    initPasswordToggle();
+
     // Global Form Validation (Bootstrap style)
     const initFormValidation = () => {
         const forms = document.querySelectorAll('.needs-validation');
@@ -182,15 +204,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.preventDefault();
                     e.stopPropagation();
                 } else {
-                    if (form.id === 'login-form' || form.id === 'signup-form' || form.id === 'booking-form') {
+                    // Success handling for various forms
+                    if (form.id === 'login-form' || form.id === 'signup-form') {
+                        e.preventDefault();
+                        window.location.href = 'dashboard.html';
+                    } else if (form.id === 'booking-form') {
                         e.preventDefault();
                         const successModal = document.getElementById('successModal');
                         if (successModal) {
                             const modal = new bootstrap.Modal(successModal);
                             modal.show();
-                        } else {
-                            window.location.href = 'dashboard.html';
                         }
+                    } else if (form.id === 'contact-form') {
+                        e.preventDefault();
+                        alert('Thank you! Your message has been sent successfully. We will get back to you within 24 hours.');
+                        form.reset();
+                        form.classList.remove('was-validated');
+                        return; // Prevent adding was-validated again
                     }
                 }
                 form.classList.add('was-validated');
