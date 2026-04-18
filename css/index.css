@@ -2068,3 +2068,54 @@ footer a:hover i {
 .was-validated .form-control:valid~.password-toggle-btn {
     border-color: #198754 !important;
 }
+
+/* Social Login Buttons */
+.social-btn {
+    background-color: var(--white);
+    border: 1px solid var(--dash-border);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    transition: var(--transition);
+    color: var(--text-main);
+}
+
+.social-btn:hover {
+    background-color: var(--bg-soft);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    color: var(--primary);
+}
+
+.social-btn img {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain;
+}
+
+.social-btn .xsmall {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+[data-theme="dark"] .social-btn img[alt="Apple"],
+[data-theme="dark"] .social-btn img[src*="apple"] {
+    filter: invert(1) brightness(2) !important;
+}
+
+/* Social Grid Stacking */
+.auth-social-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media (min-width: 768px) {
+    .auth-social-group {
+        flex-direction: row;
+    }
+}
